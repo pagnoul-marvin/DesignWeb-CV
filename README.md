@@ -12,3 +12,4 @@ Retours 1er feedbacks :
 - Mettre mes hobbys à la place des cookies (et enlever les boutons et les mettre dans la page me contacter avec les services (-> garder mes infos))
 - Enlever les boutons à côté des inputs dans la page me contacter
 - Inventer des sponsors dans le footer et y remettre la nav dedans
+- Bug au niveau des images dans le site de base en passant en français
