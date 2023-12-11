@@ -1,6 +1,7 @@
 # DesignWeb-CV
 
-Site de base : https://store.totalwar.com/en/total-war/total-war-warhammer-iii/total-war-warhammer-iii
+Site de base : https://store.totalwar.com/en/total-war/total-war-warhammer-iii/total-war-warhammer-iii  
+
 Retours 1er feedbacks :    
 - Changer "compétences" par "langages maîtrisés"
 - Ordre anti-chronologique dans "mes formations"
