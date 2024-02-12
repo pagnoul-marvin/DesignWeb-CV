@@ -129,7 +129,7 @@
 
 								</li>
 
-								<li id="firstname">
+								<li id="form_firstname">
 									
 									<label for="firstname">Pr&eacute;nom*</label>
 									<input type="text" name="nom" id="firstname" required="required" placeholder="Marvin">
@@ -229,7 +229,7 @@
 
 				<h2 class="hidden">Slider de mes formations</h2>
 				
-				<ul id="slider">
+				<ul class="slider">
 					
 					<li id="hepl">
 						
@@ -298,8 +298,8 @@
 
 				</ul>
 
-				<button id="previous">Previous</button>
-				<button id="next">Next</button>
+				<button class="previous">Previous</button>
+				<button class="next">Next</button>
 
 			</nav>
 
@@ -313,51 +313,48 @@
 
 				<h2 class="hidden">Slider de mes langages ma&icirc;tris&eacute;s</h2>
 				
-				<ul id="slider">
+				<ul class="slider">
 					
-					<li id="html">
+					<li>
 						
 						<ul>
-							
-							<img id="html" src="./img/ref/html.svg" alt="Image de HTML" height="500" width="890">
-
-							<progress value="95" max="100">
+							<div class="image_container">
+								<img src="./img/ref/html.svg" alt="Image de HTML" height="260" width="460">
+							</div>
 
 						</ul>
 
 					</li>
 
-					<li id="css">
+					<li>
 						
 						<ul>
-							
-							<img id="css" src="./img/ref/css.svg" alt="Image de CSS" height="500" width="890">
 
-							<progress value="90" max="100">
+							<div class="image_container">
+								<img src="./img/ref/css.svg" alt="Image de CSS" height="260" width="460">
+							</div>
 
 						</ul>
 
 					</li>
 
-					<li id="javascript">
+					<li>
 						
 						<ul>
-							
-							<img id="javascript" src="./img/ref/js.svg" alt="Image de Javascript" height="500" width="890">
-
-							<progress value="98" max="100">
+							<div class="image_container">
+								<img src="./img/ref/js.svg" alt="Image de Javascript" height="260" width="460">
+							</div>
 
 						</ul>
 
 					</li>
 
-					<li id="php">
+					<li>
 						
 						<ul>
-							
-							<img id="php" src="./img/ref/php.svg" alt="Image de PHP" height="500" width="890">
-
-							<progress value="97" max="100">
+							<div class="image_container">
+								<img  src="./img/ref/php.svg" alt="Image de PHP" height="260" width="460">
+							</div>
 
 						</ul>
 
@@ -365,14 +362,14 @@
 
 				</ul>
 
-				<button id="previous">Previous</button>
-				<button id="next">Next</button>
+				<button class="previous">Previous</button>
+				<button class="next">Next</button>
 
 			</nav>
 
 		</section>
 
-		<section id="skills">
+		<section id="soft_skills">
 			
 			<h1>Mes soft skills</h1>
 
@@ -388,7 +385,7 @@
 
 			<img id="hobbies_button" src="./img/ref/hobby.svg" width="90" height="90" alt="La lettre H dans une étoile">
 
-			<ul>
+			<ul class="hover">
 
 				<a id="close2" title="Fermer la section de mes hobbies" href="" hreflang="fr">Fermer</a>
 
@@ -438,9 +435,9 @@
 		
 		<ul id="socials">
 			
-			<li><a title="Aller vers mon profil Facebook" href="https://www.facebook.com/marvin.pgnl/?locale=fr_FR" hreflang="fr">Facebook</a></li>
-			<li><a title="Aller vers mon profil Instagram" href="https://www.instagram.com/pagnoulmarvin/" hreflang="fr">Instagram</a></li>
-			<li><a title="Aller vers mon profil Github" href="https://github.com/pagnoul-marvin" hreflang="fr">Github</a></li>
+			<li><a id="facebook" title="Aller vers mon profil Facebook" href="https://www.facebook.com/marvin.pgnl/?locale=fr_FR" hreflang="fr">Facebook</a></li>
+			<li><a id="instagram" title="Aller vers mon profil Instagram" href="https://www.instagram.com/pagnoulmarvin/" hreflang="fr">Instagram</a></li>
+			<li><a id="github" title="Aller vers mon profil Github" href="https://github.com/pagnoul-marvin" hreflang="fr">Github</a></li>
 
 		</ul>
 
