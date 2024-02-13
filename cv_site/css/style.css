@@ -21,6 +21,12 @@ header{
 	margin-right: 30px;
 }
 
+#article_number {
+	position: absolute;
+	top: 25px;
+	right: 85px;
+}
+
 #nav_list {
 	display: flex;
 	flex-grow: 1;
@@ -43,6 +49,7 @@ header{
 
 .hidden {
 	text-indent: -1000px;
+	overflow: hidden;
 	font-size: 0;
 }
 
@@ -120,8 +127,9 @@ main {
 
 #competences {
 	color: white;
-	margin-top: 50px;
+	margin: 50px 0;
 	padding-top: 40px;
+	z-index: 1;
 }
 
 #competences_list {
@@ -151,12 +159,11 @@ main {
 	margin-left: 600px;
 }
 
-
 #competences_text p {
 	margin: 20px 0 100px 0;
 	font-family: Segoe UI Regular, sans-serif;
 	font-size: 15px;
-	line-height: 20px;
+	line-height: 25px;
 }
 
 #competences_text a {
@@ -189,17 +196,17 @@ h1 {
 	display: flex;
 	font-family: Segoe UI Regular, sans-serif;
 	font-size: 15px;
-	margin: 30px 0 40px 40px;
+	margin: 30px 0 75px 75px;
 	overflow: hidden;
 	gap: 20px;
 }
 
 #formations .slider>li {
 	background-color: #20242B;
-	min-width: 400px;
+	min-width: 380px;
 	border-radius: 10px;
 	text-align: left;
-	line-height: 20px;
+	line-height: 25px;
 	padding: 30px 30px 75px 30px;
 }
 
@@ -215,8 +222,8 @@ h3 {
 
 #formations nav button.previous {
 	position: absolute;
-	bottom: -920px;
-	left: 15px;
+	bottom: -1010px;
+	left: 48px;
 	background-image: url(../img/icons/fleche_noire_previous.svg);
 	background-repeat: no-repeat;
 	background-position: 10px center;
@@ -231,8 +238,8 @@ h3 {
 
 #formations nav button.next {
 	position: absolute;
-	bottom: -920px;
-	left: 1435px;
+	bottom: -1010px;
+	left: 1410px;
 	background-image: url(../img/icons/fleche_noire_next.svg);
 	background-repeat: no-repeat;
 	background-position: 13px center;
@@ -246,7 +253,7 @@ h3 {
 }
 
 #formations h1, #langages h1 {
-	margin-left: 40px;
+	margin-left: 75px;
 }
 
 #langages .slider {
@@ -254,22 +261,22 @@ h3 {
 	justify-content: space-between;
 	overflow: hidden;
 	gap: 20px;
-	margin: 30px 0 40px 40px;
+	margin: 30px 0 40px 75px;
 }
 
 #langages .slider img {
 	border-radius: 10px;
-	transition: transform 0.5s ease-in-out;
+	transition: transform 0.3s ease-in-out;
+}
+
+#langages .slider img:hover {
+	transform: scale(1.2);
 }
 
 .image_container {
 	overflow: hidden;
 	border-radius: 10px;
 	height: 260px;
-}
-
-#langages .slider img:hover {
-	transform: scale(1.1);
 }
 
 #langages nav button.next, #langages nav button.previous {
@@ -286,27 +293,27 @@ h3 {
 
 #langages nav button.next {
 	background-image: url(../img/icons/fleche_noire_next.svg);
-	bottom: -1395px;
-	left: 1435px;
+	bottom: -1525px;
+	left: 1410px;
 	background-position: 13px center;
 }
 
 #langages nav button.previous {
 	background-image: url(../img/icons/fleche_noire_previous.svg);
-	bottom: -1395px;
-	left: 15px;
+	bottom: -1525px;
+	left: 48px;
 	background-position: 10px center;
 }
 
 #soft_skills {
 	border-radius: 10px;
 	border: 2px solid #293033;
-	padding: 65px;
-	margin: 40px;
+	padding: 60px 40px;
+	margin: 80px 75px;
 }
 
 #soft_skills h1 {
-	margin-bottom: 35px;
+	margin-bottom: 60px;
 }
 
 #soft_skills p {
@@ -315,16 +322,16 @@ h3 {
 }
 
 footer{
-	padding: 40px;
+	padding: 50px 75px 75px 75px;
 	background-color: black;
 	color: white;
+	font-family: Segoe UI Regular, sans-serif;
+	font-size: 15px;
 }
 
 #socials {
 	display: flex;
-	width: 330px;
-	justify-content: space-between;
-	gap: 70px;
+	gap: 60px;
 }
 
 #facebook, #github, #instagram {
@@ -350,5 +357,102 @@ footer{
 	background-image: url(../img/ref/instagram.svg);
 }
 
+#flex_container {
+	display: flex;
+	align-items: center;
+	margin-top: 40px;
+	margin-bottom: 60px;
+}
+#languages {
+	width: 300px;
+	padding: 10px;
+	background-color: transparent;
+	color: white;
+	border: 2px solid white;
+	border-radius: 10px;
+	margin-right: 100px;
+}
 
+#sponsors {
+	display: flex;
+	gap: 50px;
+}
 
+#alsacreations, #lmstudio {
+	text-decoration: none;
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-position: center;
+	overflow: hidden;
+	text-indent: -5000px;
+	height: 40px;
+}
+
+#alsacreations {
+	background-image: url(../img/ref/alsacreations.svg);
+	width: 211px;
+}
+
+#lmstudio {
+	background-image: url(../img/ref/lmstudio.svg);
+	width: 165px;
+}
+
+#grid_container {
+	display: grid;
+	grid-template-areas: "p services mail"
+				         "p skills tel"
+				         "p formations adress"
+				         "p languages ."
+					     "p softskills .";
+	grid-column-gap: 40px;
+	grid-row-gap: 10px;
+	grid-auto-flow: column;
+}
+
+#grid_container a {
+	text-decoration: none;
+	color: white;
+}
+
+#site_explanation a {
+	text-decoration: underline;
+	color: white;
+}
+
+#site_explanation {
+	grid-area: p;
+	line-height: 25px;
+}
+
+#services_footer {
+	grid-area: services;
+}
+
+#skills_footer {
+	grid-area: skills;
+}
+
+#formations_footer {
+	grid-area: formations;
+}
+
+#languages_footer {
+	grid-area: languages;
+}
+
+#softskills_footer {
+	grid-area: softskills;
+}
+
+#mail_footer {
+	grid-area: mail;
+}
+
+#tel_footer {
+	grid-area: tel;
+}
+
+#adress_footer {
+	grid-area: adress;
+}
