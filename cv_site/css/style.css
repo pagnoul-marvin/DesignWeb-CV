@@ -128,14 +128,13 @@ main {
 	font-family: Segoe UI Bold, sans-serif;
 	display: flex;
 	justify-content: space-between;
-	color: black;
+	color: white;
 	border-radius: 10px;
 	border: 1px solid #293033;
 	margin: 0 75px 75px 75px;
 	align-items: center;
 	padding: 0 80px;
 	min-height: 75px;
-	color: white;
 }
 
 #competences_list li:not(:last-child) {
@@ -195,13 +194,13 @@ h1 {
 	gap: 20px;
 }
 
-#formations .slider li {
+#formations .slider>li {
 	background-color: #20242B;
 	min-width: 400px;
-	padding: 30px 30px 75px 30px;
 	border-radius: 10px;
 	text-align: left;
 	line-height: 20px;
+	padding: 30px 30px 75px 30px;
 }
 
 #formations .slider li ul img {
@@ -350,3 +349,6 @@ footer{
 #instagram {
 	background-image: url(../img/ref/instagram.svg);
 }
+
+
+
