@@ -77,7 +77,7 @@ document.querySelectorAll('#nav_list>li:not(:last-child)').forEach(liElt => {
 });
 
 
-document.querySelector('#hobbies_button').addEventListener('click', (e)=>{
+document.querySelector('#hobbies_button').addEventListener('click', ()=>{
     document.querySelector('#hobbies_list').classList.toggle('no_display');
     document.getElementById('overlay').classList.toggle('opacity');
 });
