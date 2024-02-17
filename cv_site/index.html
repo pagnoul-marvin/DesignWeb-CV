@@ -7,7 +7,7 @@
 	<meta name="description" content="La page d'acceuil de mon Currciculum vitae">
 	<meta name="keywords" content="CV, curriculum vitae, Marvin Pagnoul, HEPL, Front-End, Back-End, Web Designer, Web Developper">
 	<link rel="stylesheet" type="text/css" href="./css/reset.css">
-	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<title>Curriculum vitae &ndash; Marvin Pagnoul</title>
 </head>
 <body>
@@ -18,16 +18,17 @@
 
 		<nav id="main_nav">
 
-			<h1 class="hidden">Navigation principale</h1> 
+			<h1 class="hidden">Navigation principale</h1>
 
 			<img id="logo" src="./img/icons/logo.svg" alt="Logo du site" height="40" width="40">
 			<img id="secondlogo" src="./img/icons/logo2.svg" alt="Logo de mon prénom avec un cheval à côté" height="40" width="118">
 
 			<ul id="nav_list">
-				<li>
+				<li id="first_nav_list_item">
 					Mes services
+					<img src="./img/icons/fleche.svg" alt="Une croix blanche" width="16" height="10">
 
-					<ul class="hover">
+					<ul id="first_dropdown" class="no_display">
 						<li><a title="Aller vers la section de mes services" href="#services" hreflang="fr">Cr&eacute;er un site web</a></li>
 						<li><a title="Aller vers la section de mes services" href="#services" hreflang="fr">Cr&eacute;er un design</a></li>
 						<li><a title="Aller vers la section de mes services" href="#services" hreflang="fr">R&eacute;aliser du responsive web design</a></li>
@@ -36,10 +37,11 @@
 
 				</li>
 
-				<li>
+				<li id="second_nav_list_item">
 					Mes comp&eacute;tences
+					<img src="./img/icons/fleche.svg" alt="Une croix blanche" width="16" height="10">
 
-					<ul class="hover">
+					<ul id="second_dropdown" class="no_display">
 						<li><a title="Aller vers la section de mes compétences" href="#ui" hreflang="fr"><abbr lang="en" title="User Interface">UI</abbr></a></li>
 						<li><a title="Aller vers la section de mes compétences" href="#ux" hreflang="fr"><abbr lang="en" title="User EXperience">UX</abbr></a></li>
 						<li><a title="Aller vers la section de mes compétences" href="#frontend" hreflang="fr">Front&ndash;End</a></li>
@@ -48,10 +50,11 @@
 
 				</li>
 
-				<li>
+				<li id="third_nav_list_item">
 					Mes formations
+					<img src="./img/icons/fleche.svg" alt="Une croix blanche" width="16" height="10">
 
-					<ul class="hover">
+					<ul class="no_display" id="third_dropdown">
 						<li><a title="Aller vers la section de mes formations" href="#hepl" hreflang="fr">&Eacute;tudes sup&eacute;rieures :&nbsp;<abbr title="Haute Ecole de la Province de Liège">HEPL</abbr>, Seraing</a></li>
 						<li><a title="Aller vers la section de mes formations" href="#formation" hreflang="fr">Formation en ligne :&nbsp;<abbr lang="fr" title="Deux Dimensions">2D</abbr></a></li>
 						<li><a title="Aller vers la section de mes formations" href="#helmo" hreflang="fr">&Eacute;tudes sup&eacute;rieures :&nbsp;Sainte&ndash;Croix, Li&egrave;ge</a></li>
@@ -60,11 +63,12 @@
 
 				</li>
 
-			
-				<li>
-					Mes langages maîtris&eacute;s
 
-					<ul class="hover">
+				<li id="fourth_nav_list_item">
+					Mes langages maîtris&eacute;s
+					<img src="./img/icons/fleche.svg" alt="Une croix blanche" width="16" height="10">
+
+					<ul class="no_display" id="fourth_dropdown">
 						<li><a title="Aller vers la section de mes langages maîtrisés" href="#html" hreflang="fr"><abbr lang="en" title="Hyper Text Markup Language">HTML</abbr></a></li>
 						<li><a title="Aller vers la section de mes langages maîtrisés" href="#css" hreflang="fr"><abbr lang="en" title="Cascading Style Sheet">CSS</abbr></a></li>
 						<li><a title="Aller vers la section de mes langages maîtrisés" href="#javascript" hreflang="fr">JavaScript</a></li>
@@ -73,10 +77,11 @@
 
 				</li>
 
-				<li>
+				<li id="fifth_nav_list_item">
 					Mes soft skills
+					<img src="./img/icons/fleche.svg" alt="Une croix blanche" width="16" height="10">
 
-					<ul class="hover">
+					<ul class="no_display" id="fifth_dropdown">
 						<li><a title="Aller vers la section de mes soft skills" href="#skills" hreflang="fr">Cr&eacute;ativit&eacute;</a></li>
 						<li><a title="Aller vers la section de mes soft skills" href="#skills" hreflang="fr">Recherche</a></li>
 						<li><a title="Aller vers la section de mes soft skills" href="#skills" hreflang="fr">Organisation</a></li>
@@ -93,10 +98,10 @@
 
 					<img id="basket" src="./img/ref/panier.svg" alt="Panier" height="35" width="27">
 
-					<ul class="hover">
+					<ul class="article_hover no_display">
 
 						<li><a id="close1" title="Retourner à la pge précédente" href="#" hreflang="fr">Fermer</a></li>
-						
+
 						<li><img id="content_profile" src="#" alt="Image de moi en monstre" height="" width=""></li>
 
 						<li>
@@ -171,6 +176,10 @@
 	</header>
 
 	<main>
+		<div class="js_message">
+			<label for="js">Pour pouvoir utiliser toutes les fonctionnalit&eacute;s du site, veuillez activer Javascript. Pour activer Javascript, appuyez sur ce lien :&nbsp;<a href="https://support.google.com/admanager/answer/12654?hl=fr" title="Se rediriger vers une aide de Google pour activer Javascript">Activer Javascript sur son navigateur</a></label>
+			<input type="checkbox" id="js" name="checked_js">
+		</div>
 
 		<section id="services">
 
@@ -178,7 +187,7 @@
 
 			<h1 class="hidden">Mes informations personnelles</h1>
 
-			<ul id="informations">	
+			<ul id="informations">
 
 				<li itemprop="gender" id="gender">Homme</li>
 				<li><strong><span itemprop="givenName">Marvin</span> <span id="lastname" itemprop="familyName">Pagnoul</span></strong></li>
@@ -217,7 +226,7 @@
 				<h1>Mes compétences</h1>
 
 				<p>
-					Je suis une personne polyvalente sachant aussi bien ma&icirc;triser le Front&ndash;End que le Back&ndash;End, l&rsquo;<abbr lang="en" title="User Interface">UI</abbr> et l&rsquo;<abbr lang="en" title="User EXperience">UX</abbr> sont tout autant important pour moi afin d&rsquo;avoir une application ou un site accessible pour toutes personnes. J&rsquo;apporte &agrave; ces comp&eacute;tences le soin, la rigueur, l&rsquo;envie de r&eacute;ussir et surtout l&rsquo;envie de satisfaire.  
+					Je suis une personne polyvalente sachant aussi bien ma&icirc;triser le Front&ndash;End que le Back&ndash;End, l&rsquo;<abbr lang="en" title="User Interface">UI</abbr> et l&rsquo;<abbr lang="en" title="User EXperience">UX</abbr> sont tout autant important pour moi afin d&rsquo;avoir une application ou un site accessible pour toutes personnes. J&rsquo;apporte &agrave; ces comp&eacute;tences le soin, la rigueur, l&rsquo;envie de r&eacute;ussir et surtout l&rsquo;envie de satisfaire.
 				</p>
 
 				<a title="Aller vers mon portfolio" href="#" hreflang="fr">En savoir plus</a>
@@ -225,21 +234,21 @@
 			</div>
 
 			<img id="skills" src="" alt="Image de moi en monstre" height="" width="">
-			
+
 		</section>
 
 		<section id="formations">
-			
+
 			<h1>Mes formations</h1>
 
 			<nav>
 
 				<h2 class="hidden">Slider de mes formations</h2>
-				
-				<ul class="slider">
-					
+
+				<ul id="first_slider">
+
 					<li id="hepl">
-						
+
 						<ul>
 							<li><img id="hepl_logo" src="./img/ref/hepl.svg" alt="Image du logo de la HEPL" height="225" width="380"></li>
 
@@ -256,9 +265,9 @@
 					</li>
 
 					<li id="formation">
-						
+
 						<ul>
-							
+
 							<li><img id="online_training" src="./img/ref/formation.svg" alt="Logo de formations en ligne" height="225" width="380"></li>
 
 							<li><h3>Formation en ligne :&nbsp;<abbr lang="fr" title="Deux dimensions">2D</abbr></h3></li>
@@ -274,9 +283,9 @@
 					</li>
 
 					<li id="helmo">
-						
+
 						<ul>
-							
+
 							<li><img id="sainte_croix" src="./img/ref/helmo.svg" alt="Photo de l'école de Sainte-Croix" height="225" width="380"></li>
 
 							<li><h3>&Eacute;tudes sup&eacute;rieures :&nbsp;Sainte&ndash;Croix, Li&egrave;ge</h3></li>
@@ -292,9 +301,9 @@
 					</li>
 
 					<li id="secondaire">
-						
+
 						<ul>
-							
+
 							<li><img id="saint_louis" src="./img/ref/secondaire.svg" alt="Photo de l'école de Saint-Louis" height="225" width="380"></li>
 
 							<li><h3>&Eacute;tudes secondaires :&nbsp;Saint&ndash;Louis, Waremme</h3></li>
@@ -312,25 +321,25 @@
 
 				</ul>
 
-				<button class="previous">Previous</button>
-				<button class="next">Next</button>
+				<button id="first_slider_previous">Previous</button>
+				<button id="first_slider_next">Next</button>
 
 			</nav>
 
 		</section>
 
 		<section id="langages">
-			
+
 			<h1>Mes langages ma&icirc;tris&eacute;s</h1>
 
 			<nav>
 
 				<h2 class="hidden">Slider de mes langages ma&icirc;tris&eacute;s</h2>
-				
-				<ul class="slider">
-					
+
+				<ul id="second_slider">
+
 					<li>
-						
+
 						<ul>
 							<li id="html" class="image_container">
 								<img src="./img/ref/html.svg" alt="Image de HTML" height="260" width="440">
@@ -341,7 +350,7 @@
 					</li>
 
 					<li>
-						
+
 						<ul>
 
 							<li id="css" class="image_container">
@@ -353,7 +362,7 @@
 					</li>
 
 					<li>
-						
+
 						<ul>
 							<li id="javascript" class="image_container">
 								<img src="./img/ref/js.svg" alt="Image de Javascript" height="260" width="440">
@@ -364,7 +373,7 @@
 					</li>
 
 					<li>
-						
+
 						<ul>
 							<li id="php" class="image_container">
 								<img  src="./img/ref/php.svg" alt="Image de PHP" height="260" width="440">
@@ -376,15 +385,15 @@
 
 				</ul>
 
-				<button class="previous">Previous</button>
-				<button class="next">Next</button>
+				<button id="second_slider_previous">Previous</button>
+				<button id="second_slider_next">Next</button>
 
 			</nav>
 
 		</section>
 
 		<section id="soft_skills">
-			
+
 			<h1>Mes soft skills</h1>
 
 			<p>
@@ -394,7 +403,7 @@
 		</section>
 
 		<section id="hobbies">
-			
+
 			<h1 class="hidden">Mes hobbies</h1>
 
 			<img id="hobbies_button" src="./img/ref/hobby.svg" width="90" height="90" alt="La lettre H dans une étoile">
@@ -416,11 +425,11 @@
 				</li>
 
 				<li>
-					
+
 					<h2>Tir &agrave; l&rsquo;arc</h2>
 
 					<p>
-						Pratiquer le tir &agrave; l&rsquo;arc est assez r&eacute;cent dans ma vie :&nbsp;je le pratique que depuis un peu plus d&rsquo;un an. Je tire &agrave; la Compagnie Royale D&rsquo;archers se situant &agrave; Li&egrave;ge. 
+						Pratiquer le tir &agrave; l&rsquo;arc est assez r&eacute;cent dans ma vie :&nbsp;je le pratique que depuis un peu plus d&rsquo;un an. Je tire &agrave; la Compagnie Royale D&rsquo;archers se situant &agrave; Li&egrave;ge.
 					</p>
 
 					<p>2x&frasl;sem</p>
@@ -428,7 +437,7 @@
 				</li>
 
 				<li>
-					
+
 					<h2>Histoire</h2>
 
 					<p>
@@ -438,7 +447,7 @@
 					<p>Dans la vie de tous les jours</p>
 
 				</li>
-				
+
 			</ul>
 
 		</section>
@@ -446,9 +455,9 @@
 	</main>
 
 	<footer>
-		
+
 		<ul id="socials">
-			
+
 			<li><a id="facebook" title="Aller vers mon profil Facebook" href="https://www.facebook.com/marvin.pgnl/?locale=fr_FR" hreflang="fr">Facebook</a></li>
 			<li><a id="instagram" title="Aller vers mon profil Instagram" href="https://www.instagram.com/pagnoulmarvin/" hreflang="fr">Instagram</a></li>
 			<li><a id="github" title="Aller vers mon profil Github" href="https://github.com/pagnoul-marvin" hreflang="fr">Github</a></li>
@@ -472,13 +481,13 @@
 		</div>
 
 		<ul id="grid_container">
-			
+
 			<li id="site_explanation">
 				<p>
 					Ce site a &eacute;t&eacute; cr&eacute;&eacute; &agrave; l&rsquo;occasion d&rsquo;un des nombreux projets lors de ma seconde ann&eacute;e (2023&ndash;2024) de mes &eacute;tudes sup&eacute;rieures en infographie &agrave; l&rsquo;<abbr lang="fr" title="Haute Ecole de la Province de Liège">HEPL</abbr> &agrave; Seraing (Campus des Mar&ecirc;ts). Je n&rsquo;ai pas &eacute;t&eacute; seul :&nbsp;j&rsquo;ai &eacute;t&eacute; aid&eacute; et conseill&eacute; par mes proches ainsi que par mes professeurs. Le but &eacute;tait de refaire un site choisi par moi-m&ecirc;me et de changer ses informations par mes informations afin de cr&eacute;er un curriculum vitae. Le site que j&rsquo;ai choisi est celui&ndash;ci :&nbsp;<a title="Aller vers le site de Total War" href="https://store.totalwar.com/en/total-war/total-war-warhammer-iii/total-war-warhammer-iii">Total War :&nbsp;Warhammer III</a>. Pour le bien de mon site, certaines informations ont pu &ecirc;tre invent&eacute;es.
 				</p>
 			</li>
-					
+
 			<li><a id="services_footer" title="Retourner vers mes services" href="#services" hreflang="fr">Mes services</a></li>
 			<li><a id="skills_footer" title="Retourner vers mes compétences" href="#competences" hreflang="fr">Mes comp&eacute;tences</a></li>
 			<li><a id="formations_footer" title="Retourner vers mes formations" href="#formations" hreflang="fr">Mes formations</a></li>
@@ -492,6 +501,6 @@
 		</ul>
 
 	</footer>
-
+	<script src="./js/main.js"></script>
 </body>
 </html>
