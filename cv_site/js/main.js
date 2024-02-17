@@ -45,7 +45,7 @@ document.querySelectorAll("button").forEach(btnElt => {
 });
 
 
-document.querySelectorAll('#nav_list li:not(:last-child)').forEach(liElt => {
+document.querySelectorAll('#nav_list>li:not(:last-child)').forEach(liElt => {
     liElt.addEventListener('mouseover', (e) => {
         if (e.currentTarget.id === 'first_nav_list_item') {
             document.getElementById('first_dropdown').classList.remove('no_display');
@@ -60,7 +60,7 @@ document.querySelectorAll('#nav_list li:not(:last-child)').forEach(liElt => {
         }
     });
 });
-document.querySelectorAll('#nav_list li:not(:last-child)').forEach(liElt => {
+document.querySelectorAll('#nav_list>li:not(:last-child)').forEach(liElt => {
     liElt.addEventListener('mouseout', (e) => {
         if (e.currentTarget.id === 'first_nav_list_item') {
             document.getElementById('first_dropdown').classList.add('no_display');
@@ -76,6 +76,16 @@ document.querySelectorAll('#nav_list li:not(:last-child)').forEach(liElt => {
     });
 });
 
+
+document.querySelector('#hobbies_button').addEventListener('click', (e)=>{
+    document.querySelector('#hobbies_list').classList.toggle('no_display');
+    document.getElementById('overlay').classList.toggle('opacity');
+});
+
+document.querySelector('#close2').addEventListener('click', ()=>{
+    document.querySelector('#hobbies_list').classList.toggle('no_display');
+    document.getElementById('overlay').classList.toggle('opacity');
+});
 
 
 
