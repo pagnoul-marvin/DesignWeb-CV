@@ -26,7 +26,7 @@
 			<ul id="nav_list">
 				<li id="first_nav_list_item">
 					Mes services
-					<img src="./img/icons/fleche.svg" alt="Une croix blanche" width="16" height="10">
+					<img id="nav_first_arrow" src="./img/icons/fleche.svg" alt="Une croix blanche" width="16" height="10">
 
 					<ul id="first_dropdown" class="no_display">
 						<li><a title="Aller vers la section de mes services" href="#services" hreflang="fr">Cr&eacute;er un site web</a></li>
@@ -39,7 +39,7 @@
 
 				<li id="second_nav_list_item">
 					Mes comp&eacute;tences
-					<img src="./img/icons/fleche.svg" alt="Une croix blanche" width="16" height="10">
+					<img id="nav_second_arrow" src="./img/icons/fleche.svg" alt="Une croix blanche" width="16" height="10">
 
 					<ul id="second_dropdown" class="no_display">
 						<li><a title="Aller vers la section de mes compétences" href="#ui" hreflang="fr"><abbr lang="en" title="User Interface">UI</abbr></a></li>
@@ -52,7 +52,7 @@
 
 				<li id="third_nav_list_item">
 					Mes formations
-					<img src="./img/icons/fleche.svg" alt="Une croix blanche" width="16" height="10">
+					<img id="nav_third_arrow" src="./img/icons/fleche.svg" alt="Une croix blanche" width="16" height="10">
 
 					<ul class="no_display" id="third_dropdown">
 						<li><a title="Aller vers la section de mes formations" href="#hepl" hreflang="fr">&Eacute;tudes sup&eacute;rieures :&nbsp;<abbr title="Haute Ecole de la Province de Liège">HEPL</abbr>, Seraing</a></li>
@@ -66,7 +66,7 @@
 
 				<li id="fourth_nav_list_item">
 					Mes langages maîtris&eacute;s
-					<img src="./img/icons/fleche.svg" alt="Une croix blanche" width="16" height="10">
+					<img id="nav_fourth_arrow" src="./img/icons/fleche.svg" alt="Une croix blanche" width="16" height="10">
 
 					<ul class="no_display" id="fourth_dropdown">
 						<li><a title="Aller vers la section de mes langages maîtrisés" href="#html" hreflang="fr"><abbr lang="en" title="Hyper Text Markup Language">HTML</abbr></a></li>
@@ -79,7 +79,7 @@
 
 				<li id="fifth_nav_list_item">
 					Mes soft skills
-					<img src="./img/icons/fleche.svg" alt="Une croix blanche" width="16" height="10">
+					<img id="nav_fifth_arrow" src="./img/icons/fleche.svg" alt="Une croix blanche" width="16" height="10">
 
 					<ul class="no_display" id="fifth_dropdown">
 						<li><a title="Aller vers la section de mes soft skills" href="#skills" hreflang="fr">Cr&eacute;ativit&eacute;</a></li>
@@ -97,75 +97,6 @@
 					<span id="article_number">0</span>
 
 					<img id="basket" src="./img/ref/panier.svg" alt="Panier" height="35" width="27">
-
-					<ul class="article_hover no_display">
-
-						<li><a id="close1" title="Retourner à la pge précédente" href="#" hreflang="fr">Fermer</a></li>
-
-						<li><img id="content_profile" src="#" alt="Image de moi en monstre" height="" width=""></li>
-
-						<li>
-							<ul>
-
-								<li><p>Cr&eacute;er un site web</p></li>
-								<li><p>Cr&eacute;ateur :&nbsp;Marvin Pagnoul</p></li>
-								<li><p>marvinpagnoul@icloud.com</p></li>
-								<li><p>04 94 16 40 75</p></li>
-								<li><p>Rue Louis Happart, 15 THYS</p></li>
-								<li><a title="Enlever cet élément de mon panier" href="" hreflang="fr">Enlever</a></li>
-
-							</ul>
-
-						</li>
-
-						<li>
-
-							<form method="post" action="#">
-
-								<fieldset>
-
-								<legend>Vos coordonn&eacute;es</legend>
-
-								<label for="keep_informations">Garder mes informations</label>
-								<input type="checkbox" id="keep_informations" name="keep">
-
-								<ol>
-
-									<li id="form_lastname">
-
-										<label for="name">Nom*</label>
-										<input type="text" name="nom" id="name" required="required" placeholder="Pagnoul">
-
-									</li>
-
-									<li id="form_firstname">
-
-										<label for="firstname">Pr&eacute;nom*</label>
-										<input type="text" name="nom" id="firstname" required="required" placeholder="Marvin">
-
-									</li>
-
-									<li id="email">
-
-										<label for="mail">Adresse mail*</label>
-										<input type="email" name="nom" id="mail" required="required" placeholder="marvinpagnoul@icloud.com">
-
-									</li>
-
-								</ol>
-
-								<p>
-									<strong>Note</strong> :&nbsp;En soumettant, je vais recevoir un mail ayant le service ainsi que les coordonn&eacute;es ci&ndash;dessus. Suite &agrave; cela, nous pourrons discuter afin de d&eacute;finir vos souhaits.
-								</p>
-
-								<input type="submit" value="SOUMETTRE">
-
-								</fieldset>
-
-							</form>
-						</li>
-
-					</ul>
 
 				</li>
 
@@ -202,7 +133,7 @@
 					</ul>
 				</li>
 
-				<li><a title="Aller vers la section pour me contacter" href="" hreflang="fr">Me contacter</a></li><!--
+				<li><p title="Aller vers la section pour me contacter" id="contact">Me contacter</p></li><!--
 
 				--><li><img id="projects_number" src="./img/ref/projets.svg" alt="Image PEGI" height="80" width="60"></li>
 
@@ -446,6 +377,84 @@
 
 					<p>Dans la vie de tous les jours</p>
 
+				</li>
+
+			</ul>
+
+		</section>
+
+		<section id="panier">
+
+			<h1 class="hidden">Mon panier</h1>
+
+			<ul id="article_hover" class="no_display">
+
+				<li><img id="close1" src="./img/icons/croixnoire.svg" alt="Une croix noire" width="13"
+				height="13"></li>
+
+				<li><img id="content_profile" src="#" alt="Image de moi en monstre" height="" width=""></li>
+
+				<li>
+					<ul id="summary">
+
+						<li><p id="service_name">Cr&eacute;er un site web</p></li>
+						<li><p>Cr&eacute;ateur :&nbsp;Marvin Pagnoul</p></li>
+						<li><p>marvinpagnoul@icloud.com</p></li>
+						<li><p>04 94 16 40 75</p></li>
+						<li><p>Rue Louis Happart, 15 THYS</p></li>
+						<li><p id="delete_article" title="Enlever ce service de mon panier">Enlever</p></li>
+
+					</ul>
+
+				</li>
+
+				<li>
+
+					<form method="post" action="#">
+
+						<fieldset>
+
+							<legend>Vos coordonn&eacute;es</legend>
+
+							<label class="toggle" for="keep_informations">Garder mes informations
+								<input class="checkbox" type="checkbox" id="keep_informations" name="keep">
+								<span class="slider_round"></span>
+							</label>
+
+							<ol>
+
+								<li id="form_lastname">
+
+									<label for="name">Nom*</label>
+									<input type="text" name="nom" id="name" required="required" placeholder="Nom*">
+
+								</li>
+
+								<li id="form_firstname">
+
+									<label for="firstname">Pr&eacute;nom*</label>
+									<input type="text" name="nom" id="firstname" required="required" placeholder="Prénom*">
+
+								</li>
+
+								<li id="email">
+
+									<label for="mail">Adresse mail*</label>
+									<input type="email" name="nom" id="mail" required="required" placeholder="Adresse mail*">
+
+								</li>
+
+							</ol>
+
+							<p>
+								<span id="note">Note</span> :&nbsp;En soumettant, je vais recevoir un mail ayant le service ainsi que les coordonn&eacute;es ci&ndash;dessus. Suite &agrave; cela, nous pourrons discuter afin de d&eacute;finir vos souhaits.
+							</p>
+
+							<input type="submit" value="SOUMETTRE">
+
+						</fieldset>
+
+					</form>
 				</li>
 
 			</ul>

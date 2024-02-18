@@ -49,14 +49,19 @@ document.querySelectorAll('#nav_list>li:not(:last-child)').forEach(liElt => {
     liElt.addEventListener('mouseover', (e) => {
         if (e.currentTarget.id === 'first_nav_list_item') {
             document.getElementById('first_dropdown').classList.remove('no_display');
+            document.getElementById('nav_first_arrow').classList.add('rotate');
         } else if (e.currentTarget.id === 'second_nav_list_item') {
             document.getElementById('second_dropdown').classList.remove('no_display');
+            document.getElementById('nav_second_arrow').classList.add('rotate');
         } else if (e.currentTarget.id === 'third_nav_list_item') {
             document.getElementById('third_dropdown').classList.remove('no_display');
+            document.getElementById('nav_third_arrow').classList.add('rotate');
         } else if (e.currentTarget.id === 'fourth_nav_list_item') {
             document.getElementById('fourth_dropdown').classList.remove('no_display');
+            document.getElementById('nav_fourth_arrow').classList.add('rotate');
         } else {
             document.getElementById('fifth_dropdown').classList.remove('no_display');
+            document.getElementById('nav_fifth_arrow').classList.add('rotate');
         }
     });
 });
@@ -64,14 +69,19 @@ document.querySelectorAll('#nav_list>li:not(:last-child)').forEach(liElt => {
     liElt.addEventListener('mouseout', (e) => {
         if (e.currentTarget.id === 'first_nav_list_item') {
             document.getElementById('first_dropdown').classList.add('no_display');
+            document.getElementById('nav_first_arrow').classList.remove('rotate');
         } else if (e.currentTarget.id === 'second_nav_list_item') {
             document.getElementById('second_dropdown').classList.add('no_display');
+            document.getElementById('nav_second_arrow').classList.remove('rotate');
         } else if (e.currentTarget.id === 'third_nav_list_item') {
             document.getElementById('third_dropdown').classList.add('no_display');
+            document.getElementById('nav_third_arrow').classList.remove('rotate');
         } else if (e.currentTarget.id === 'fourth_nav_list_item') {
             document.getElementById('fourth_dropdown').classList.add('no_display');
+            document.getElementById('nav_fourth_arrow').classList.remove('rotate');
         } else {
             document.getElementById('fifth_dropdown').classList.add('no_display');
+            document.getElementById('nav_fifth_arrow').classList.remove('rotate');
         }
     });
 });
@@ -85,6 +95,25 @@ document.querySelector('#hobbies_button').addEventListener('click', ()=>{
 document.querySelector('#close2').addEventListener('click', ()=>{
     document.querySelector('#hobbies_list').classList.toggle('no_display');
     document.getElementById('overlay').classList.toggle('opacity');
+});
+
+let articleNumber = 0;
+document.getElementById('contact').addEventListener('click', ()=>{
+    document.getElementById('article_number').textContent = `${articleNumber++}`;
+    document.getElementById('article_hover').classList.remove('no_display');
+});
+
+document.getElementById('basket').addEventListener('click', ()=>{
+    document.getElementById('article_hover').classList.toggle('no_display');
+});
+document.getElementById('close1').addEventListener('click', ()=>{
+    document.getElementById('article_hover').classList.add('no_display');
+});
+
+document.getElementById('delete_article').addEventListener('click', ()=>{
+    articleNumber = 0;
+    document.getElementById('article_hover').innerHTML = "";
+    document.getElementById('article_number').textContent = `${articleNumber}`;
 });
 
 

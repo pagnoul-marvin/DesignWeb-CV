@@ -88,6 +88,10 @@ header{
 	margin-left: 5px;
 }
 
+.rotate {
+	transform: rotate(180deg);
+}
+
 #nav_list>li:hover {
 	cursor: pointer;
 }
@@ -215,7 +219,7 @@ main {
 	border-radius: 10px;
 }
 
-#informations a {
+#informations p {
 	display: inline-block;
 	width: 100%;
 	color: black;
@@ -226,6 +230,10 @@ main {
 	text-decoration: none;
 	text-transform: uppercase;
 	border-radius: 10px;
+}
+
+#informations p:hover {
+	cursor: pointer;
 }
 
 #hobbies_button {
@@ -633,3 +641,159 @@ ul#first_slider, ul#second_slider {
 	width: 100vh;
 	height: 100vh;
 }
+
+#article_hover {
+	min-width: 30%;
+	background-color: white;
+	color: black;
+	font-family: Segoe UI Regular, sans-serif;
+	font-size: 15px;
+	margin-left: auto;
+	padding: 20px 20px 20px 30px;
+	position: fixed;
+	left: 1012px;
+	top: 0;
+	z-index: 3;
+	min-height: 100vh;
+	text-align: left;
+}
+
+#article_hover>li:first-child{
+	position: absolute;
+	right: 50px;
+}
+
+#article_hover #content_profile {
+	float: left;
+	border-radius: 10px;
+	min-height: 175px;
+	margin-right: 10px;
+}
+
+#article_hover>li ul  {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 175px;
+}
+
+#article_hover #delete_article, #article_hover #service_name, legend, label[for='keep_informations'], #note, input[type='submit'] {
+	font-family: Segoe UI Bold, sans-serif;
+}
+
+#article_hover #delete_article:hover {
+	cursor: pointer;
+}
+
+#article_hover #delete_article, #note, input[type='submit'] {
+	text-transform: uppercase;
+}
+
+legend {
+	margin-bottom: 10px;
+}
+
+#article_hover form {
+	margin-top: 50px;
+}
+
+#article_hover form ol label {
+	display: none;
+}
+
+#article_hover form ol input {
+	padding: 20px;
+	border-radius: 10px;
+	border: 2px solid black;
+	margin-top: 20px;
+}
+
+form p {
+	margin: 30px 0 20px;
+	line-height: 20px;
+}
+
+form input[type='submit'] {
+	width: 100%;
+	background-color: #FAE09E;
+	padding: 15px 0;
+	text-align: center;
+	border: none;
+	border-radius: 10px;
+	font-size: 20px;
+}
+
+.toggle {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	width: 276px;
+}
+
+.toggle:before {
+	content: 'On';
+	position: absolute;
+	left: 210px;
+	bottom: 8px;
+	z-index: 1;
+	color: white;
+	font-family: Segoe UI Regular, sans-serif;
+}
+
+.toggle:after {
+	content: 'Off';
+	position: absolute;
+	left: 240px;
+	bottom: 8px;
+	z-index: 1;
+	color: white;
+	font-family: Segoe UI Regular, sans-serif;
+}
+
+.toggle input {
+	display: none;
+}
+
+.slider_round {
+	position: relative;
+	display: block;
+	cursor: pointer;
+	background-color: grey;
+	transition: 0.4s;
+	width: 80px;
+	height: 30px;
+}
+
+.slider_round:before {
+	content: '';
+	position: absolute;
+	width: 30px;
+	height: 20px;
+	background-color: white;
+	transition: 0.4s;
+	top: 5px;
+	left: 7px;
+	z-index: 2;
+}
+
+.toggle input:checked + .slider_round:before {
+	transform: translateX(35px);
+}
+
+.slider_round {
+	border-radius: 15px;
+}
+
+.slider_round:before {
+	border-radius: 10px;
+}
+
+#close1:hover, input[type='submit']:hover {
+	cursor: pointer;
+}
+
+#panier ul.no_display {
+	display: none;
+}
+
