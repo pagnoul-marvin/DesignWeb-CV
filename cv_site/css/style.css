@@ -219,6 +219,15 @@ main {
 	border-radius: 10px;
 }
 
+#services_list li:hover {
+	cursor: pointer;
+	filter: invert(.85);
+}
+
+#services_list .active_service {
+	background-color: #fff;
+}
+
 #informations p {
 	display: inline-block;
 	width: 100%;
@@ -252,19 +261,18 @@ main {
 #competences_list {
 	font-family: Segoe UI Bold, sans-serif;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	color: white;
 	border-radius: 10px;
 	border: 1px solid #293033;
 	margin: 0 75px 75px 75px;
 	align-items: center;
-	padding: 0 80px;
 	min-height: 75px;
 }
 
-#competences_list li:not(:last-child) {
-	border-right: 1px solid #293033;
-
+#competences_list>li:not(:last-child) {
+	padding-right: 150px;
+	border-right: 1px solid #262C2F;
 }
 
 #competences_text {
@@ -628,6 +636,18 @@ ul#first_slider, ul#second_slider {
 	left: 770px;
 }
 
+#hobbies_button:hover {
+	cursor: pointer;
+}
+
+#close2:hover {
+	cursor: pointer;
+}
+
+button:hover {
+	border-color: grey;
+}
+
 #hobbies ul.no_display {
 	visibility: hidden;
 }
@@ -643,6 +663,7 @@ ul#first_slider, ul#second_slider {
 }
 
 #article_hover {
+	max-width: 30%;
 	min-width: 30%;
 	background-color: white;
 	color: black;
@@ -651,7 +672,7 @@ ul#first_slider, ul#second_slider {
 	margin-left: auto;
 	padding: 20px 20px 20px 30px;
 	position: fixed;
-	left: 1012px;
+	left: 1008px;
 	top: 0;
 	z-index: 3;
 	min-height: 100vh;
@@ -706,6 +727,7 @@ legend {
 	border-radius: 10px;
 	border: 2px solid black;
 	margin-top: 20px;
+	width: 410px;
 }
 
 form p {
