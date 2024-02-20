@@ -9,7 +9,29 @@
 	background-color: #212529;
 }
 
-main div:first-child a{
+#no_js_message #banner {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	font-family: Segoe UI Regular, sans-serif;
+	font-size: 15px;
+	color: #806520;
+	margin-top: 60px;
+}
+
+#no_js_message label {
+	margin: 30px 30px 30px 0;
+}
+
+#no_js_message {
+	background-color: #FDF3D2;
+}
+
+#no_js_message p {
+	margin: 30px 0 30px 250px;
+}
+
+#no_js_message a{
 	color: white;
 	background-color: black;
 	padding: 10px;
@@ -17,32 +39,39 @@ main div:first-child a{
 	text-decoration: none;
 }
 
-main div:first-child input:hover{
-	cursor: pointer;
-}
-
-main div:first-child input {
-	background-image: url("../img/icons/croixbrune.svg");
-	background-repeat: no-repeat;
-	background-position: center;
-	appearance: none;
-	width: 13px;
-	height: 13px;
-}
-
-.js_message {
-	display: flex;
-	font-size: 15px;
-	font-family: Segoe UI Regular, sans-serif;
-	background-color: #FAE09F;
-	color: #856404;
-	min-width: 100%;
-	padding: 20px 0;
-	align-items: center;
+#no_js_message input{
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
 	position: absolute;
-	justify-content: center;
-	gap: 100px;
-	top: 60px;
+	white-space: nowrap;
+	width: 1px;
+}
+
+.cross-button {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	width: 20px;
+	aspect-ratio: 1;
+}
+
+.line {
+	position: absolute;
+}
+
+.line:nth-child(1) {
+	transform: translateX(1px) rotate(45deg);
+}
+
+.line:nth-child(2) {
+	transform: translateX(-2px) rotate(-45deg);
+}
+
+.cross[type="checkbox"]:checked + .cross-button + #content,
+.cross[type="checkbox"]:checked + .cross-button {
+	display: none;
 }
 
 .no_js {
@@ -649,17 +678,24 @@ button:hover {
 }
 
 #hobbies ul.no_display {
-	visibility: hidden;
+	display: none;
 }
 
-.opacity {
+#overlay, #second_overlay {
 	background-color: rgba(0,0,0,0.4);
 	position: fixed;
 	top: 0;
-	right: 0;
 	z-index: 1;
-	width: 100vh;
-	height: 100vh;
+	min-width: 100%;
+	min-height: 100%;
+}
+
+#overlay {
+	right: 0;
+}
+
+#second_overlay {
+	left: 0;
 }
 
 #article_hover {
@@ -684,6 +720,10 @@ button:hover {
 	right: 50px;
 }
 
+.no_display {
+	display: none;
+}
+
 #article_hover #content_profile {
 	float: left;
 	border-radius: 10px;
@@ -691,7 +731,7 @@ button:hover {
 	margin-right: 10px;
 }
 
-#article_hover>li ul  {
+#article_hover>li ul#summary  {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -733,6 +773,31 @@ legend {
 form p {
 	margin: 30px 0 20px;
 	line-height: 20px;
+}
+
+#article_hover>li:last-child ul {
+	margin-top: 350px;
+}
+
+#article_hover>li:last-child ul li:first-child{
+	font-family: Segoe UI Regular, sans-serif;
+	font-size: 15px;
+	text-align: center;
+}
+
+#article_hover>li:last-child ul li a {
+	display: inline-block;
+	width: 100%;
+	background-color: #FAE09E;
+	padding: 15px 0;
+	text-align: center;
+	border: none;
+	border-radius: 10px;
+	font-size: 20px;
+	color: black;
+	font-family: Segoe UI Bold, sans-serif;
+	text-decoration: none;
+	margin-top: 20px;
 }
 
 form input[type='submit'] {

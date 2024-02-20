@@ -107,9 +107,22 @@
 	</header>
 
 	<main>
-		<div class="js_message">
-			<label for="js">Pour pouvoir utiliser toutes les fonctionnalit&eacute;s du site, veuillez activer Javascript. Pour activer Javascript, appuyez sur ce lien :&nbsp;<a href="https://support.google.com/admanager/answer/12654?hl=fr" title="Se rediriger vers une aide de Google pour activer Javascript">Activer Javascript sur son navigateur</a></label>
-			<input type="checkbox" id="js" name="checked_js">
+
+		<div id="no_js_message">
+
+			<div id="banner">
+
+				<input type="checkbox" id="cross" class="cross hidden" autocomplete="off">
+				<label for="cross" class="cross-button">
+					<span class="line">|</span>
+					<span class="line">|</span>
+				</label>
+				<p id="content" class="banner-content">Pour pouvoir utiliser toutes les fonctionnalit&eacute;s du site, veuillez activer Javascript. Pour pouvoir activer Javascript appuyez sur ce boutton
+					<a href="https://support.google.com/adsense/answer/12654?hl=fr" hreflang="fr" title="Activer Javascript sur son navigateur">Activer Javascript</a>
+				</p>
+
+			</div>
+
 		</div>
 
 		<section id="services">
@@ -338,7 +351,7 @@
 			<h1 class="hidden">Mes hobbies</h1>
 
 			<img id="hobbies_button" src="./img/ref/hobby.svg" width="90" height="90" alt="La lettre H dans une étoile">
-			<div id="overlay"></div>
+			<div id="overlay" class="no_display"></div>
 			<ul class="no_display" id="hobbies_list">
 
 				<li><img id="close2" src="./img/icons/croixblanche.svg" alt="Une croix blanche" width="13" height="13"></li>
@@ -386,6 +399,8 @@
 		<section id="panier">
 
 			<h1 class="hidden">Mon panier</h1>
+
+			<div id="second_overlay" class="no_display"></div>
 
 			<ul id="article_hover" class="no_display">
 
@@ -455,6 +470,13 @@
 						</fieldset>
 
 					</form>
+				</li>
+
+				<li class="no_display">
+					<ul>
+						<li><p>Votre panier est vide :&nbsp;aucun service n&rsquo;a &eacute;t&eacute; choisi.</p></li>
+						<li><a id="back_to_services" href="#services" title="Revenir à la section des services" hreflang="fr">Choisir un service</a></li>
+					</ul>
 				</li>
 
 			</ul>

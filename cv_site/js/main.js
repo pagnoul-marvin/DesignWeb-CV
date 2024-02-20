@@ -1,4 +1,4 @@
-/*document.querySelector('main p:first-child').classList.add('no_js');*/
+document.getElementById('no_js_message').classList.add('no_display');
 
 const wwwElement = document.getElementById('www');
 const wwwImage = document.getElementById('www_image');
@@ -155,12 +155,12 @@ document.querySelectorAll('#nav_list>li:not(:last-child)').forEach(liElt => {
 
 document.querySelector('#hobbies_button').addEventListener('click', () => {
     document.querySelector('#hobbies_list').classList.remove('no_display');
-    document.getElementById('overlay').classList.add('opacity');
+    document.getElementById('overlay').classList.remove('no_display');
 });
 
 document.querySelector('#close2').addEventListener('click', () => {
     document.querySelector('#hobbies_list').classList.add('no_display');
-    document.getElementById('overlay').classList.remove('opacity');
+    document.getElementById('overlay').classList.add('no_display');
 });
 
 let articleNumber = 0;
@@ -168,21 +168,40 @@ document.getElementById('contact').addEventListener('click', () => {
     articleNumber = 1;
     document.getElementById('article_number').textContent = `${articleNumber}`;
     document.getElementById('article_hover').classList.remove('no_display');
+    document.getElementById('second_overlay').classList.remove('no_display');
+    document.querySelectorAll('#article_hover>li:not(:last-child)').forEach(liElt=>{
+        liElt.classList.remove('no_display');
+    });
+    document.querySelector('#article_hover>li:last-child').classList.add('no_display');
 });
 
 document.getElementById('basket').addEventListener('click', () => {
-    document.getElementById('article_hover').classList.toggle('no_display');
+    document.getElementById('second_overlay').classList.remove('no_display');
+    if (articleNumber === 1) {
+        document.getElementById('article_hover').classList.remove('no_display');
+    } else {
+        document.getElementById('article_hover').classList.remove('no_display');
+        document.querySelectorAll('#article_hover>li:not(:last-child)').forEach(liElt => {
+            liElt.classList.add('no_display');
+        });
+        document.querySelector('#article_hover>li:last-child').classList.remove('no_display');
+    }
 });
 document.getElementById('close1').addEventListener('click', () => {
     document.getElementById('article_hover').classList.add('no_display');
+    document.getElementById('second_overlay').classList.add('no_display');
 });
 
 document.getElementById('delete_article').addEventListener('click', () => {
     articleNumber = 0;
-    document.getElementById('article_hover').innerHTML = "";
+    document.querySelectorAll('#article_hover>li:not(:last-child)').forEach(liElt => {
+        liElt.classList.add('no_display');
+    });
+    document.querySelector('#article_hover>li:last-child').classList.remove('no_display');
     document.getElementById('article_number').textContent = `${articleNumber}`;
 });
 
-
-
-
+document.getElementById('back_to_services').addEventListener('click', () => {
+    document.getElementById('article_hover').classList.add('no_display');
+    document.getElementById('second_overlay').classList.add('no_display');
+});
