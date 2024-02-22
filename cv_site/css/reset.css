@@ -127,30 +127,44 @@ table {
 font-family: 'Segoe UI Regular';
 font-style: normal;
 font-weight: normal;
- src: url('../fonts/Segoe UI.woff') format('woff');
+ src: url('../fonts/segoe/Segoe UI.woff') format('woff');
 }
-    
-
-@font-face {
-font-family: 'Segoe UI Italic';
-font-style: normal;
-font-weight: normal;
-src: url('../fonts/Segoe UI Italic.woff') format('woff');
-}
-    
 
 @font-face {
 font-family: 'Segoe UI Bold';
 font-style: normal;
-font-weight: normal;
-src: url('../fonts/Segoe UI Bold.woff') format('woff');
+font-weight: 700;
+src: url('../fonts/segoe/Segoe UI Bold.woff') format('woff');
 }
-    
 
 @font-face {
-font-family: 'Segoe UI Bold Italic';
+font-family: 'Metropolis Regular';
 font-style: normal;
 font-weight: normal;
-src: url('../fonts/Segoe UI Bold Italic.woff') format('woff');
+ src: url('../fonts/metropolis/Metropolis-Regular.otf') format('OpenType');
 }
+
+@font-face {
+font-family: 'Metropolis Bold';
+font-style: normal;
+font-weight: 700;
+src: url('../fonts/metropolis/Metropolis-Bold.otf') format('OpenType');
+}
+
+@font-face {
+font-family: 'Montserrat Regular';
+font-style: normal;
+font-weight: normal;
+ src: url('../fonts/montserrat/Montserrat-Regular.ttf') format('TrueType');
+}
+
+@font-face {
+font-family: 'Montserrat Bold';
+font-style: normal;
+font-weight: 700;
+src: url('../fonts/montserrat/Montserrat-Bold.ttf') format('TrueType');
+}
+
+
+
 
