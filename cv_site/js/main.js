@@ -8,6 +8,7 @@ const responsiveElement = document.getElementById('responsive');
 const responsiveImage = document.getElementById('responsive_image');
 const rankingElement = document.getElementById('ranking');
 const rankingImage = document.getElementById('ranking_image');
+const serviceTitle = document.getElementById('service_name');
 document.querySelectorAll('#services_list li').forEach(liElt => {
     liElt.addEventListener('click', (e) => {
         if (e.currentTarget.id === 'www') {
@@ -63,6 +64,7 @@ document.querySelectorAll('#services_list li').forEach(liElt => {
                 wwwImage.src = './img/icons/www.svg';
             }
         }
+        serviceTitle.textContent = e.currentTarget.dataset.name;
     });
 });
 
@@ -102,14 +104,7 @@ document.querySelectorAll("button").forEach(btnElt => {
             document.getElementById('second_slider').style.left = `${pourcentage}px`;
         }
     });
-    btnElt.addEventListener('mouseover', (e) => {
-        e.currentTarget.style.borderColor = 'grey';
-    });
-    btnElt.addEventListener('mouseout', (e) => {
-        e.currentTarget.style.borderColor = 'black';
-    });
 });
-
 
 document.querySelectorAll('#nav_list>li:not(:last-child)').forEach(liElt => {
     liElt.addEventListener('mouseover', (e) => {
@@ -152,10 +147,9 @@ document.querySelectorAll('#nav_list>li:not(:last-child)').forEach(liElt => {
     });
 });
 
-
 document.querySelector('#hobbies_button').addEventListener('click', () => {
-    document.querySelector('#hobbies_list').classList.remove('no_display');
-    document.getElementById('overlay').classList.remove('no_display');
+    document.querySelector('#hobbies_list').classList.toggle('no_display');
+    document.getElementById('overlay').classList.toggle('no_display');
 });
 
 document.querySelector('#close2').addEventListener('click', () => {
