@@ -1,7 +1,46 @@
-#main_nav {
-	display: flex;
-	color: white;
+#main_nav, #banner, #informations, #competences_list, #competences_text a, h1, #article_hover #delete_article, #article_hover #service_name, legend, label[for='keep_informations'], #note, input[type='submit'], #article_hover>li:last-child ul li a  {
 	font-family: "Metropolis Bold", "Montserrat Bold", "Segoe UI Bold", sans-serif;
+}
+
+#nav_list ul li a, #choice, #competences_text p, #formations #first_slider, #soft_skills p, footer, #hobbies_list, #hobbies h2, #article_hover, #article_hover>li:last-child ul li:first-child, .toggle:before, .toggle:after {
+	font-family: "Metropolis Regular", "Montserrat Regular", "Segoe UI Regular", sans-serif;
+}
+
+.hidden {
+	text-indent: -5000px;
+	overflow: hidden;
+	font-size: 0;
+}
+
+.no_display, #nav_list ul.no_display, #hobbies ul.no_display, #panier ul.no_display, .no_js {
+	display: none;
+}
+
+#main_nav, #banner, #nav_list, #nav_list ul, #services_list, #competences_list, #formations #first_slider, #langages #second_slider, #socials, #sponsors, #languages_sponsors, #article_hover>li ul#summary, .toggle {
+	display: flex;
+}
+
+#article_hover>li ul#summary, #nav_list ul {
+	flex-direction: column;
+}
+
+.cross-button, #nav_list>li, #services_list li, #informations p, button, #hobbies_button, #close2, #article_hover #delete_article, .slider_round, #close1, input[type='submit'] {
+	cursor: pointer;
+}
+
+#no_js_message, p#contact, form input[type='submit'], #article_hover>li:last-child ul li a {
+	background-color: #FAE09F;
+}
+
+#main_nav, #no_js_message a, #nav_list ul li a, #informations, main, #competences, #competences_list, footer, #languages, #site_explanation a, #grid_container a, #hobbies_list, .toggle:before, .toggle:after {
+	color: #fff;
+}
+
+#competences_text a, #formations nav #first_slider_previous, #formations nav #first_slider_next, #langages nav #second_slider_next, #langages nav #second_slider_previous, #article_hover, .slider_round:before {
+	background-color: #fff;
+}
+
+#main_nav {
 	font-size: 0.9275em;
 	align-items: center;
 	padding: 0 4.6875em;
@@ -10,10 +49,8 @@
 }
 
 #no_js_message #banner {
-	display: flex;
 	flex-direction: row-reverse;
 	justify-content: space-between;
-	font-family: "Metropolis Bold", "Montserrat Bold", "Segoe UI Bold", sans-serif;
 	font-size: 0.9275em;
 	color: #806520;
 	margin-top: 3.75em;
@@ -23,16 +60,11 @@
 	margin: 2em 2em 2em 0;
 }
 
-#no_js_message {
-	background-color: #FDF3D2;
-}
-
 #no_js_message p {
 	margin: 2em 0 2em 16.7em;
 }
 
-#no_js_message a{
-	color: white;
+#no_js_message a {
 	background-color: black;
 	padding: 0.7em;
 	text-transform: uppercase;
@@ -50,7 +82,6 @@
 }
 
 .cross-button {
-	cursor: pointer;
 	display: inline-block;
 	position: relative;
 	width: 1.3em;
@@ -74,10 +105,6 @@
 	display: none;
 }
 
-.no_js {
-	display: none;
-}
-
 header{
 	position: fixed;
 	width: 100%;
@@ -97,7 +124,6 @@ header{
 }
 
 #nav_list {
-	display: flex;
 	flex-grow: 1;
 	align-items: center;
 	margin-left: 4em;
@@ -120,10 +146,6 @@ header{
 
 .rotate {
 	transform: rotate(180deg);
-}
-
-#nav_list>li:hover {
-	cursor: pointer;
 }
 
 #nav_list>li:not(:last-child):hover {
@@ -154,8 +176,6 @@ header{
 	background-color: #282B35;
 	z-index: 2;
 	position: absolute;
-	display: flex;
-	flex-direction: column;
 	gap: 1.3em;
 	text-transform: none;
 	justify-content: space-between;
@@ -186,9 +206,7 @@ header{
 	right: 4em;
 }
 
-#nav_list ul li a{
-	color: white;
-	font-family: "Metropolis Regular", "Montserrat Regular", "Segoe UI Regular", sans-serif;
+#nav_list ul li a {
 	font-size: 1em;
 	text-decoration: none;
 }
@@ -197,18 +215,7 @@ header{
 	text-decoration: underline;
 }
 
-#nav_list ul.no_display {
-	display: none;
-}
-
-.hidden {
-	text-indent: -5000px;
-	overflow: hidden;
-	font-size: 0;
-}
-
 #informations {
-	color: white;
 	background-color: #20242B;
 	max-width: 18em;
 	margin-left: 3.8em;
@@ -216,7 +223,6 @@ header{
 	padding: 2.5em 1.875em;
 	border-radius: 1.25em;
 	text-align: left;
-	font-family: "Metropolis Bold", "Montserrat Bold", "Segoe UI Bold", sans-serif;
 	font-size: 1.25em;
 }
 
@@ -229,11 +235,10 @@ header{
 main {
 	overflow: hidden;
 	background-color: #151419;
-	color: white;
 }
 
 #tariff {
-	color: #F8DF9E;
+	color: #FAE09F;
 	margin: 1em 0;
 }
 
@@ -242,7 +247,6 @@ main {
 	border-radius: 0.5em;
 	margin-bottom: 1em;
 	padding: 0.5em 0.75em;
-	font-family: "Metropolis Regular", "Montserrat Regular", "Segoe UI Regular", sans-serif;
 }
 
 #lastname {
@@ -250,7 +254,6 @@ main {
 }
 
 #services_list {
-	display: flex;
 	justify-content: space-between;
 }
 
@@ -262,7 +265,6 @@ main {
 }
 
 #services_list li:hover {
-	cursor: pointer;
 	filter: invert(.85);
 }
 
@@ -276,15 +278,10 @@ main {
 	color: black;
 	text-align: center;
 	margin: 1em 0;
-	background-color: #FAE09F;
 	padding: 0.9375em 0;
 	text-decoration: none;
 	text-transform: uppercase;
 	border-radius: 0.625em;
-}
-
-#informations p:hover {
-	cursor: pointer;
 }
 
 #hobbies_button {
@@ -294,17 +291,13 @@ main {
 }
 
 #competences {
-	color: white;
 	margin: 3.125em 0;
 	padding-top: 2.5em;
 	z-index: 1;
 }
 
 #competences_list {
-	font-family: "Metropolis Bold", "Montserrat Bold", "Segoe UI Bold", sans-serif;
-	display: flex;
 	justify-content: space-around;
-	color: white;
 	border-radius: 0.625em;
 	border: 1px solid #293033;
 	margin: 0 4.6875em 4.6875em 4.6875em;
@@ -328,7 +321,6 @@ main {
 
 #competences_text p {
 	margin: 1.25em 0 6.25em 0;
-	font-family: "Metropolis Regular", "Montserrat Regular", "Segoe UI Regular", sans-serif;
 	font-size: 0.9375em;
 	line-height: 1.56em;
 }
@@ -336,12 +328,10 @@ main {
 #competences_text a {
 	color: black;
 	display: inline-block;
-	background-color: white;
 	border-radius: 0.625em;
 	text-transform: uppercase;
 	text-decoration: none;
 	padding: 0.625em 3.125em;
-	font-family: "Metropolis Bold", "Montserrat Bold", "Segoe UI Bold", sans-serif;
 	width: 12.5em;
 	text-align: center;
 	background-image: url(../img/ref/play.svg);
@@ -355,13 +345,10 @@ abbr {
 
 h1 {
 	text-transform: uppercase;
-	font-family: "Metropolis Bold", "Montserrat Bold", "Segoe UI Bold", sans-serif;
 	font-size: 1.56em;
 }
 
 #formations #first_slider {
-	display: flex;
-	font-family: "Metropolis Regular", "Montserrat Regular", "Segoe UI Regular", sans-serif;
 	font-size: 0.9375em;
 	margin: 1.875em 0 4.6875em 4.6875em;
 	gap: 1.25em;
@@ -386,10 +373,6 @@ h3 {
 	margin: 2em 0 0.67em 0;
 }
 
-button {
-	cursor: pointer;
-}
-
 #formations nav {
 	position: relative;
 }
@@ -404,7 +387,6 @@ button {
 	text-indent: -5000px;
 	border-radius: 50%;
 	border: 5px solid black;
-	background-color: white;
 	width: 1.06em;
 	height: 1.75em;
 	padding: 1.5em;
@@ -420,7 +402,6 @@ button {
 	text-indent: -5000px;
 	border-radius: 50%;
 	border: 5px solid black;
-	background-color: white;
 	width: 1.06em;
 	height: 1.75em;
 	padding: 1.5em;
@@ -435,7 +416,6 @@ button {
 }
 
 #langages #second_slider {
-	display: flex;
 	justify-content: space-between;
 	gap: 1.05em;
 	margin: 1.875em 0 2.5em 4.6875em;
@@ -466,7 +446,6 @@ button {
 	text-indent: -5000px;
 	border-radius: 50%;
 	border: 5px solid black;
-	background-color: white;
 	width: 1.06em;
 	height: 1.75em;
 	padding: 1.5em;
@@ -498,20 +477,16 @@ button {
 }
 
 #soft_skills p {
-	font-family: "Metropolis Regular", "Montserrat Regular", "Segoe UI Regular", sans-serif;
 	font-size: 0.9375em;
 }
 
-footer{
+footer {
 	padding: 3.125em 4.6875em 4.6875em 4.6875em;
 	background-color: black;
-	color: white;
-	font-family: "Metropolis Regular", "Montserrat Regular", "Segoe UI Regular", sans-serif;
 	font-size: 0.9375em;
 }
 
 #socials {
-	display: flex;
 	gap: 4em;
 }
 
@@ -538,8 +513,7 @@ footer{
 	background-image: url(../img/ref/instagram.svg);
 }
 
-#flex_container {
-	display: flex;
+#languages_sponsors {
 	align-items: center;
 	margin-top: 2.5em;
 	margin-bottom: 4em;
@@ -549,14 +523,12 @@ footer{
 	width: 20em;
 	padding: 0.67em;
 	background-color: transparent;
-	color: white;
 	border: 2px solid white;
 	border-radius: 0.67em;
 	margin-right: 6.67em;
 }
 
 #sponsors {
-	display: flex;
 	gap: 3.33em;
 }
 
@@ -594,12 +566,10 @@ footer{
 
 #grid_container a {
 	text-decoration: none;
-	color: white;
 }
 
 #site_explanation a {
 	text-decoration: underline;
-	color: white;
 }
 
 #site_explanation {
@@ -646,9 +616,7 @@ ul#first_slider, ul#second_slider {
 }
 
 #hobbies_list {
-	color: white;
 	background-color: black;
-	font-family: "Metropolis Regular", "Montserrat Regular", "Segoe UI Regular", sans-serif;
 	font-size: 0.9375em;
 	line-height: 1.5625em;
 	display: inline-block;
@@ -664,7 +632,6 @@ ul#first_slider, ul#second_slider {
 
 #hobbies h2 {
 	margin-bottom: 1em;
-	font-family: "Metropolis Regular", "Montserrat Regular", "Segoe UI Regular", sans-serif;
 	font-size: 1.33em;
 }
 
@@ -690,18 +657,6 @@ ul#first_slider, ul#second_slider {
 	left: 41em;
 }
 
-#hobbies_button:hover {
-	cursor: pointer;
-}
-
-#close2:hover {
-	cursor: pointer;
-}
-
-#hobbies ul.no_display {
-	display: none;
-}
-
 #overlay, #second_overlay {
 	background-color: rgba(0,0,0,0.4);
 	position: fixed;
@@ -720,9 +675,7 @@ ul#first_slider, ul#second_slider {
 }
 
 #article_hover {
-	background-color: white;
 	color: black;
-	font-family: "Metropolis Regular", "Montserrat Regular", "Segoe UI Regular", sans-serif;
 	font-size: 0.9375em;
 	margin-left: auto;
 	padding: 1.25em 1.25em 1.25em 1.875em;
@@ -740,10 +693,6 @@ ul#first_slider, ul#second_slider {
 	right: 3.3em;
 }
 
-.no_display {
-	display: none;
-}
-
 #article_hover #content_profile {
 	float: left;
 	border-radius: 0.67em;
@@ -752,18 +701,8 @@ ul#first_slider, ul#second_slider {
 }
 
 #article_hover>li ul#summary  {
-	display: flex;
-	flex-direction: column;
 	justify-content: space-between;
 	min-height: 11.67em
-}
-
-#article_hover #delete_article, #article_hover #service_name, legend, label[for='keep_informations'], #note, input[type='submit'] {
-	font-family: "Metropolis Bold", "Montserrat Bold", "Segoe UI Bold", sans-serif;
-}
-
-#article_hover #delete_article:hover {
-	cursor: pointer;
 }
 
 #article_hover #delete_article, #note, input[type='submit'] {
@@ -799,8 +738,7 @@ form p {
 	margin-top: 23.33em;
 }
 
-#article_hover>li:last-child ul li:first-child{
-	font-family: "Metropolis Regular", "Montserrat Regular", "Segoe UI Regular", sans-serif;
+#article_hover>li:last-child ul li:first-child {
 	font-size: 1em;
 	text-align: center;
 }
@@ -808,21 +746,18 @@ form p {
 #article_hover>li:last-child ul li a {
 	display: inline-block;
 	width: 100%;
-	background-color: #FAE09E;
 	padding: 1em 0;
 	text-align: center;
 	border: none;
 	border-radius: 0.67em;
 	font-size: 1.33em;
 	color: black;
-	font-family: "Metropolis Bold", "Montserrat Bold", "Segoe UI Bold", sans-serif;
 	text-decoration: none;
 	margin-top: 1.33em;
 }
 
 form input[type='submit'] {
 	width: 100%;
-	background-color: #FAE09E;
 	padding: 1em 0;
 	text-align: center;
 	border: none;
@@ -832,7 +767,6 @@ form input[type='submit'] {
 
 .toggle {
 	position: relative;
-	display: flex;
 	align-items: center;
 	gap: 1.33em;
 	width: 18.4em;
@@ -844,8 +778,6 @@ form input[type='submit'] {
 	left: 14em;
 	bottom: 0.53em;
 	z-index: 1;
-	color: white;
-	font-family: "Metropolis Regular", "Montserrat Regular", "Segoe UI Regular", sans-serif;
 }
 
 .toggle:after {
@@ -854,8 +786,6 @@ form input[type='submit'] {
 	left: 16em;
 	bottom: 0.53Em;
 	z-index: 1;
-	color: white;
-	font-family: "Metropolis Regular", "Montserrat Regular", "Segoe UI Regular", sans-serif;
 }
 
 .toggle input {
@@ -865,7 +795,6 @@ form input[type='submit'] {
 .slider_round {
 	position: relative;
 	display: block;
-	cursor: pointer;
 	background-color: grey;
 	transition: 0.4s;
 	width: 5.33em;
@@ -877,8 +806,7 @@ form input[type='submit'] {
 	position: absolute;
 	width: 2em;
 	height: 1.33em;
-	background-color: white;
-	transition: 0.4s;
+	transition: 0.4s ease-in-out;
 	top: 0.33em;
 	left: 0.467em;
 	z-index: 2;
@@ -899,12 +827,4 @@ form input[type='submit'] {
 #close1 {
 	position: absolute;
 	left: 1em;
-}
-
-#close1:hover, input[type='submit']:hover {
-	cursor: pointer;
-}
-
-#panier ul.no_display {
-	display: none;
 }
