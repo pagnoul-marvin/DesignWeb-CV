@@ -359,9 +359,10 @@ main {
 	text-align: center;
 	background-image: url(../img/ref/play.svg);
 	background-position: 3.125em;
+	font-size: 1em;
 }
 
-h1, #competences_text a {
+h1 {
 	font-size: 1.56em;
 }
 
