@@ -65,6 +65,7 @@ document.querySelectorAll('#services_list li').forEach(liElt => {
             }
         }
         serviceTitle.textContent = e.currentTarget.dataset.name;
+        document.getElementById('contact').classList.add('a_service_is_active');
     });
 });
 
@@ -158,16 +159,25 @@ document.querySelector('#close2').addEventListener('click', () => {
 });
 
 let articleNumber = 0;
-document.getElementById('contact').addEventListener('click', () => {
-    articleNumber = 1;
-    document.getElementById('article_number').textContent = `${articleNumber}`;
+document.getElementById('contact').addEventListener('click', (e) => {
+    if (e.currentTarget.classList.contains('a_service_is_active')) {
+        articleNumber = 1;
+        document.getElementById('article_number').textContent = `${articleNumber}`;
+        document.querySelectorAll('#article_hover>li:not(:last-child)').forEach(liElt => {
+            liElt.classList.remove('no_display');
+        });
+        document.querySelector('#article_hover>li:last-child').classList.add('no_display');
+    } else {
+        document.querySelectorAll('#article_hover>li:not(:last-child)').forEach(liElt => {
+            liElt.classList.add('no_display');
+        });
+        document.querySelector('#article_hover>li:last-child').classList.remove('no_display');
+    }
     document.getElementById('article_hover').classList.remove('no_display');
     document.getElementById('second_overlay').classList.remove('no_display');
-    document.querySelectorAll('#article_hover>li:not(:last-child)').forEach(liElt=>{
-        liElt.classList.remove('no_display');
-    });
-    document.querySelector('#article_hover>li:last-child').classList.add('no_display');
 });
+
+console.log(document.querySelectorAll('#services_list li'));
 
 document.getElementById('basket').addEventListener('click', () => {
     document.getElementById('second_overlay').classList.remove('no_display');
