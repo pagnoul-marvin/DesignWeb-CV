@@ -176,9 +176,6 @@ document.getElementById('contact').addEventListener('click', (e) => {
     document.getElementById('article_hover').classList.remove('no_display');
     document.getElementById('second_overlay').classList.remove('no_display');
 });
-
-console.log(document.querySelectorAll('#services_list li'));
-
 document.getElementById('basket').addEventListener('click', () => {
     document.getElementById('second_overlay').classList.remove('no_display');
     if (articleNumber === 1) {
