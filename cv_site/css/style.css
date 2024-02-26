@@ -122,20 +122,23 @@ header, #informations p, #article_hover>li:last-child ul li a, form input[type='
 	background-color: #212529;
 }
 
+#no_js_message {
+	margin-top: 3.90em;
+}
+
 #no_js_message #banner {
 	flex-direction: row-reverse;
-	justify-content: space-between;
+	justify-content: space-around;
 	font-size: 0.9275em;
 	color: #806520;
-	margin-top: 3.75em;
 }
 
 #no_js_message label {
-	margin: 2em 2em 2em 0;
+	margin: 2em 0;
 }
 
 #no_js_message p {
-	margin: 2em 0 2em 16.7em;
+	margin: 2em 0;
 }
 
 #no_js_message a {
@@ -146,7 +149,6 @@ header, #informations p, #article_hover>li:last-child ul li a, form input[type='
 	clip: rect(0 0 0 0);
 	clip-path: inset(50%);
 	height: 1px;
-	white-space: nowrap;
 	width: 1px;
 }
 
@@ -156,11 +158,11 @@ header, #informations p, #article_hover>li:last-child ul li a, form input[type='
 }
 
 .line:nth-child(1) {
-	transform: translateX(1px) rotate(45deg);
+	transform: translateX(6px) translateY(3px) rotate(45deg);
 }
 
 .line:nth-child(2) {
-	transform: translateX(-2px) rotate(-45deg);
+	transform: translateX(7px) translateY(3px) rotate(-45deg);
 }
 
 #logo {
