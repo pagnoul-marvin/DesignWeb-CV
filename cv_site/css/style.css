@@ -30,7 +30,7 @@
     flex-direction: column;
 }
 
-.cross-button, #nav_list > li, #services_list li, #informations p, button, #hobbies_button, #close2, #article_hover #delete_article, .slider_round, #close1, input[type='submit'] {
+.cross-button, #nav_list > li, #services_list li, #informations p, button, #hobbies_button, #close2, #article_hover #delete_article, .slider_round, #close1, input[type='submit'], #languages_sponsors img, #select_options, #select_options, #languages, #language_chosen {
     cursor: pointer;
 }
 
@@ -38,7 +38,7 @@
     background-color: #FAE09F;
 }
 
-#main_nav, #no_js_message a, #nav_list ul li a, #informations, main, #competences, #competences_list, footer, #languages, #site_explanation a, #grid_container a, #hobbies_list, .toggle:before, .toggle:after {
+#main_nav, #no_js_message a, #nav_list ul li a, #informations, main, #competences, #competences_list, footer, #language_chosen, #site_explanation a, #grid_container a, #hobbies_list, .toggle:before, .toggle:after, #languages {
     color: #fff;
 }
 
@@ -54,11 +54,11 @@
     background-color: #fff;
 }
 
-#no_js_message input, .line, #article_number, #nav_list ul::before, #nav_list ul, #formations nav #first_slider_previous, #formations nav #first_slider_next, #langages nav #second_slider_next, #langages nav #second_slider_previous, #hobbies ul li:first-child, #article_hover > li:first-child, .slider_round:before, .toggle:before, .toggle:after, #close1 {
+#no_js_message input, .line, #article_number, #nav_list ul::before, #nav_list ul, #formations nav #first_slider_previous, #formations nav #first_slider_next, #langages nav #second_slider_next, #langages nav #second_slider_previous, #hobbies ul li:first-child, #article_hover > li:first-child, .slider_round:before, .toggle:before, .toggle:after, #close1, #languages_sponsors img, #select_options {
     position: absolute;
 }
 
-.cross-button, #nav_list, #formations nav, #langages nav, ul#first_slider, ul#second_slider, .toggle, .slider_round {
+.cross-button, #nav_list, #formations nav, #langages nav, ul#first_slider, ul#second_slider, .toggle, .slider_round, #select_js_enabled {
     position: relative;
 }
 
@@ -181,6 +181,10 @@ header, #informations p, #article_hover > li:last-child ul li a, form input[type
     align-items: center;
     margin-left: 4em;
     justify-content: space-between;
+}
+
+#nav_list img, #languages_sponsors img {
+    transition: transform 0.25s ease-in-out;
 }
 
 #nav_list > li {
@@ -372,6 +376,10 @@ main {
     font-size: 1em;
 }
 
+#competences_text a:hover {
+    background-color: #d5d2d2;
+}
+
 h1 {
     font-size: 1.56em;
 }
@@ -500,13 +508,37 @@ footer {
     margin-bottom: 4em;
 }
 
-#languages {
+#language_chosen, #languages {
     width: 20em;
-    padding: 0.67em;
-    background-color: transparent;
+    padding: 1.025em;
+    margin-right: 6.67em;
+}
+
+#language_chosen, #select_options, #languages {
+    background-color: rgb(0,0,0);
     border: 2px solid white;
     border-radius: 0.67em;
-    margin-right: 6.67em;
+}
+
+#languages_sponsors img {
+    left: 19.5em;
+    top: 1.4em;
+}
+
+#select_options {
+    width: 22em;
+    padding: 1.025em 0;
+    top: 4em;
+}
+
+#select_options p {
+    text-indent: 1.025em;
+}
+
+#select_options p:first-child {
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    border-bottom: 2px solid #fff;
 }
 
 #sponsors {
@@ -626,12 +658,10 @@ footer {
 
 #article_hover {
     font-size: 0.9375em;
-    margin-left: auto;
-    padding: 1.25em 1.25em 1.25em 1.875em;
-    left: 67.35em;
-
+    padding: 1.25em;
+    right: 0;
     min-height: 100vh;
-    min-width: 30em;
+    max-width: 30em;
     text-align: left;
 }
 
@@ -750,6 +780,50 @@ form input[type='submit'] {
 
 @media (width <= 750px) {
 
+    #burger_menu {
+        display: block;
+        margin-right: 2em;
+        cursor: pointer;
+        width: 2em;
+        height: 1.5em;
+    }
+
+    #burger_menu span {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+    }
+
+    #burger_menu span:before, #burger_menu span:after {
+        content: '';
+        width: 2em;
+        height: 0.3em;
+        background-color: #fff;
+        position: absolute;
+        left: 2em;
+    }
+
+    #burger_menu span:before {
+        top: -8px;
+    }
+
+    #burger_menu span:after {
+        top: 8px;
+    }
+
+    #main_nav {
+        padding: 0 2em;
+    }
+
+    #nav_list {
+        justify-content: flex-end;
+    }
+
+    #nav_list li:not(:last-child) {
+        display: none;
+    }
+
     #services {
         margin: 5em 2em 0 2em;
     }
@@ -818,5 +892,48 @@ form input[type='submit'] {
 
     #soft_skills p {
         line-height: 1.5em;
+    }
+
+    footer {
+        padding: 3.125em 2em 3.625em;
+    }
+
+    #languages_sponsors {
+        display: block;
+        margin: 2.5em 0;
+    }
+
+    select#languages {
+        margin-bottom: 8em;
+    }
+
+    footer #grid_container {
+        grid-template-areas: "p p"
+                             "services mail"
+                             "skills tel"
+                             "formations adress"
+                             "languages ."
+                             "softskills .";
+        grid-column-gap: 5em;
+        grid-row-gap: 1em;
+    }
+
+    #site_explanation {
+        width: 100%;
+    }
+
+    p#language_chosen {
+        margin-right: 0;
+        margin-bottom: 7em;
+    }
+
+    #hobbies_list {
+        max-width: 100vh;
+    }
+
+    #article_hover {
+        left: 0;
+        min-height: 100vh;
+        max-width: 100vh;
     }
 }

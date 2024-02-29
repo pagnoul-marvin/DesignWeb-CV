@@ -20,6 +20,10 @@
 
 			<h1 class="hidden">Navigation principale</h1>
 
+			<div id="burger_menu" class="no_display">
+				<span></span>
+			</div>
+
 			<img id="logo" src="./img/icons/logo.svg" alt="Logo du site" width="40" height="40">
 			<img id="secondlogo" src="./img/icons/logo2.svg" alt="Logo de mon prénom avec un cheval à côté" width="118" height="40">
 
@@ -495,14 +499,21 @@
 			<li><a id="github" title="Aller vers mon profil Github" href="https://github.com/pagnoul-marvin" hreflang="fr">Github</a></li>
 
 		</ul>
+		
 		<div id="languages_sponsors">
-			<label class="hidden" for="languages"></label>
-			<select id="languages">
-
-				<option value="français">Fran&ccedil;ais</option>
-				<option value="english" lang="en">English</option>
-
+			<label class="no_display" for="languages"></label>
+			<select name="select_languages" id="languages">
+				<option value="Français">Fran&ccedil;ais</option>
+				<option value="English">English</option>
 			</select>
+			<div id="select_js_enabled" class="no_display">
+				<p id="language_chosen">Fançais</p>
+				<img src="./img/icons/fleche_blanche.svg" alt="Une flèche blanche" width="16" height="10">
+				<div id="select_options" class="no_display">
+					<p data-name="Français">Fran&ccedil;ais</p>
+					<p data-name="English">English</p>
+				</div>
+			</div>
 
 			<ul id="sponsors">
 
@@ -529,7 +540,6 @@
 			<li id="mail_footer" itemprop="email">marvinpagnoul@icloud.com</li>
 			<li id="tel_footer" itemprop="telephone">04 94 16 40 75</li>
 			<li id="adress_footer" itemprop="address">Rue Louis Happart, 15 THYS</li>
-
 		</ul>
 
 	</footer>
