@@ -1,4 +1,6 @@
 document.getElementById('no_js_message').classList.add('no_display');
+document.getElementById('select_js_enabled').classList.remove('no_display');
+document.getElementById('languages').classList.add('no_display');
 
 const wwwElement = document.getElementById('www');
 const wwwImage = document.getElementById('www_image');
@@ -205,4 +207,13 @@ document.getElementById('delete_article').addEventListener('click', () => {
 document.getElementById('back_to_services').addEventListener('click', () => {
     document.getElementById('article_hover').classList.add('no_display');
     document.getElementById('second_overlay').classList.add('no_display');
+});
+
+document.getElementById('language_chosen').addEventListener('click', () => {
+    document.getElementById('select_options').classList.toggle('no_display');
+    document.querySelector('#languages_sponsors img').classList.toggle('rotate');
+});
+document.querySelector('#select_js_enabled img').addEventListener('click', () => {
+    document.getElementById('select_options').classList.toggle('no_display');
+    document.querySelector('#languages_sponsors img').classList.toggle('rotate');
 });
