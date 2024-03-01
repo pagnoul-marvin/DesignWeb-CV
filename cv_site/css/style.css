@@ -30,7 +30,7 @@
     flex-direction: column;
 }
 
-.cross-button, #nav_list > li, #services_list li, #informations p, button, #hobbies_button, #close2, #article_hover #delete_article, .slider_round, #close1, input[type='submit'], #languages_sponsors img, #select_options, #select_options, #languages, #language_chosen {
+.cross-button, #nav_list > li, #services_list li, #informations p, button, #hobbies_button, #close2, #article_hover #delete_article, .slider_round, #close1, input[type='submit'], #languages_sponsors img, #select_options, #select_options, #languages, #language_chosen, #main_nav>div:not(:first-child), #article_number {
     cursor: pointer;
 }
 
@@ -66,7 +66,7 @@ header, #hobbies_button, #hobbies_list, #overlay, #second_overlay, #article_hove
     position: fixed;
 }
 
-#no_js_message a, #nav_list > li:not(:last-child), #lastname, #informations p, h1, #competences_text a, #article_hover #delete_article, #note, input[type='submit'] {
+#no_js_message a, #nav_list > li, #lastname, #informations p, h1, #competences_text a, #article_hover #delete_article, #note, input[type='submit'] {
     text-transform: uppercase;
 }
 
@@ -119,7 +119,7 @@ header, #informations p, #article_hover > li:last-child ul li a, form input[type
     align-items: center;
     padding: 0 4.6875em;
     min-height: 3.75em;
-    background-color: #212529;
+    background-color: #1b1e26;
 }
 
 #no_js_message {
@@ -171,9 +171,17 @@ header, #informations p, #article_hover > li:last-child ul li a, form input[type
     margin-right: 2em;
 }
 
+#main_nav>div:not(:first-child) {
+    margin-left: 3em;
+}
+
 #article_number {
-    top: 1.7em;
-    right: 1.4em;
+    top: 1.6em;
+    right: 5.4em;
+}
+
+#main_nav>div:not(:first-child) {
+    order: 1;
 }
 
 #nav_list {
@@ -192,7 +200,7 @@ header, #informations p, #article_hover > li:last-child ul li a, form input[type
     border-radius: 0.7em;
 }
 
-#nav_list > li:not(:last-child) img {
+#nav_list > li img {
     margin-left: 0.3em;
 }
 
@@ -200,26 +208,26 @@ header, #informations p, #article_hover > li:last-child ul li a, form input[type
     transform: rotate(180deg);
 }
 
-#nav_list > li:not(:last-child):hover {
+#nav_list > li:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
 #nav_list ul::before {
+    padding: 0 6em;
     content: url(../img/icons/flèche_jaune.svg);
-    padding: 0 5.33em;
     top: -1em;
 }
 
 #nav_list ul#first_dropdown:before, #nav_list ul#second_dropdown:before, #nav_list ul#fifth_dropdown:before {
-    left: 0.75em;
+    left: 2.5em;
 }
 
 #nav_list ul#third_dropdown:before {
-    left: 5.75em;
+    left: 5em;
 }
 
 #nav_list ul#fourth_dropdown:before {
-    left: 0.5em;
+    left: 2em;
 }
 
 #nav_list ul {
@@ -228,31 +236,31 @@ header, #informations p, #article_hover > li:last-child ul li a, form input[type
     gap: 1.3em;
     text-transform: none;
     justify-content: space-between;
-    min-width: 10em;
     border-radius: 0.66em;
     text-align: left;
     border-top: 4px solid #FAE09F;
-    top: 4em;
+    top: 3.3em;
+    min-width: 15em;
 }
 
 #first_dropdown {
-    right: 62em;
+    right: 55em;
 }
 
 #second_dropdown {
-    right: 49em;
+    right: 42em;
 }
 
 #third_dropdown {
-    right: 29em;
+    right: 25em;
 }
 
 #fourth_dropdown {
-    right: 19em;
+    right: 12.5em;
 }
 
 #fifth_dropdown {
-    right: 4em;
+    right: -3em;
 }
 
 #nav_list ul li a {
@@ -626,12 +634,12 @@ footer {
     font-size: 1.33em;
 }
 
-#hobbies ul li {
+#hobbies ul li:not(:first-child) {
     margin-bottom: 2em;
     padding-bottom: 3.33em;
 }
 
-#hobbies ul li:not(:last-child) {
+#hobbies ul li:not(:last-child):not(:first-child) {
     border-bottom: 2px solid #404040;
 }
 
@@ -643,7 +651,7 @@ footer {
 }
 
 #hobbies ul li:first-child {
-    left: 41em;
+    left: 92%;
 }
 
 #overlay, #second_overlay {
@@ -798,30 +806,85 @@ form input[type='submit'] {
     #burger_menu span:before, #burger_menu span:after {
         content: '';
         width: 2em;
-        height: 0.3em;
+        height: 0.2em;
         background-color: #fff;
         position: absolute;
         left: 2em;
     }
 
     #burger_menu span:before {
-        top: -8px;
+        top: -0.5em;
     }
 
     #burger_menu span:after {
-        top: 8px;
+        top: 0.5em;
     }
 
     #main_nav {
         padding: 0 2em;
+        justify-content: space-between;
+    }
+
+    #main_nav>div:not(:last-child) {
+        margin: 0;
+    }
+
+    #logo {
+        margin: 0;
+    }
+
+    #article_number {
+        right: 2.7em;
     }
 
     #nav_list {
-        justify-content: flex-end;
+        background-color: #212529;
+        z-index: 2;
+        position: absolute;
+        padding: 2em;
+        top: 3.75em;
+        display: none;
+        margin: 0;
+        left: 0;
+        max-width: 100vh;
+        height: 100vh;
     }
 
-    #nav_list li:not(:last-child) {
-        display: none;
+    #nav_list>li {
+        border-bottom: 2px solid #FAE09F;
+    }
+
+    .add_margin {
+        margin-bottom: 13em;
+    }
+
+    #nav_list ul {
+        right: 0;
+        border:0;
+    }
+
+    ul#first_dropdown {
+        top: 5em;
+    }
+
+    ul#second_dropdown {
+        top: 8em;
+    }
+
+    ul#third_dropdown {
+
+    }
+
+    ul#fourth_dropdown {
+
+    }
+
+    ul#fifth_dropdown {
+
+    }
+
+    #nav_list ul:before {
+        content: '';
     }
 
     #services {
@@ -935,5 +998,14 @@ form input[type='submit'] {
         left: 0;
         min-height: 100vh;
         max-width: 100vh;
+    }
+
+    #nav_list.remove_no_display {
+        display: initial;
+    }
+
+    .cross_animation {
+        transform: rotate(45deg);
+        transition: transform 0.3s ease-in-out;
     }
 }
