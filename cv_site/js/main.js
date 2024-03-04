@@ -109,7 +109,7 @@ document.querySelectorAll("button").forEach(btnElt => {
     });
 });
 
-if (window.innerWidth > 750) {
+if (window.innerWidth > 1500) {
     document.querySelectorAll('#nav_list>li').forEach(liElt => {
         liElt.addEventListener('mouseover', (e) => {
             if (e.currentTarget.id === 'first_nav_list_item') {
@@ -155,18 +155,103 @@ if (window.innerWidth > 750) {
     document.querySelectorAll('#nav_list>li').forEach(liElt => {
         liElt.addEventListener('click', (e) => {
             if (e.currentTarget.id === 'first_nav_list_item') {
+                if (document.getElementById('second_nav_list_item').classList.contains('active_dropdown')) {
+                    document.getElementById('second_nav_list_item').classList.remove('active_dropdown');
+                    document.getElementById('second_dropdown').classList.add('no_display');
+                    document.getElementById('nav_second_arrow').classList.remove('rotate');
+                } else if (document.getElementById('third_nav_list_item').classList.contains('active_dropdown')) {
+                    document.getElementById('third_nav_list_item').classList.remove('active_dropdown');
+                    document.getElementById('third_dropdown').classList.add('no_display');
+                    document.getElementById('nav_third_arrow').classList.remove('rotate');
+                } else if (document.getElementById('fourth_nav_list_item').classList.contains('active_dropdown')) {
+                    document.getElementById('fourth_nav_list_item').classList.remove('active_dropdown');
+                    document.getElementById('fourth_dropdown').classList.add('no_display');
+                    document.getElementById('nav_fourth_arrow').classList.remove('rotate');
+                } else {
+                    document.getElementById('fifth_nav_list_item').classList.remove('active_dropdown');
+                    document.getElementById('fifth_dropdown').classList.add('no_display');
+                    document.getElementById('nav_fifth_arrow').classList.remove('rotate');
+                }
                 document.getElementById('first_dropdown').classList.toggle('no_display');
                 document.getElementById('nav_first_arrow').classList.toggle('rotate');
             } else if (e.currentTarget.id === 'second_nav_list_item') {
+                if (document.getElementById('first_nav_list_item').classList.contains('active_dropdown')) {
+                    document.getElementById('first_nav_list_item').classList.remove('active_dropdown');
+                    document.getElementById('first_dropdown').classList.add('no_display');
+                    document.getElementById('nav_first_arrow').classList.remove('rotate');
+                } else if (document.getElementById('third_nav_list_item').classList.contains('active_dropdown')) {
+                    document.getElementById('third_nav_list_item').classList.remove('active_dropdown');
+                    document.getElementById('third_dropdown').classList.add('no_display');
+                    document.getElementById('nav_third_arrow').classList.remove('rotate');
+                } else if (document.getElementById('fourth_nav_list_item').classList.contains('active_dropdown')) {
+                    document.getElementById('fourth_nav_list_item').classList.remove('active_dropdown');
+                    document.getElementById('fourth_dropdown').classList.add('no_display');
+                    document.getElementById('nav_fourth_arrow').classList.remove('rotate');
+                } else {
+                    document.getElementById('fifth_nav_list_item').classList.remove('active_dropdown');
+                    document.getElementById('fifth_dropdown').classList.add('no_display');
+                    document.getElementById('nav_fifth_arrow').classList.remove('rotate');
+                }
                 document.getElementById('second_dropdown').classList.toggle('no_display');
                 document.getElementById('nav_second_arrow').classList.toggle('rotate');
             } else if (e.currentTarget.id === 'third_nav_list_item') {
+                if (document.getElementById('second_nav_list_item').classList.contains('active_dropdown')) {
+                    document.getElementById('second_nav_list_item').classList.remove('active_dropdown');
+                    document.getElementById('second_dropdown').classList.add('no_display');
+                    document.getElementById('nav_second_arrow').classList.remove('rotate');
+                } else if (document.getElementById('first_nav_list_item').classList.contains('active_dropdown')) {
+                    document.getElementById('first_nav_list_item').classList.remove('active_dropdown');
+                    document.getElementById('first_dropdown').classList.add('no_display');
+                    document.getElementById('nav_first_arrow').classList.remove('rotate');
+                } else if (document.getElementById('fourth_nav_list_item').classList.contains('active_dropdown')) {
+                    document.getElementById('fourth_nav_list_item').classList.remove('active_dropdown');
+                    document.getElementById('fourth_dropdown').classList.add('no_display');
+                    document.getElementById('nav_fourth_arrow').classList.remove('rotate');
+                } else {
+                    document.getElementById('fifth_nav_list_item').classList.remove('active_dropdown');
+                    document.getElementById('fifth_dropdown').classList.add('no_display');
+                    document.getElementById('nav_fifth_arrow').classList.remove('rotate');
+                }
                 document.getElementById('third_dropdown').classList.toggle('no_display');
                 document.getElementById('nav_third_arrow').classList.toggle('rotate');
             } else if (e.currentTarget.id === 'fourth_nav_list_item') {
+                if (document.getElementById('second_nav_list_item').classList.contains('active_dropdown')) {
+                    document.getElementById('second_nav_list_item').classList.remove('active_dropdown');
+                    document.getElementById('second_dropdown').classList.add('no_display');
+                    document.getElementById('nav_second_arrow').classList.remove('rotate');
+                } else if (document.getElementById('third_nav_list_item').classList.contains('active_dropdown')) {
+                    document.getElementById('third_nav_list_item').classList.remove('active_dropdown');
+                    document.getElementById('third_dropdown').classList.add('no_display');
+                    document.getElementById('nav_third_arrow').classList.remove('rotate');
+                } else if (document.getElementById('first_nav_list_item').classList.contains('active_dropdown')) {
+                    document.getElementById('first_nav_list_item').classList.remove('active_dropdown');
+                    document.getElementById('first_dropdown').classList.add('no_display');
+                    document.getElementById('nav_first_arrow').classList.remove('rotate');
+                } else {
+                    document.getElementById('fifth_nav_list_item').classList.remove('active_dropdown');
+                    document.getElementById('fifth_dropdown').classList.add('no_display');
+                    document.getElementById('nav_fifth_arrow').classList.remove('rotate');
+                }
                 document.getElementById('fourth_dropdown').classList.toggle('no_display');
                 document.getElementById('nav_fourth_arrow').classList.toggle('rotate');
             } else {
+                if (document.getElementById('second_nav_list_item').classList.contains('active_dropdown')) {
+                    document.getElementById('second_nav_list_item').classList.remove('active_dropdown');
+                    document.getElementById('second_dropdown').classList.add('no_display');
+                    document.getElementById('nav_second_arrow').classList.remove('rotate');
+                } else if (document.getElementById('third_nav_list_item').classList.contains('active_dropdown')) {
+                    document.getElementById('third_nav_list_item').classList.remove('active_dropdown');
+                    document.getElementById('third_dropdown').classList.add('no_display');
+                    document.getElementById('nav_third_arrow').classList.remove('rotate');
+                } else if (document.getElementById('fourth_nav_list_item').classList.contains('active_dropdown')) {
+                    document.getElementById('fourth_nav_list_item').classList.remove('active_dropdown');
+                    document.getElementById('fourth_dropdown').classList.add('no_display');
+                    document.getElementById('nav_fourth_arrow').classList.remove('rotate');
+                } else {
+                    document.getElementById('first_nav_list_item').classList.remove('active_dropdown');
+                    document.getElementById('first_dropdown').classList.add('no_display');
+                    document.getElementById('nav_first_arrow').classList.remove('rotate');
+                }
                 document.getElementById('fifth_dropdown').classList.toggle('no_display');
                 document.getElementById('nav_fifth_arrow').classList.toggle('rotate');
             }
@@ -254,7 +339,7 @@ document.querySelector('#select_js_enabled img').addEventListener('click', () =>
     document.querySelector('#languages_sponsors img').classList.toggle('rotate');
 });
 
-if (window.innerWidth <= 750) {
+if (window.innerWidth <= 1500) {
     document.getElementById('burger_menu').addEventListener('click', () => {
         document.querySelector('ul#nav_list').classList.toggle('remove_no_display');
     });
