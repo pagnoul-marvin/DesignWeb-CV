@@ -340,7 +340,8 @@ document.querySelector('#select_js_enabled img').addEventListener('click', () =>
 });
 
 if (window.innerWidth <= 1500) {
-    document.getElementById('burger_menu').addEventListener('click', () => {
+    document.getElementById('burger_menu').addEventListener('click', (e) => {
         document.querySelector('ul#nav_list').classList.toggle('remove_no_display');
+        document.getElementById('burger_menu').classList.toggle('disappeared_middle_line');
     });
 }
