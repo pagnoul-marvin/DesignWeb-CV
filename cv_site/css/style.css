@@ -285,6 +285,12 @@ header, #informations p, #article_hover > li:last-child ul li a, form input[type
     border-radius: 1.25em;
 }
 
+img#skills {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+
 #services #flex_container {
     display: flex;
     justify-content: space-between;
@@ -321,11 +327,6 @@ main {
     border-radius: 0.5em;
     margin-bottom: 1em;
     padding: 0.5em 0.75em;
-}
-
-img#skills {
-    width: auto;
-    height: 100vh;
 }
 
 #services_list {
@@ -366,7 +367,7 @@ img#skills {
 }
 
 #competences {
-    margin: 3.125em 0;
+    margin: 3.125em 0 17em 0;
     padding-top: 2.5em;
 }
 
@@ -384,13 +385,20 @@ img#skills {
     border-right: 1px solid #262C2F;
 }
 
+div#skills_image {
+    position: relative;
+    margin: 0 4.6875em;
+}
+
 #competences_text {
-    background-color: #21232A;
+    background-color: #21232AE5;
     text-align: left;
     max-width: 31.25em;
     padding: 1.875em 2.5em 3.125em 3.75em;
     border-radius: 0.625em;
-    margin-left: 37.5em;
+    position: absolute;
+    bottom: -10em;
+    right: 9em;
 }
 
 #competences_text p {
@@ -543,18 +551,23 @@ footer {
     align-items: center;
     margin-top: 2.5em;
     margin-bottom: 4em;
+    width: 65%;
+    justify-content: space-between;
 }
 
 #language_chosen, #languages {
     width: 20em;
     padding: 1.025em;
-    margin-right: 6.67em;
 }
 
 #language_chosen, #select_options, #languages {
     background-color: rgb(0, 0, 0);
     border: 2px solid white;
     border-radius: 0.67em;
+}
+
+#select_js_enabled {
+    margin-right: 2em;
 }
 
 #languages_sponsors img {
@@ -817,6 +830,22 @@ form input[type='submit'] {
 
 @media (width <= 1500px) {
 
+    #main_nav > div:not(:last-child), #nav_list {
+        margin: 0;
+    }
+
+    #formations button, #langages button, #nav_list {
+        display: none;
+    }
+
+    #nav_list.remove_no_display, #burger_menu {
+        display: initial;
+    }
+
+    #burger_menu span, #burger_menu span:before, #burger_menu span:after, #hepl img, #helmo img, #formation img, #secondaire img, #html img, #css img, #php img, #javascript img {
+        width: 100%;
+    }
+
     #main_nav div#last_item {
         margin-left: auto;
     }
@@ -824,16 +853,13 @@ form input[type='submit'] {
     #logo {
         margin-left: 3em;
     }
-
     #burger_menu {
-        display: initial;
         width: 2em;
         height: 1.5em;
         position: relative;
     }
 
     #burger_menu span {
-        width: 100%;
         height: 0.2em;
         display: block;
         position: absolute;
@@ -845,7 +871,6 @@ form input[type='submit'] {
 
     #burger_menu span:before, #burger_menu span:after {
         content: '';
-        width: 100%;
         height: 0.2em;
         background-color: #fff;
         position: absolute;
@@ -885,10 +910,6 @@ form input[type='submit'] {
         justify-content: space-between;
     }
 
-    #main_nav > div:not(:last-child) {
-        margin: 0;
-    }
-
     #article_number {
         right: 5.4em;
     }
@@ -899,8 +920,6 @@ form input[type='submit'] {
         position: absolute;
         padding: 2em;
         top: 3.75em;
-        display: none;
-        margin: 0;
         left: 0;
         width: 20em;
         min-height: 100vh;
@@ -962,14 +981,6 @@ form input[type='submit'] {
         content: '';
     }
 
-    #nav_list.remove_no_display {
-        display: initial;
-    }
-
-    #formations button, #langages button {
-        display: none;
-    }
-
     #formations nav, #langages nav {
         margin: 1.875em 4.6875em;
     }
@@ -984,9 +995,7 @@ form input[type='submit'] {
                              "helmo secondaire";
         grid-gap: 1.25em;
     }
-
     #hepl img, #helmo img, #formation img, #secondaire img {
-        width: 100%;
         object-fit: cover;
     }
 
@@ -996,11 +1005,26 @@ form input[type='submit'] {
 
     #html img, #css img, #php img, #javascript img {
         object-fit: cover;
-        width: 100%;
     }
 }
 
 @media (width <= 750px) {
+
+    #competences_list, #competences #skills_image, #formations nav, #langages nav, #formations #first_slider, #langages #second_slider {
+        margin: 0;
+    }
+
+    #hobbies_list, #article_hover {
+        max-width: 100vh;
+    }
+
+    #competences #skills_image, #competences_text {
+        position: initial;
+    }
+
+    #competences_list li, #site_explanation {
+        width: 100%;
+    }
 
     #main_nav {
         padding: 0 2em;
@@ -1022,17 +1046,6 @@ form input[type='submit'] {
         margin-right: 2em;
     }
 
-    #services {
-        margin: 5em 2em 0 2em;
-    }
-
-    #informations {
-        background-color: transparent;
-        padding: 0;
-        margin: 0;
-        min-width: 100%;
-    }
-
     #competences {
         margin: 5em 2em;
     }
@@ -1042,17 +1055,16 @@ form input[type='submit'] {
         padding: 2em;
         gap: 2em;
         text-align: center;
-        margin: 0;
-    }
-
-    #competences_list li {
-        min-width: 100%;
     }
 
     #competences_list li:not(:last-child) {
         border-bottom: 1px solid #262C2F;
         border-right-style: none;
         padding: 0 0 2em 0;
+    }
+
+    img#skills {
+        margin-top: 2em;
     }
 
     #competences_text {
@@ -1071,16 +1083,8 @@ form input[type='submit'] {
         margin: 0 2em 5em;
     }
 
-    #formations nav, #langages nav {
-        margin: 0;
-    }
-
     #formations nav button, #langages nav button {
         display: none;
-    }
-
-    #formations #first_slider, #langages #second_slider {
-        margin: 0;
     }
 
     #formations h1, #langages h1 {
@@ -1120,10 +1124,6 @@ form input[type='submit'] {
         grid-row-gap: 1em;
     }
 
-    #site_explanation {
-        width: 100%;
-    }
-
     #sponsors {
         gap: 0.9em;
     }
@@ -1133,14 +1133,9 @@ form input[type='submit'] {
         margin-bottom: 7em;
     }
 
-    #hobbies_list {
-        max-width: 100vh;
-    }
-
     #article_hover {
         left: 0;
         min-height: 100vh;
-        max-width: 100vh;
     }
 
     #formations ul#first_slider, #langages ul#second_slider {
@@ -1149,5 +1144,39 @@ form input[type='submit'] {
 
     #formations ul#first_slider>li:not(:last-child), #langages ul#second_slider>li:not(:last-child) {
         margin-bottom: 1.25em;
+    }
+}
+
+@media (width <=1175px) {
+    #services, #informations {
+        padding: 0;
+    }
+
+    #services {
+        margin: 5em 4.6875em 0 4.6875em;
+    }
+
+    #services div#flex_container {
+        display: initial;
+    }
+
+    div#flex_container img#landing_image {
+        height: auto;
+        width: 100%;
+        margin-bottom: 2em;
+    }
+
+    #informations {
+        background-color: transparent;
+        margin: 0;
+        min-width: 100%;
+    }
+
+    div#languages_sponsors {
+        width: 100%;
+    }
+
+    #language_chosen {
+        margin: 0;
     }
 }
