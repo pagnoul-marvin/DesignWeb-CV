@@ -1104,11 +1104,6 @@ form input[type='submit'] {
         padding: 3.125em 2em 3.625em;
     }
 
-    #languages_sponsors {
-        display: block;
-        margin: 2.5em 0;
-    }
-
     select#languages {
         margin-bottom: 8em;
     }
@@ -1172,8 +1167,13 @@ form input[type='submit'] {
         min-width: 100%;
     }
 
+    #select_js_enabled {
+        margin: 2.5em 0;
+    }
+
     div#languages_sponsors {
-        width: 100%;
+        width: initial;
+        display: block;
     }
 
     #language_chosen {
