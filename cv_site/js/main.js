@@ -1,93 +1,81 @@
-document.getElementById('no_js_message').classList.add('no_display');
-document.getElementById('select_js_enabled').classList.remove('no_display');
-document.getElementById('languages').classList.add('no_display');
+import {settings} from "./settings";
 
-const wwwElement = document.getElementById('www');
-const wwwImage = document.getElementById('www_image');
-const pencilElement = document.getElementById('pencil');
-const pencilImage = document.getElementById('pencil_image');
-const responsiveElement = document.getElementById('responsive');
-const responsiveImage = document.getElementById('responsive_image');
-const rankingElement = document.getElementById('ranking');
-const rankingImage = document.getElementById('ranking_image');
-const serviceTitle = document.getElementById('service_name');
-document.querySelectorAll('#services_list li').forEach(liElt => {
+settings.noJsMessageElement.classList.add('no_display');
+settings.selectJsEnabledElement.classList.remove('no_display');
+settings.languagesElement.classList.add('no_display');
+settings.servicesListLiElements.forEach(liElt => {
     liElt.addEventListener('click', (e) => {
-        if (e.currentTarget.id === 'www') {
-            e.currentTarget.classList.add('active_service');
-            document.getElementById('www_image').src = './img/icons/www_active.svg';
-            if (pencilElement.classList.contains('active_service')) {
-                pencilElement.classList.remove('active_service');
-                pencilImage.src = './img/icons/design.svg';
-            } else if (responsiveElement.classList.contains('active_service')) {
-                responsiveElement.classList.remove('active_service');
-                responsiveImage.src = './img/icons/responsive.svg';
-            } else if (rankingElement.classList.contains('active_service')) {
-                rankingElement.classList.remove('active_service');
-                rankingImage.src = './img/icons/referencement.svg';
+        if (e.currentTarget.id === settings.wwwId) {
+            e.currentTarget.classList.add(settings.activeServiceClass);
+            settings.wwwImageElement.src = settings.wwwActivePath;
+            if (settings.pencilElement.classList.contains(settings.activeServiceClass)) {
+                settings.pencilElement.classList.remove(settings.activeServiceClass);
+                settings.pencilImageElement.src = settings.designPath;
+            } else if (settings.responsiveElement.classList.contains(settings.activeServiceClass)) {
+                settings.responsiveElement.classList.remove(settings.activeServiceClass);
+                settings.responsiveImageElement.src = settings.responsivePath;
+            } else if (settings.rankingElement.classList.contains(settings.activeServiceClass)) {
+                settings.rankingElement.classList.remove(settings.activeServiceClass);
+                settings.rankingImageElement.src = settings.referencementPath;
             }
-        } else if (e.currentTarget.id === 'pencil') {
-            e.currentTarget.classList.add('active_service');
-            document.getElementById('pencil_image').src = './img/icons/design_active.svg';
-            if (wwwElement.classList.contains('active_service')) {
-                wwwElement.classList.remove('active_service');
-                wwwImage.src = './img/icons/www.svg';
-            } else if (responsiveElement.classList.contains('active_service')) {
-                responsiveElement.classList.remove('active_service');
-                responsiveImage.src = './img/icons/responsive.svg';
-            } else if (rankingElement.classList.contains('active_service')) {
-                rankingElement.classList.remove('active_service');
-                rankingImage.src = './img/icons/referencement.svg';
+        } else if (e.currentTarget.id === settings.pencilId) {
+            e.currentTarget.classList.add(settings.activeServiceClass);
+            settings.pencilImageElement.src = settings.designActivePath;
+            if (settings.wwwElement.classList.contains(settings.activeServiceClass)) {
+                settings.wwwElement.classList.remove(settings.activeServiceClass);
+                settings.wwwImageElement.src = settings.wwwPath;
+            } else if (settings.responsiveElement.classList.contains(settings.activeServiceClass)) {
+                settings.responsiveElement.classList.remove(settings.activeServiceClass);
+                settings.responsiveImageElement.src = settings.responsivePath;
+            } else if (settings.rankingElement.classList.contains(settings.activeServiceClass)) {
+                settings.rankingElement.classList.remove(settings.activeServiceClass);
+                settings.rankingImageElement.src = settings.referencementPath;
             }
-        } else if (e.currentTarget.id === 'responsive') {
-            e.currentTarget.classList.add('active_service');
-            document.getElementById('responsive_image').src = './img/icons/responsive_active.svg';
-            if (pencilElement.classList.contains('active_service')) {
-                pencilElement.classList.remove('active_service');
-                pencilImage.src = './img/icons/design.svg';
-            } else if (wwwElement.classList.contains('active_service')) {
-                wwwElement.classList.remove('active_service');
-                wwwImage.src = './img/icons/www.svg';
-            } else if (rankingElement.classList.contains('active_service')) {
-                rankingElement.classList.remove('active_service');
-                rankingImage.src = './img/icons/referencement.svg';
+        } else if (e.currentTarget.id === settings.responsiveId) {
+            e.currentTarget.classList.add(settings.activeServiceClass);
+            settings.responsiveImageElement.src = settings.responsiveActivePath;
+            if (settings.pencilElement.classList.contains(settings.activeServiceClass)) {
+                settings.pencilElement.classList.remove(settings.activeServiceClass);
+                settings.pencilImageElement.src = settings.designPath
+            } else if (settings.wwwElement.classList.contains(settings.activeServiceClass)) {
+                settings.wwwElement.classList.remove(settings.activeServiceClass);
+                settings.wwwImageElement.src = settings.wwwPath;
+            } else if (settings.rankingElement.classList.contains(settings.activeServiceClass)) {
+                settings.rankingElement.classList.remove(settings.activeServiceClass);
+                settings.rankingImageElement.src = settings.referencementPath;
             }
         } else {
-            e.currentTarget.classList.add('active_service');
-            document.getElementById('ranking_image').src = './img/icons/referencement_active.svg';
-            if (pencilElement.classList.contains('active_service')) {
-                pencilElement.classList.remove('active_service');
-                pencilImage.src = './img/icons/design.svg';
-            } else if (responsiveElement.classList.contains('active_service')) {
-                responsiveElement.classList.remove('active_service');
-                responsiveImage.src = './img/icons/responsive.svg';
-            } else if (wwwElement.classList.contains('active_service')) {
-                wwwElement.classList.remove('active_service');
-                wwwImage.src = './img/icons/www.svg';
+            e.currentTarget.classList.add(settings.activeServiceClass);
+            settings.rankingImageElement.src = settings.referencementActivePath;
+            if (settings.pencilElement.classList.contains(settings.activeServiceClass)) {
+                settings.pencilElement.classList.remove(settings.activeServiceClass);
+                settings.pencilImageElement.src = settings.designPath;
+            } else if (settings.responsiveElement.classList.contains(settings.activeServiceClass)) {
+                settings.responsiveElement.classList.remove(settings.activeServiceClass);
+                settings.responsiveImageElement.src = settings.responsivePath;
+            } else if (settings.wwwElement.classList.contains(settings.activeServiceClass)) {
+                settings.wwwElement.classList.remove(settings.activeServiceClass);
+                settings.wwwImageElement.src = settings.wwwPath;
             }
         }
-        serviceTitle.textContent = e.currentTarget.dataset.name;
-        document.getElementById('contact').classList.add('a_service_is_active');
+        settings.serviceTitleElement.textContent = e.currentTarget.dataset.name;
+        settings.contactElement.classList.add(settings.aServiceIsActiveClass);
     });
 });
 
-let pourcentage = 0;
-let maxPourcentage = -460;
-let minPourcentage = 0;
-
 function previousSlide() {
-    if (pourcentage === maxPourcentage) {
-        pourcentage = minPourcentage;
+    if (settings.pourcentage === settings.maxPourcentage) {
+        settings.pourcentage = settings.minPourcentage;
     } else {
-        pourcentage -= 460;
+        settings.pourcentage -= 460;
     }
 }
 
 function nextSlide() {
-    if (pourcentage === minPourcentage) {
-        pourcentage = maxPourcentage;
+    if (settings.pourcentage === settings.minPourcentage) {
+        settings.pourcentage = settings.maxPourcentage;
     } else {
-        pourcentage += 460;
+        settings.pourcentage += 460;
     }
 }
 
@@ -95,16 +83,16 @@ document.querySelectorAll("button").forEach(btnElt => {
     btnElt.addEventListener('click', (e) => {
         if (e.currentTarget.id === "first_slider_previous") {
             previousSlide(e);
-            document.getElementById('first_slider').style.left = `${pourcentage}px`;
+            document.getElementById('first_slider').style.left = `${settings.pourcentage}px`;
         } else if (e.currentTarget.id === "first_slider_next") {
             nextSlide(e);
-            document.getElementById('first_slider').style.left = `${pourcentage}px`;
+            document.getElementById('first_slider').style.left = `${settings.pourcentage}px`;
         } else if (e.currentTarget.id === "second_slider_previous") {
             previousSlide(e);
-            document.getElementById('second_slider').style.left = `${pourcentage}px`;
+            document.getElementById('second_slider').style.left = `${settings.pourcentage}px`;
         } else {
             nextSlide(e);
-            document.getElementById('second_slider').style.left = `${pourcentage}px`;
+            document.getElementById('second_slider').style.left = `${settings.pourcentage}px`;
         }
     });
 });
@@ -271,11 +259,11 @@ document.querySelector('#close2').addEventListener('click', () => {
     document.getElementById('overlay').classList.add('no_display');
 });
 
-let articleNumber = 0;
+settings.articleNumber = 0;
 document.getElementById('contact').addEventListener('click', (e) => {
     if (e.currentTarget.classList.contains('a_service_is_active')) {
-        articleNumber = 1;
-        document.getElementById('article_number').textContent = `${articleNumber}`;
+        settings.articleNumber = 1;
+        document.getElementById('article_number').textContent = `${settings.articleNumber}`;
         document.querySelectorAll('#article_hover>li:not(:last-child)').forEach(liElt => {
             liElt.classList.remove('no_display');
         });
@@ -292,7 +280,7 @@ document.getElementById('contact').addEventListener('click', (e) => {
 
 document.getElementById('basket').addEventListener('click', () => {
     document.getElementById('second_overlay').classList.remove('no_display');
-    if (articleNumber === 1) {
+    if (settings.articleNumber === 1) {
         document.getElementById('article_hover').classList.remove('no_display');
     } else {
         document.getElementById('article_hover').classList.remove('no_display');
@@ -308,12 +296,12 @@ document.getElementById('close1').addEventListener('click', () => {
 });
 
 document.getElementById('delete_article').addEventListener('click', () => {
-    articleNumber = 0;
+    settings.articleNumber = 0;
     document.querySelectorAll('#article_hover>li:not(:last-child)').forEach(liElt => {
         liElt.classList.add('no_display');
     });
     document.querySelector('#article_hover>li:last-child').classList.remove('no_display');
-    document.getElementById('article_number').textContent = `${articleNumber}`;
+    document.getElementById('article_number').textContent = `${settings.articleNumber}`;
 });
 
 document.getElementById('back_to_services').addEventListener('click', () => {
@@ -342,6 +330,6 @@ document.querySelector('#select_js_enabled img').addEventListener('click', () =>
 if (window.innerWidth <= 1500) {
     document.getElementById('burger_menu').addEventListener('click', (e) => {
         document.querySelector('ul#nav_list').classList.toggle('remove_no_display');
-        document.getElementById('burger_menu').classList.toggle('disappeared_middle_line');
+        e.currentTarget.classList.toggle('disappeared_middle_line');
     });
 }
