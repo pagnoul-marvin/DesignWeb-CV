@@ -7,11 +7,11 @@
 }
 
 .hidden {
-    font-size: 0;
+    font-size: 0 !important;
 }
 
 .hidden, #formations nav #first_slider_previous, #formations nav #first_slider_next, #langages nav #second_slider_next, #langages nav #second_slider_previous, #facebook, #github, #instagram, #alsacreations, #lmstudio {
-    text-indent: -5000px;
+    text-indent: -5000px !important;
 }
 
 .no_display, #nav_list ul.no_display, #hobbies ul.no_display, #panier ul.no_display, .no_js, .toggle input, .cross[type="checkbox"]:checked + .cross-button + #content, .cross[type="checkbox"]:checked + .cross-button, #article_hover form ol label {
@@ -22,16 +22,22 @@
     display: inline-block;
 }
 
-#main_nav, #banner, #nav_list, #nav_list ul, #services_list, #competences_list, #formations #first_slider, #langages #second_slider, #socials, #sponsors, #languages_sponsors, #article_hover > li ul#summary, .toggle {
+#main_nav, #banner, #nav_list, #nav_list ul, #services_list, #competences_list, #formations #first_slider, #langages #second_slider, #socials, #sponsors, #languages_sponsors, #article_hover > li ul#summary, .toggle, #services #flex_container {
     display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
 }
 
 #nav_list, #nav_list ul, #services #flex_container, #services_list, #languages_sponsors, #article_hover > li ul#summary {
     justify-content: space-between;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
 }
 
 #article_hover > li ul#summary, #nav_list ul {
     flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
 }
 
 .cross-button, #nav_list > li, #services_list li, #informations p, button, #hobbies_button, #close2, #article_hover #delete_article, .slider_round, #close1, input[type='submit'], #languages_sponsors img, #select_options, #select_options, #languages, #language_chosen, #main_nav > div:not(:first-child), #article_number {
@@ -104,6 +110,8 @@ header, #competences, #overlay, #second_overlay, .toggle:before, .toggle:after {
 
 ul#first_slider, ul#second_slider, #hobbies_list, .slider_round, .slider_round:before {
     transition: .4s ease-in-out;
+    -o-transition: .4s ease-in-out;
+    -webkit-transition: .4s ease-in-out;
 }
 
 #hobbies_list, #second_overlay, ul#first_slider, ul#second_slider {
@@ -136,6 +144,8 @@ html {
 
 #no_js_message #banner {
     flex-direction: row-reverse;
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
     padding: 0 4.6875em;
     line-height: 2.4em;
     font-size: 0.9275em;
@@ -172,10 +182,12 @@ html {
 
 .line:nth-child(1) {
     transform: translateX(6px) translateY(3px) rotate(45deg);
+    -ms-transform: translateX(6px) translateY(3px) rotate(45deg);
 }
 
 .line:nth-child(2) {
     transform: translateX(7px) translateY(3px) rotate(-45deg);
+    -ms-transform: translateX(7px) translateY(3px) rotate(-45deg);
 }
 
 #logo {
@@ -198,18 +210,24 @@ html {
 }
 
 #nav_list {
+    -webkit-box-flex: 1;
     flex-grow: 1;
     align-items: center;
     margin-left: 4em;
 }
 
 #nav_list img, #languages_sponsors img {
+    -webkit-transition: -webkit-transform 0.25s ease-in-out;
+    transition: -webkit-transform 0.25s ease-in-out;
+    -o-transition: transform 0.25s ease-in-out;
     transition: transform 0.25s ease-in-out;
 }
 
 #nav_list > li {
     padding: 0.8em;
     border-radius: 0.7em;
+    -webkit-border-radius: 0.7em;
+    -moz-border-radius: 0.7em;
 }
 
 #nav_list > li img {
@@ -218,6 +236,7 @@ html {
 
 .rotate {
     transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
 }
 
 #nav_list > li:hover {
@@ -248,6 +267,8 @@ html {
     gap: 1.3em;
     text-transform: none;
     border-radius: 0.66em;
+    -webkit-border-radius: 0.66em;
+    -moz-border-radius: 0.66em;
     text-align: left;
     border-top: 4px solid #FAE09F;
     top: 3.3em;
@@ -289,6 +310,8 @@ html {
 
 #landing_image, img#skills {
     border-radius: 1.25em;
+    -webkit-border-radius: 1.25em;
+    -moz-border-radius: 1.25em;
 }
 
 img#skills {
@@ -296,14 +319,12 @@ img#skills {
     height: 100% !important;
 }
 
-#services #flex_container {
-    display: flex;
-}
-
 #informations {
     min-width: 18em;
     padding: 2.5em 1.875em;
     border-radius: 1.25em;
+    -webkit-border-radius: 1.25em;
+    -moz-border-radius: 1.25em;
     text-align: left;
     font-size: 1.25em;
     max-height: 511px;
@@ -329,6 +350,8 @@ main {
 #choice {
     background-color: #32363F;
     border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
     margin-bottom: 1em;
     padding: 0.5em 0.75em;
 }
@@ -341,6 +364,9 @@ main {
     border: 1px solid white;
     min-height: 3.5em;
     border-radius: 0.625em;
+    -webkit-border-radius: 0.625em;
+    -moz-border-radius: 0.625em;
+    -webkit-box-flex: 1;
     flex-grow: 1;
     text-align: center;
 }
@@ -363,6 +389,8 @@ main {
     margin: 1em 0;
     padding: 0.9375em 0;
     border-radius: 0.625em;
+    -webkit-border-radius: 0.625em;
+    -moz-border-radius: 0.625em;
 }
 
 #hobbies_button {
@@ -377,6 +405,8 @@ main {
 #competences_list {
     justify-content: space-evenly;
     border-radius: 0.625em;
+    -webkit-border-radius: 0.625em;
+    -moz-border-radius: 0.625em;
     border: 1px solid #293033;
     margin: 0 4.6875em 4.6875em 4.6875em;
     align-items: center;
@@ -384,6 +414,7 @@ main {
 }
 
 #competences_list > li {
+    -webkit-box-flex: 1;
     flex-grow: 1;
     text-align: center;
 }
@@ -403,6 +434,8 @@ div#skills_image {
     max-width: 31.25em;
     padding: 1.875em 2.5em 3.125em 3.75em;
     border-radius: 0.625em;
+    -webkit-border-radius: 0.625em;
+    -moz-border-radius: 0.625em;
     position: absolute;
     bottom: -10em;
     right: 9em;
@@ -416,6 +449,8 @@ div#skills_image {
 
 #competences_text a {
     border-radius: 0.625em;
+    -webkit-border-radius: 0.625em;
+    -moz-border-radius: 0.625em;
     padding: 0.625em 3.125em;
     width: 12.5em;
     text-align: center;
@@ -446,6 +481,8 @@ h1 {
 
 #formations #first_slider > li {
     border-radius: 0.67em;
+    -webkit-border-radius: 0.67em;
+    -moz-border-radius: 0.67em;
     text-align: left;
     line-height: 1.67em;
     padding: 2em 2em 5em 2em;
@@ -458,6 +495,8 @@ h1 {
 
 #formations #first_slider li ul img {
     border-radius: 0.67em;
+    -webkit-border-radius: 0.67em;
+    -moz-border-radius: 0.67em;
 }
 
 h3 {
@@ -473,6 +512,8 @@ h3 {
     height: 1.75em;
     padding: 1.5em;
     border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
 }
 
 #langages nav #second_slider_previous, #formations nav #first_slider_previous {
@@ -497,15 +538,23 @@ h3 {
 
 #langages #second_slider img {
     border-radius: 0.625em;
+    -webkit-border-radius: 0.625em;
+    -moz-border-radius: 0.625em;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: -webkit-transform 0.3s ease-in-out;
+    -o-transition: transform 0.3s ease-in-out;
     transition: transform 0.3s ease-in-out;
 }
 
 #langages #second_slider img:hover {
     transform: scale(1.2);
+    -ms-transform: scale(1.2);
 }
 
 .image_container {
     border-radius: 0.625em;
+    -webkit-border-radius: 0.625em;
+    -moz-border-radius: 0.625em;
     height: 16.25em;
 }
 
@@ -515,6 +564,8 @@ h3 {
 
 #soft_skills {
     border-radius: 0.625em;
+    -webkit-border-radius: 0.625em;
+    -moz-border-radius: 0.625em;
     border: 2px solid #293033;
     padding: 3.75em 2.5em;
     margin: 5em 4.6875em;
@@ -570,6 +621,8 @@ footer {
     background-color: rgb(0, 0, 0);
     border: 2px solid white;
     border-radius: 0.67em;
+    -webkit-border-radius: 0.67em;
+    -moz-border-radius: 0.67em;
 }
 
 #select_js_enabled {
@@ -618,6 +671,7 @@ footer {
 
 #grid_container {
     display: grid;
+    display: -ms-grid;
     grid-template-areas: "p services mail"
 				         "p skills tel"
 				         "p formations adress"
@@ -676,6 +730,8 @@ footer {
     padding: 1.875em;
     min-height: 100vh;
     transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    -webkit-transition: 0.5s ease-in-out;
 }
 
 #hobbies h2 {
@@ -696,6 +752,8 @@ footer {
     border: 2px solid white;
     padding: 0.33em 0.67em;
     border-radius: 0.33em;
+    -webkit-border-radius: 0.33em;
+    -moz-border-radius: 0.33em;
     margin-top: 1em;
 }
 
@@ -729,6 +787,8 @@ footer {
 #article_hover #content_profile {
     float: left;
     border-radius: 0.67em;
+    -webkit-border-radius: 0.67em;
+    -moz-border-radius: 0.67em;
     min-height: 11.67em;
     margin-right: 0.67em;
 }
@@ -748,6 +808,8 @@ legend {
 #article_hover form ol input {
     padding: 1.33em;
     border-radius: 0.67em;
+    -webkit-border-radius: 0.67em;
+    -moz-border-radius: 0.67em;
     border: 2px solid black;
     margin-top: 1.33em;
     min-width: 31em;
@@ -776,11 +838,15 @@ form p {
 
 #article_hover > li:last-child ul li a {
     border-radius: 0.67em;
+    -moz-border-radius: 0.67em;
+    -webkit-border-radius: 0.67em;
     margin-top: 1.33em;
 }
 
 form input[type='submit'] {
     border-radius: 0.67em;
+    -moz-border-radius: 0.67em;
+    -webkit-border-radius: 0.67em;
 }
 
 .toggle {
@@ -820,14 +886,19 @@ form input[type='submit'] {
 
 .toggle input:checked + .slider_round:before {
     transform: translateX(2.33em);
+    -ms-transform: translateX(2.33em);
 }
 
 .slider_round {
     border-radius: 1em;
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
 }
 
 .slider_round:before {
     border-radius: 0.67em;
+    -moz-border-radius: 0.67em;
+    -webkit-border-radius: 0.67em;
 }
 
 #close1 {
@@ -871,8 +942,11 @@ form input[type='submit'] {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
         background-color: #fff;
         transition: background-color 0.2s ease-in-out;
+        -o-transition: background-color 0.2s ease-in-out;
+        -webkit-transition: background-color 0.2s ease-in-out;
     }
 
     #burger_menu span:before, #burger_menu span:after {
@@ -880,14 +954,19 @@ form input[type='submit'] {
         height: 0.2em;
         background-color: #fff;
         position: absolute;
+        -webkit-transition: -webkit-transform 0.2s ease-in-out;
+        transition: -webkit-transform 0.2s ease-in-out;
+        -o-transition: transform 0.2s ease-in-out;
         transition: transform 0.2s ease-in-out;
     }
 
     #burger_menu span:before {
+        -ms-transform: translateY(-0.5em);
         transform: translateY(-0.5em);
     }
 
     #burger_menu span:after {
+        -ms-transform: translateY(0.5em);
         transform: translateY(0.5em);
     }
 
@@ -896,24 +975,30 @@ form input[type='submit'] {
     }
 
     div#burger_menu.disappeared_middle_line span:before {
+        -ms-transform: translateY(0) rotateZ(45deg);
         transform: translateY(0) rotateZ(45deg);
     }
 
     div#burger_menu.disappeared_middle_line span:after {
+        -ms-transform: translateY(0) rotateZ(-45deg);
         transform: translateY(0) rotateZ(-45deg);
     }
 
     .first_line_animation {
+        -ms-transform: rotateZ(45deg);
         transform: rotateZ(45deg);
     }
 
     .second_line_animation {
+        -ms-transform: rotateZ(-45deg);
         transform: rotateZ(-45deg);
     }
 
     #main_nav {
         padding: 0 4.6875em;
         justify-content: space-between;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
     }
 
     #article_number {
@@ -997,6 +1082,7 @@ form input[type='submit'] {
 
     #formations ul#first_slider, #langages ul#second_slider {
         display: grid;
+        display: -ms-grid;
         grid-template-areas: "hepl formation"
                              "helmo secondaire";
         grid-gap: 1.25em;
@@ -1058,6 +1144,8 @@ form input[type='submit'] {
 
     #competences_list {
         flex-direction: column;
+        -ms-flex-direction: column;
+        -webkit-flex-direction: column;
         padding: 2em;
         gap: 2em;
         text-align: center;
