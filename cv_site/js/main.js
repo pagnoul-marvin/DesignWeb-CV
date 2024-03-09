@@ -1,166 +1,35 @@
 import {settings} from "./settings";
 
 const myCurriculumVitae = {
+
     init() {
         settings.noJsMessageElement.classList.add('no_display');
         settings.selectJsEnabledElement.classList.remove('no_display');
         settings.languagesElement.classList.add('no_display');
         this.addEventListeners();
+    },
+
+    addEventListeners() {
 
         if (window.innerWidth > 1500) {
             settings.navListLiElements.forEach(liElt => {
                 liElt.addEventListener('mouseover', (e) => {
-                    if (e.currentTarget.id === settings.firstNavListItemId) {
-                        settings.firstDropdownElement.classList.remove(settings.noDisplayClass);
-                        settings.navFirstArrowElement.classList.add(settings.rotateClass);
-                    } else if (e.currentTarget.id === settings.secondNavListItemId) {
-                        settings.secondDropdownElement.classList.remove(settings.noDisplayClass);
-                        settings.navSecondArrowElement.classList.add(settings.rotateClass);
-                    } else if (e.currentTarget.id === settings.thirdNavListItemId) {
-                        settings.thirdDropdownElement.classList.remove(settings.noDisplayClass);
-                        settings.navThirdArrowElement.classList.add(settings.rotateClass);
-                    } else if (e.currentTarget.id === settings.fourthNavListItemId) {
-                        settings.fourthDropdownElement.classList.remove(settings.noDisplayClass);
-                        settings.navFourthArrowElement.classList.add(settings.rotateClass);
-                    } else {
-                        settings.fifthDropdownElement.classList.remove(settings.noDisplayClass);
-                        settings.navFifthArrowElement.classList.add(settings.rotateClass);
-                    }
+                    this.mainNavHover(e);
                 });
             });
 
             settings.navListLiElements.forEach(liElt => {
                 liElt.addEventListener('mouseout', (e) => {
-                    if (e.currentTarget.id === settings.firstNavListItemId) {
-                        settings.firstDropdownElement.classList.add(settings.noDisplayClass);
-                        settings.navFirstArrowElement.classList.remove(settings.rotateClass);
-                    } else if (e.currentTarget.id === settings.secondNavListItemId) {
-                        settings.secondDropdownElement.classList.add(settings.noDisplayClass);
-                        settings.navSecondArrowElement.classList.remove(settings.rotateClass);
-                    } else if (e.currentTarget.id === settings.thirdNavListItemId) {
-                        settings.thirdDropdownElement.classList.add(settings.noDisplayClass);
-                        settings.navThirdArrowElement.classList.remove(settings.rotateClass);
-                    } else if (e.currentTarget.id === settings.fourthNavListItemId) {
-                        settings.fourthDropdownElement.classList.add(settings.noDisplayClass);
-                        settings.navFourthArrowElement.classList.remove(settings.rotateClass);
-                    } else {
-                        settings.fifthDropdownElement.classList.add(settings.noDisplayClass);
-                        settings.navFifthArrowElement.classList.remove(settings.rotateClass);
-                    }
+                    this.mainNavHoverOut(e);
                 });
             });
         } else {
             settings.navListLiElements.forEach(liElt => {
                 liElt.addEventListener('click', (e) => {
-                    if (e.currentTarget.id === settings.firstNavListItemId) {
-                        if (settings.secondNavListItemElement.classList.contains(settings.activeDropdownClass)) {
-                            settings.secondNavListItemElement.classList.remove(settings.activeDropdownClass);
-                            settings.secondDropdownElement.classList.add(settings.noDisplayClass);
-                            settings.navSecondArrowElement.classList.remove(settings.rotateClass);
-                        } else if (settings.thirdNavListItemElement.classList.contains(settings.activeDropdownClass)) {
-                            settings.thirdNavListItemElement.classList.remove(settings.activeDropdownClass);
-                            settings.thirdDropdownElement.classList.add(settings.noDisplayClass);
-                            settings.navThirdArrowElement.classList.remove(settings.rotateClass);
-                        } else if (settings.fourthNavListItemElement.classList.contains(settings.activeDropdownClass)) {
-                            settings.fourthNavListItemElement.classList.remove(settings.activeDropdownClass);
-                            settings.fourthDropdownElement.classList.add(settings.noDisplayClass);
-                            settings.navFourthArrowElement.classList.remove(settings.rotateClass);
-                        } else {
-                            settings.fifthNavListItemElement.classList.remove(settings.activeDropdownClass);
-                            settings.fifthDropdownElement.classList.add(settings.noDisplayClass);
-                            settings.navFifthArrowElement.classList.remove(settings.rotateClass);
-                        }
-                        settings.firstDropdownElement.classList.toggle(settings.noDisplayClass);
-                        settings.navFirstArrowElement.classList.toggle(settings.rotateClass);
-                    } else if (e.currentTarget.id === settings.secondNavListItemId) {
-                        if (settings.firstNavListItemElement.classList.contains(settings.activeDropdownClass)) {
-                            settings.firstNavListItemElement.classList.remove(settings.activeDropdownClass);
-                            settings.firstDropdownElement.classList.add(settings.noDisplayClass);
-                            settings.navFirstArrowElement.classList.remove(settings.rotateClass);
-                        } else if (settings.thirdNavListItemElement.classList.contains(settings.activeDropdownClass)) {
-                            settings.thirdNavListItemElement.classList.remove(settings.activeDropdownClass);
-                            settings.thirdDropdownElement.classList.add(settings.noDisplayClass);
-                            settings.navThirdArrowElement.classList.remove(settings.rotateClass);
-                        } else if (settings.fourthNavListItemElement.classList.contains(settings.activeDropdownClass)) {
-                            settings.fourthNavListItemElement.classList.remove(settings.activeDropdownClass);
-                            settings.fourthDropdownElement.classList.add(settings.noDisplayClass);
-                            settings.navFourthArrowElement.classList.remove(settings.rotateClass);
-                        } else {
-                            settings.fifthNavListItemElement.classList.remove(settings.activeDropdownClass);
-                            settings.fifthDropdownElement.classList.add(settings.noDisplayClass);
-                            settings.navFifthArrowElement.classList.remove(settings.rotateClass);
-                        }
-                        settings.secondDropdownElement.classList.toggle(settings.noDisplayClass);
-                        settings.navSecondArrowElement.classList.toggle(settings.rotateClass);
-                    } else if (e.currentTarget.id === settings.thirdNavListItemId) {
-                        if (settings.secondNavListItemElement.classList.contains(settings.activeDropdownClass)) {
-                            settings.secondNavListItemElement.classList.remove(settings.activeDropdownClass);
-                            settings.secondDropdownElement.classList.add(settings.noDisplayClass);
-                            settings.navSecondArrowElement.classList.remove(settings.rotateClass);
-                        } else if (settings.firstNavListItemElement.classList.contains(settings.activeDropdownClass)) {
-                            settings.firstNavListItemElement.classList.remove(settings.activeDropdownClass);
-                            settings.firstDropdownElement.classList.add(settings.noDisplayClass);
-                            settings.navFirstArrowElement.classList.remove(settings.rotateClass);
-                        } else if (settings.fourthNavListItemElement.classList.contains(settings.activeDropdownClass)) {
-                            settings.fourthNavListItemElement.classList.remove(settings.activeDropdownClass);
-                            settings.fourthDropdownElement.classList.add(settings.noDisplayClass);
-                            settings.navFourthArrowElement.classList.remove(settings.rotateClass);
-                        } else {
-                            settings.fifthNavListItemElement.classList.remove(settings.activeDropdownClass);
-                            settings.fifthDropdownElement.classList.add(settings.noDisplayClass);
-                            settings.navFifthArrowElement.classList.remove(settings.rotateClass);
-                        }
-                        settings.thirdDropdownElement.classList.toggle(settings.noDisplayClass);
-                        settings.navThirdArrowElement.classList.toggle(settings.rotateClass);
-                    } else if (e.currentTarget.id === settings.fourthNavListItemId) {
-                        if (settings.secondNavListItemElement.classList.contains(settings.activeDropdownClass)) {
-                            settings.secondNavListItemElement.classList.remove(settings.activeDropdownClass);
-                            settings.secondDropdownElement.classList.add(settings.noDisplayClass);
-                            settings.navSecondArrowElement.classList.remove(settings.rotateClass);
-                        } else if (settings.thirdNavListItemElement.classList.contains(settings.activeDropdownClass)) {
-                            settings.thirdNavListItemElement.classList.remove(settings.activeDropdownClass);
-                            settings.thirdDropdownElement.classList.add(settings.noDisplayClass);
-                            settings.navThirdArrowElement.classList.remove(settings.rotateClass);
-                        } else if (settings.firstNavListItemElement.classList.contains(settings.activeDropdownClass)) {
-                            settings.firstNavListItemElement.classList.remove(settings.activeDropdownClass);
-                            settings.firstDropdownElement.classList.add(settings.noDisplayClass);
-                            settings.navFirstArrowElement.classList.remove(settings.rotateClass);
-                        } else {
-                            settings.fifthNavListItemElement.classList.remove(settings.activeDropdownClass);
-                            settings.fifthDropdownElement.classList.add(settings.noDisplayClass);
-                            settings.navFifthArrowElement.classList.remove(settings.rotateClass);
-                        }
-                        settings.fourthDropdownElement.classList.toggle(settings.noDisplayClass);
-                        settings.navFourthArrowElement.classList.toggle(settings.rotateClass);
-                    } else {
-                        if (settings.secondNavListItemElement.classList.contains(settings.activeDropdownClass)) {
-                            settings.secondNavListItemElement.classList.remove(settings.activeDropdownClass);
-                            settings.secondDropdownElement.classList.add(settings.noDisplayClass);
-                            settings.navSecondArrowElement.classList.remove(settings.rotateClass);
-                        } else if (settings.thirdNavListItemElement.classList.contains(settings.activeDropdownClass)) {
-                            settings.thirdNavListItemElement.classList.remove(settings.activeDropdownClass);
-                            settings.thirdDropdownElement.classList.add(settings.noDisplayClass);
-                            settings.navThirdArrowElement.classList.remove(settings.rotateClass);
-                        } else if (settings.fourthNavListItemElement.classList.contains(settings.activeDropdownClass)) {
-                            settings.fourthNavListItemElement.classList.remove(settings.activeDropdownClass);
-                            settings.fourthDropdownElement.classList.add(settings.noDisplayClass);
-                            settings.navFourthArrowElement.classList.remove(settings.rotateClass);
-                        } else {
-                            settings.firstNavListItemElement.classList.remove(settings.activeDropdownClass);
-                            settings.firstDropdownElement.classList.add(settings.noDisplayClass);
-                            settings.navFirstArrowElement.classList.remove(settings.rotateClass);
-                        }
-                        settings.fifthDropdownElement.classList.toggle(settings.noDisplayClass);
-                        settings.navFifthArrowElement.classList.toggle(settings.rotateClass);
-                    }
-                    e.currentTarget.classList.toggle(settings.activeDropdownClass);
+                    this.mainNavClick(e);
                 });
             });
         }
-
-    },
-
-    addEventListeners() {
 
         settings.servicesListLiElements.forEach(liElt => {
             liElt.addEventListener('click', (e) => {
@@ -189,6 +58,7 @@ const myCurriculumVitae = {
         settings.basketElement.addEventListener('click', () => {
             this.openArticlePopUpFromBasket();
         });
+
         settings.firstCloseELement.addEventListener('click', () => {
             this.closeArticlePopUp();
         });
@@ -220,6 +90,226 @@ const myCurriculumVitae = {
                 this.openAndCloseBurgerMenu(e);
             });
         }
+
+        if (window.innerWidth > 750) {
+            settings.firstOverlayElement.addEventListener('click', () => {
+                this.closeHobbyPopUp();
+            });
+
+            settings.secondOverlayELement.addEventListener('click', () => {
+                this.closeArticlePopUp();
+            });
+        }
+
+        if (window.innerWidth <= 1500) {
+            settings.navListAElement.forEach(aElt => {
+                aElt.addEventListener('click', () => {
+                    this.closeNavList();
+                })
+            });
+        }
+    },
+
+    /*Main nav*/
+
+    mainNavHover(e) {
+        if (e.currentTarget.id === settings.firstNavListItemId) {
+            this.firstNavListItemHover();
+        } else if (e.currentTarget.id === settings.secondNavListItemId) {
+            this.secondNavListItemHover();
+        } else if (e.currentTarget.id === settings.thirdNavListItemId) {
+            this.thirdNavListItemHover();
+        } else if (e.currentTarget.id === settings.fourthNavListItemId) {
+            this.fourthNavListItemHover();
+        } else {
+            this.fifthNavListItemHover();
+        }
+    },
+
+    mainNavHoverOut(e) {
+        if (e.currentTarget.id === settings.firstNavListItemId) {
+            this.firstNavListItemHoverOut();
+        } else if (e.currentTarget.id === settings.secondNavListItemId) {
+            this.secondNavListItemHoverOut();
+        } else if (e.currentTarget.id === settings.thirdNavListItemId) {
+            this.thirdNavListItemHoverOut();
+        } else if (e.currentTarget.id === settings.fourthNavListItemId) {
+            this.fourthNavListItemHoverOut();
+        } else {
+            this.fifthNavListHoverOut();
+        }
+    },
+
+    mainNavClick(e) {
+        if (e.currentTarget.id === settings.firstNavListItemId) {
+            this.firstNavListItemIsCurrentTarget();
+        } else if (e.currentTarget.id === settings.secondNavListItemId) {
+            this.secondNavListItemIsCurrentTarget();
+        } else if (e.currentTarget.id === settings.thirdNavListItemId) {
+            this.thirdNavListItemIsCurrentTarget();
+        } else if (e.currentTarget.id === settings.fourthNavListItemId) {
+            this.fourthNavListItemIsCurrentTarget();
+        } else {
+            this.fifthNavListItemIsCurrentTarget();
+        }
+        e.currentTarget.classList.toggle(settings.activeDropdownClass);
+    },
+
+    firstNavListItemHover() {
+        settings.firstDropdownElement.classList.remove(settings.noDisplayClass);
+        settings.navFirstArrowElement.classList.add(settings.rotateClass);
+    },
+
+    firstNavListItemHoverOut() {
+        settings.firstDropdownElement.classList.add(settings.noDisplayClass);
+        settings.navFirstArrowElement.classList.remove(settings.rotateClass);
+    },
+
+    firstNavListItemClick() {
+        settings.firstNavListItemElement.classList.remove(settings.activeDropdownClass);
+        settings.firstDropdownElement.classList.add(settings.noDisplayClass);
+        settings.navFirstArrowElement.classList.remove(settings.rotateClass);
+    },
+
+    firstNavListItemIsCurrentTarget() {
+        if (settings.secondNavListItemElement.classList.contains(settings.activeDropdownClass)) {
+            this.secondNavListItemClick();
+        } else if (settings.thirdNavListItemElement.classList.contains(settings.activeDropdownClass)) {
+            this.thirdNavListItemClick();
+        } else if (settings.fourthNavListItemElement.classList.contains(settings.activeDropdownClass)) {
+            this.fourthNavListItemClick();
+        } else {
+            this.fifthNavListItemClick();
+        }
+        settings.firstDropdownElement.classList.toggle(settings.noDisplayClass);
+        settings.navFirstArrowElement.classList.toggle(settings.rotateClass);
+    },
+
+    secondNavListItemHover() {
+        settings.secondDropdownElement.classList.remove(settings.noDisplayClass);
+        settings.navSecondArrowElement.classList.add(settings.rotateClass);
+    },
+
+    secondNavListItemHoverOut() {
+        settings.secondDropdownElement.classList.add(settings.noDisplayClass);
+        settings.navSecondArrowElement.classList.remove(settings.rotateClass);
+    },
+
+    secondNavListItemClick() {
+        settings.secondNavListItemElement.classList.remove(settings.activeDropdownClass);
+        settings.secondDropdownElement.classList.add(settings.noDisplayClass);
+        settings.navSecondArrowElement.classList.remove(settings.rotateClass);
+    },
+
+    secondNavListItemIsCurrentTarget() {
+        if (settings.firstNavListItemElement.classList.contains(settings.activeDropdownClass)) {
+            this.firstNavListItemClick();
+        } else if (settings.thirdNavListItemElement.classList.contains(settings.activeDropdownClass)) {
+            this.thirdNavListItemClick();
+        } else if (settings.fourthNavListItemElement.classList.contains(settings.activeDropdownClass)) {
+            this.fourthNavListItemClick();
+        } else {
+            this.fifthNavListItemClick();
+        }
+        settings.secondDropdownElement.classList.toggle(settings.noDisplayClass);
+        settings.navSecondArrowElement.classList.toggle(settings.rotateClass);
+    },
+
+    thirdNavListItemHover() {
+        settings.thirdDropdownElement.classList.remove(settings.noDisplayClass);
+        settings.navThirdArrowElement.classList.add(settings.rotateClass);
+    },
+
+    thirdNavListItemHoverOut() {
+        settings.thirdDropdownElement.classList.add(settings.noDisplayClass);
+        settings.navThirdArrowElement.classList.remove(settings.rotateClass);
+    },
+
+    thirdNavListItemClick() {
+        settings.thirdNavListItemElement.classList.remove(settings.activeDropdownClass);
+        settings.thirdDropdownElement.classList.add(settings.noDisplayClass);
+        settings.navThirdArrowElement.classList.remove(settings.rotateClass);
+    },
+
+    thirdNavListItemIsCurrentTarget() {
+        if (settings.secondNavListItemElement.classList.contains(settings.activeDropdownClass)) {
+            this.secondNavListItemClick();
+        } else if (settings.firstNavListItemElement.classList.contains(settings.activeDropdownClass)) {
+            this.fifthNavListItemClick();
+        } else if (settings.fourthNavListItemElement.classList.contains(settings.activeDropdownClass)) {
+            this.fourthNavListItemClick();
+        } else {
+            this.fifthNavListItemClick();
+        }
+        settings.thirdDropdownElement.classList.toggle(settings.noDisplayClass);
+        settings.navThirdArrowElement.classList.toggle(settings.rotateClass);
+    },
+
+    fourthNavListItemHover() {
+        settings.fourthDropdownElement.classList.remove(settings.noDisplayClass);
+        settings.navFourthArrowElement.classList.add(settings.rotateClass);
+    },
+
+    fourthNavListItemHoverOut() {
+        settings.fourthDropdownElement.classList.add(settings.noDisplayClass);
+        settings.navFourthArrowElement.classList.remove(settings.rotateClass);
+    },
+
+    fourthNavListItemClick() {
+        settings.fourthNavListItemElement.classList.remove(settings.activeDropdownClass);
+        settings.fourthDropdownElement.classList.add(settings.noDisplayClass);
+        settings.navFourthArrowElement.classList.remove(settings.rotateClass);
+    },
+
+    fourthNavListItemIsCurrentTarget() {
+        if (settings.secondNavListItemElement.classList.contains(settings.activeDropdownClass)) {
+            this.secondNavListItemClick();
+        } else if (settings.thirdNavListItemElement.classList.contains(settings.activeDropdownClass)) {
+            this.thirdNavListItemClick();
+        } else if (settings.firstNavListItemElement.classList.contains(settings.activeDropdownClass)) {
+            this.firstNavListItemClick();
+        } else {
+            this.fifthNavListItemClick();
+        }
+        settings.fourthDropdownElement.classList.toggle(settings.noDisplayClass);
+        settings.navFourthArrowElement.classList.toggle(settings.rotateClass);
+    },
+
+    fifthNavListItemHover() {
+        settings.fifthDropdownElement.classList.remove(settings.noDisplayClass);
+        settings.navFifthArrowElement.classList.add(settings.rotateClass);
+    },
+
+    fifthNavListHoverOut() {
+        settings.fifthDropdownElement.classList.add(settings.noDisplayClass);
+        settings.navFifthArrowElement.classList.remove(settings.rotateClass);
+    },
+
+    fifthNavListItemClick() {
+        settings.fifthNavListItemElement.classList.remove(settings.activeDropdownClass);
+        settings.fifthDropdownElement.classList.add(settings.noDisplayClass);
+        settings.navFifthArrowElement.classList.remove(settings.rotateClass);
+    },
+
+    fifthNavListItemIsCurrentTarget() {
+        if (settings.secondNavListItemElement.classList.contains(settings.activeDropdownClass)) {
+            this.secondNavListItemClick();
+        } else if (settings.thirdNavListItemElement.classList.contains(settings.activeDropdownClass)) {
+            this.thirdNavListItemClick();
+        } else if (settings.fourthNavListItemElement.classList.contains(settings.activeDropdownClass)) {
+            this.fourthNavListItemClick();
+        } else {
+            this.fifthNavListItemClick();
+        }
+        settings.fifthDropdownElement.classList.toggle(settings.noDisplayClass);
+        settings.navFifthArrowElement.classList.toggle(settings.rotateClass);
+    },
+
+    /*Nav List*/
+
+    closeNavList() {
+        settings.navListElement.classList.remove(settings.removeNoDisplayClass);
+        settings.burgerMenuElement.classList.remove(settings.disappearedMiddleLineClass);
     },
 
     /*Services Section*/
@@ -242,60 +332,66 @@ const myCurriculumVitae = {
     firstImageFromServices() {
         settings.wwwImageElement.src = settings.wwwActivePath;
         if (settings.pencilElement.classList.contains(settings.activeServiceClass)) {
-            settings.pencilElement.classList.remove(settings.activeServiceClass);
-            settings.pencilImageElement.src = settings.designPath;
+            this.secondImageIsActive();
         } else if (settings.responsiveElement.classList.contains(settings.activeServiceClass)) {
-            settings.responsiveElement.classList.remove(settings.activeServiceClass);
-            settings.responsiveImageElement.src = settings.responsivePath;
+            this.thirdImageIsActive();
         } else if (settings.rankingElement.classList.contains(settings.activeServiceClass)) {
-            settings.rankingElement.classList.remove(settings.activeServiceClass);
-            settings.rankingImageElement.src = settings.referencementPath;
+            this.fourthImageIsActive();
         }
+    },
+
+    firstImageIsActive() {
+        settings.wwwElement.classList.remove(settings.activeServiceClass);
+        settings.wwwImageElement.src = settings.wwwPath;
     },
 
     secondImageFromServices() {
         settings.pencilImageElement.src = settings.designActivePath;
         if (settings.wwwElement.classList.contains(settings.activeServiceClass)) {
-            settings.wwwElement.classList.remove(settings.activeServiceClass);
-            settings.wwwImageElement.src = settings.wwwPath;
+            this.firstImageIsActive();
         } else if (settings.responsiveElement.classList.contains(settings.activeServiceClass)) {
-            settings.responsiveElement.classList.remove(settings.activeServiceClass);
-            settings.responsiveImageElement.src = settings.responsivePath;
+            this.thirdImageIsActive();
         } else if (settings.rankingElement.classList.contains(settings.activeServiceClass)) {
-            settings.rankingElement.classList.remove(settings.activeServiceClass);
-            settings.rankingImageElement.src = settings.referencementPath;
+            this.fourthImageIsActive();
         }
+    },
+
+    secondImageIsActive() {
+        settings.pencilElement.classList.remove(settings.activeServiceClass);
+        settings.pencilImageElement.src = settings.designPath;
     },
 
     thirdImageFromServices() {
         settings.responsiveImageElement.src = settings.responsiveActivePath;
         if (settings.pencilElement.classList.contains(settings.activeServiceClass)) {
-            settings.pencilElement.classList.remove(settings.activeServiceClass);
-            settings.pencilImageElement.src = settings.designPath
+            this.secondImageIsActive();
         } else if (settings.wwwElement.classList.contains(settings.activeServiceClass)) {
-            settings.wwwElement.classList.remove(settings.activeServiceClass);
-            settings.wwwImageElement.src = settings.wwwPath;
+            this.firstImageIsActive();
         } else if (settings.rankingElement.classList.contains(settings.activeServiceClass)) {
-            settings.rankingElement.classList.remove(settings.activeServiceClass);
-            settings.rankingImageElement.src = settings.referencementPath;
+            this.fourthImageIsActive();
         }
+    },
+
+    thirdImageIsActive() {
+        settings.responsiveElement.classList.remove(settings.activeServiceClass);
+        settings.responsiveImageElement.src = settings.responsivePath;
     },
 
     fourthImageFromServices() {
         settings.rankingImageElement.src = settings.referencementActivePath;
         if (settings.pencilElement.classList.contains(settings.activeServiceClass)) {
-            settings.pencilElement.classList.remove(settings.activeServiceClass);
-            settings.pencilImageElement.src = settings.designPath;
+            this.secondImageIsActive();
         } else if (settings.responsiveElement.classList.contains(settings.activeServiceClass)) {
-            settings.responsiveElement.classList.remove(settings.activeServiceClass);
-            settings.responsiveImageElement.src = settings.responsivePath;
+            this.thirdImageIsActive();
         } else if (settings.wwwElement.classList.contains(settings.activeServiceClass)) {
-            settings.wwwElement.classList.remove(settings.activeServiceClass);
-            settings.wwwImageElement.src = settings.wwwPath;
+            this.firstImageIsActive();
         }
     },
 
-    /**/
+    fourthImageIsActive() {
+        settings.rankingElement.classList.remove(settings.activeServiceClass);
+        settings.rankingImageElement.src = settings.referencementPath;
+    },
 
     /*Sliders*/
 
@@ -363,7 +459,7 @@ const myCurriculumVitae = {
         settings.secondOverlayELement.classList.remove(settings.noDisplayClass);
     },
 
-    openArticlePopUpFromBasket () {
+    openArticlePopUpFromBasket() {
         settings.secondOverlayELement.classList.remove(settings.noDisplayClass);
         if (settings.articleNumber === 1) {
             settings.articleHoverElement.classList.remove(settings.noDisplayClass);
@@ -376,12 +472,12 @@ const myCurriculumVitae = {
         }
     },
 
-    closeArticlePopUp () {
+    closeArticlePopUp() {
         settings.articleHoverElement.classList.add(settings.noDisplayClass);
         settings.secondOverlayELement.classList.add(settings.noDisplayClass);
     },
 
-    removeArticleFromBasket () {
+    removeArticleFromBasket() {
         settings.articleNumber = 0;
         settings.articleHoverLiELements.forEach(liElt => {
             liElt.classList.add(settings.noDisplayClass);
@@ -390,32 +486,32 @@ const myCurriculumVitae = {
         settings.articleNumberElement.textContent = `${settings.articleNumber}`;
     },
 
-    goBackToTheServices () {
+    goBackToTheServices() {
         settings.articleHoverElement.classList.add(settings.noDisplayClass);
         settings.secondOverlayELement.classList.add(settings.noDisplayClass);
     },
 
     /*Select languages*/
 
-    openAndCloseSelectForText () {
+    openAndCloseSelectForText() {
         settings.selectOptionsElement.classList.toggle(settings.noDisplayClass);
         settings.languagesSponsorsImgElement.classList.toggle(settings.rotateClass);
     },
 
-    selectLanguage (e) {
+    selectLanguage(e) {
         settings.languageChosenElement.textContent = e.currentTarget.dataset.name;
         settings.selectOptionsElement.classList.add(settings.noDisplayClass);
         settings.languagesSponsorsImgElement.classList.remove(settings.rotateClass);
     },
 
-    openAndCloseSelect () {
+    openAndCloseSelect() {
         settings.selectOptionsElement.classList.toggle(settings.noDisplayClass);
         settings.languagesSponsorsImgElement.classList.toggle(settings.rotateClass);
     },
 
     /*Burger Menu*/
 
-    openAndCloseBurgerMenu (e) {
+    openAndCloseBurgerMenu(e) {
         settings.navListElement.classList.toggle(settings.removeNoDisplayClass);
         e.currentTarget.classList.toggle(settings.disappearedMiddleLineClass);
     }

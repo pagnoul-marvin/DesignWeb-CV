@@ -26,6 +26,10 @@
     display: flex;
 }
 
+#nav_list, #nav_list ul, #services #flex_container, #services_list, #languages_sponsors, #article_hover > li ul#summary {
+    justify-content: space-between;
+}
+
 #article_hover > li ul#summary, #nav_list ul {
     flex-direction: column;
 }
@@ -193,7 +197,6 @@ header, #informations p, #article_hover > li:last-child ul li a, form input[type
     flex-grow: 1;
     align-items: center;
     margin-left: 4em;
-    justify-content: space-between;
 }
 
 #nav_list img, #languages_sponsors img {
@@ -240,7 +243,6 @@ header, #informations p, #article_hover > li:last-child ul li a, form input[type
     background-color: #282B35;
     gap: 1.3em;
     text-transform: none;
-    justify-content: space-between;
     border-radius: 0.66em;
     text-align: left;
     border-top: 4px solid #FAE09F;
@@ -290,10 +292,8 @@ img#skills {
     height: 100% !important;
 }
 
-
 #services #flex_container {
     display: flex;
-    justify-content: space-between;
 }
 
 #informations {
@@ -330,7 +330,6 @@ main {
 }
 
 #services_list {
-    justify-content: space-between;
     gap: 0.5em;
 }
 
@@ -372,7 +371,7 @@ main {
 }
 
 #competences_list {
-    justify-content: space-around;
+    justify-content: space-evenly;
     border-radius: 0.625em;
     border: 1px solid #293033;
     margin: 0 4.6875em 4.6875em 4.6875em;
@@ -380,9 +379,13 @@ main {
     min-height: 4.6875em;
 }
 
+#competences_list > li {
+    flex-grow: 1;
+    text-align: center;
+}
+
 #competences_list > li:not(:last-child) {
-    padding-right: 9.375em;
-    border-right: 1px solid #262C2F;
+    border-right: 1px solid #273134;
 }
 
 div#skills_image {
@@ -552,7 +555,6 @@ footer {
     margin-top: 2.5em;
     margin-bottom: 4em;
     width: 65%;
-    justify-content: space-between;
 }
 
 #language_chosen, #languages {
@@ -727,7 +729,6 @@ footer {
 }
 
 #article_hover > li ul#summary {
-    justify-content: space-between;
     min-height: 11.67em
 }
 
@@ -982,7 +983,7 @@ form input[type='submit'] {
     }
 
     #formations nav, #langages nav {
-        margin: 1.875em 4.6875em;
+        margin: 1.875em 4.6875em 0 4.6875em;
     }
 
     #formations #first_slider > li:not(:last-child), #langages #second_slider > li:not(:last-child) {
@@ -1018,7 +1019,7 @@ form input[type='submit'] {
         max-width: 100vh;
     }
 
-    #competences #skills_image, #competences_text {
+    #competences #skills_image {
         position: initial;
     }
 
@@ -1057,7 +1058,11 @@ form input[type='submit'] {
         text-align: center;
     }
 
-    #competences_list li:not(:last-child) {
+    main #services {
+        margin: 5em 2em 0 2em;
+    }
+
+    #competences #competences_list li:not(:last-child) {
         border-bottom: 1px solid #262C2F;
         border-right-style: none;
         padding: 0 0 2em 0;
@@ -1065,18 +1070,6 @@ form input[type='submit'] {
 
     img#skills {
         margin-top: 2em;
-    }
-
-    #competences_text {
-        padding: 0;
-        background-color: transparent;
-        text-align: left;
-        margin: 2em 0 0 0;
-        max-width: 100%;
-    }
-
-    #competences_text p {
-        margin: 1.25em 0;
     }
 
     #formations, #langages {
@@ -1143,6 +1136,7 @@ form input[type='submit'] {
 }
 
 @media (width <=1175px) {
+
     #services, #informations {
         padding: 0;
     }
@@ -1159,6 +1153,27 @@ form input[type='submit'] {
         height: auto;
         width: 100%;
         margin-bottom: 2em;
+    }
+
+    #competences {
+        margin-bottom: 5em;
+    }
+
+    #formations {
+        margin-bottom: 5em;
+    }
+
+    #competences_text {
+        padding: 0;
+        background-color: transparent;
+        text-align: left;
+        margin: 2em 0 0 0;
+        max-width: 100%;
+        position: initial;
+    }
+
+    #competences_text p {
+        margin: 1.25em 0;
     }
 
     #informations {

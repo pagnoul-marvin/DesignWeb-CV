@@ -56,6 +56,7 @@ export const settings = {
     selectJsEnabledImgElement : document.querySelector('#select_js_enabled img'),
     burgerMenuElement : document.getElementById('burger_menu'),
     navListElement : document.getElementById('nav_list'),
+    navListAElement : document.querySelectorAll('#nav_list ul li a'),
     noDisplayClass : 'no_display',
     removeNoDisplayClass : 'remove_no_display',
     activeServiceClass : 'active_service',
