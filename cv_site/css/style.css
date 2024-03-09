@@ -118,6 +118,10 @@ header, #informations p, #article_hover > li:last-child ul li a, form input[type
     width: 100%;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 #main_nav {
     font-size: 0.9275em;
     align-items: center;
@@ -671,6 +675,7 @@ footer {
     max-width: 40em;
     padding: 1.875em;
     min-height: 100vh;
+    transition: 0.5s ease-in-out;
 }
 
 #hobbies h2 {
