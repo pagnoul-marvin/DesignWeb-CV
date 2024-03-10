@@ -3,9 +3,9 @@ import {settings} from "./settings";
 const myCurriculumVitae = {
 
     init() {
-        settings.noJsMessageElement.classList.add('no_display');
-        settings.selectJsEnabledElement.classList.remove('no_display');
-        settings.languagesElement.classList.add('no_display');
+        settings.noJsMessageElement.classList.add(settings.noDisplayClass);
+        settings.selectJsEnabledElement.classList.remove(settings.noDisplayClass);
+        settings.languagesElement.classList.add(settings.noDisplayClass);
         this.addEventListeners();
     },
 

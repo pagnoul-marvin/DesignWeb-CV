@@ -245,7 +245,7 @@ html {
 
 #nav_list ul::before {
     padding: 0 6em;
-    content: url(../img/icons/flèche_jaune.svg);
+    content: url(../assets/icons/flèche_jaune.svg);
     top: -1em;
 }
 
@@ -454,7 +454,7 @@ div#skills_image {
     padding: 0.625em 3.125em;
     width: 12.5em;
     text-align: center;
-    background-image: url(../img/ref/play.svg);
+    background-image: url(../assets/ref/play.svg);
     background-position: 3.125em;
     font-size: 1em;
 }
@@ -517,7 +517,7 @@ h3 {
 }
 
 #langages nav #second_slider_previous, #formations nav #first_slider_previous {
-    background-image: url(../img/icons/fleche_noire_previous.svg);
+    background-image: url(../assets/icons/fleche_noire_previous.svg);
     left: -2em;
     background-position: 0.625em center;
 }
@@ -525,7 +525,7 @@ h3 {
 #langages nav #second_slider_next, #formations nav #first_slider_next {
     background-position: 1em center;
     right: 4.5em;
-    background-image: url(../img/icons/fleche_noire_next.svg);
+    background-image: url(../assets/icons/fleche_noire_next.svg);
 }
 
 #formations nav #first_slider_next:hover, #formations nav #first_slider_previous:hover, #langages nav #second_slider_previous:hover, #langages nav #second_slider_next:hover {
@@ -594,15 +594,15 @@ footer {
 }
 
 #facebook {
-    background-image: url(../img/ref/facebook.svg);
+    background-image: url(../assets/ref/facebook.svg);
 }
 
 #github {
-    background-image: url(../img/ref/github.svg);
+    background-image: url(../assets/ref/github.svg);
 }
 
 #instagram {
-    background-image: url(../img/ref/instagram.svg);
+    background-image: url(../assets/ref/instagram.svg);
 }
 
 #languages_sponsors {
@@ -660,12 +660,12 @@ footer {
 }
 
 #alsacreations {
-    background-image: url(../img/ref/alsacreations.svg);
+    background-image: url(../assets/ref/alsacreations.svg);
     width: 14.07em;
 }
 
 #lmstudio {
-    background-image: url(../img/ref/lmstudio.svg);
+    background-image: url(../assets/ref/lmstudio.svg);
     width: 11em;
 }
 
