@@ -7,8 +7,8 @@
 	.st1{fill:#EC6629;}
 	.st2{fill:none;stroke:#000000;stroke-miterlimit:10;}
 </style>
-<rect x="-30" y="-20" class="st0" width="500" height="300"/>
-<image style="overflow:visible;enable-background:new    ;" width="1196" height="1198" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABKwAAASwCAYAAADWs9KpAAAACXBIWXMAAF0KAABdCgGXd+jcAAAg
+	<rect x="-30" y="-20" class="st0" width="500" height="300"/>
+	<image style="overflow:visible;enable-background:new    ;" width="1196" height="1198" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABKwAAASwCAYAAADWs9KpAAAACXBIWXMAAF0KAABdCgGXd+jcAAAg
 AElEQVR4nOzde8xu2V0f9t/e+zlnZuy5HF8yY2Uwl8SUooBURFy1VZW0oqpCJJLmn0D6V2tzCTGu
 CBgCJgnGIbFRwUBqC0OSNpGoMrEUtTFKrGBAlho14mLcmkBwwXRCGRufy5z3cu7nWWv1jzmOj8dn
 7/M+z/s879qXz0cayRrOvO9Xg72eZ333Wr/dBDALXbe6GhEXaufYsVsprR+rHWIXum71TRHxj2vn
@@ -697,8 +697,8 @@ AFAkFFYAAKDyjg+tvzn3enLq9NUzkm6f5whBXu97U8u8Wmf6Gm9t+PUH6TxnAAAAKA0KKwAAUDs9
 sAIAAJjG2PMrk/TcDT+yxD/tgp6WtFbSm9651yzJX1/5wsEjsTMCAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAABE8v8BjsTERbpCerMAAAAASUVORK5CYII=" transform="matrix(0.1191 0 0 0.1191 148.7754 32)">
 </image>
-<path class="st1" d="M304,198.1H123.1c-7.4,0-13.5,6.1-13.5,13.5l0,0c0,7.4,6.1,13.5,13.5,13.5H304c7.4,0,13.5-6.1,13.5-13.5l0,0
+	<path class="st1" d="M304,198.1H123.1c-7.4,0-13.5,6.1-13.5,13.5l0,0c0,7.4,6.1,13.5,13.5,13.5H304c7.4,0,13.5-6.1,13.5-13.5l0,0
 	C317.5,204.2,311.5,198.1,304,198.1z"/>
-<path class="st2" d="M317.5,198.1h-195c-7.4,0-13.5,6.1-13.5,13.5l0,0c0,7.4,6.1,13.5,13.5,13.5h194.9c7.4,0,13.5-6.1,13.5-13.5l0,0
+	<path class="st2" d="M317.5,198.1h-195c-7.4,0-13.5,6.1-13.5,13.5l0,0c0,7.4,6.1,13.5,13.5,13.5h194.9c7.4,0,13.5-6.1,13.5-13.5l0,0
 	C331,204.2,324.9,198.1,317.5,198.1z"/>
 </svg>

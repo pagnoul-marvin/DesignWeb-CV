@@ -7,9 +7,9 @@
 	.st1{fill:#F0BE24;}
 	.st2{fill:none;stroke:#000000;stroke-miterlimit:10;}
 </style>
-<g>
+	<g>
 	<rect x="-30" y="-20" class="st0" width="500" height="300"/>
-	
+
 		<image style="overflow:visible;enable-background:new    ;" width="2793" height="1750" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAACuUAAAbWCAYAAACvWCirAAAACXBIWXMAAIhpAACIaQElfnZ1AAAg
 AElEQVR4nOzdP3JbybnG4ZasGirqk91gAq1jgsPAC3AE1oQOvAIshWtwZheRzAYcEIEXcKsmd2hx
 gtPRpRPdgIdjjIZ/RDaIr0+f50kAVqmotwoAox8/pgQAAAAAAAAAAAAAAAAAAAAAAAAAAACR3kUP
@@ -963,9 +963,9 @@ XAAAAACAPagb6Sa3V3CbEuECAAAAAHSDKBcAAAAA4ADui3SbEOECAAAAAHSTKBcAAAAAoAXLSDdZ
 F+qKcAEAAAAA+kGUCwAAAADQETeh7pIIFwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAqOf/AEQL
 F0FF12+NAAAAAElFTkSuQmCC" transform="matrix(8.116371e-02 0 0 8.116371e-02 106.655 29.9635)">
 	</image>
-	<path class="st1" d="M298.5,198.1H117.6c-7.4,0-13.5,6.1-13.5,13.5l0,0c0,7.4,6.1,13.5,13.5,13.5h180.9c7.4,0,13.5-6.1,13.5-13.5
+		<path class="st1" d="M298.5,198.1H117.6c-7.4,0-13.5,6.1-13.5,13.5l0,0c0,7.4,6.1,13.5,13.5,13.5h180.9c7.4,0,13.5-6.1,13.5-13.5
 		l0,0C312,204.2,305.9,198.1,298.5,198.1z"/>
-	<path class="st2" d="M312.5,198.1H117.6c-7.4,0-13.5,6.1-13.5,13.5l0,0c0,7.4,6.1,13.5,13.5,13.5h194.9c7.4,0,13.5-6.1,13.5-13.5
+		<path class="st2" d="M312.5,198.1H117.6c-7.4,0-13.5,6.1-13.5,13.5l0,0c0,7.4,6.1,13.5,13.5,13.5h194.9c7.4,0,13.5-6.1,13.5-13.5
 		l0,0C326,204.2,320,198.1,312.5,198.1z"/>
 </g>
 </svg>

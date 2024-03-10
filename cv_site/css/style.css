@@ -836,6 +836,10 @@ form p {
     font-size: 1.33em;
 }
 
+#second_slider img {
+    object-fit: cover;
+}
+
 #article_hover > li:last-child ul li a {
     border-radius: 0.67em;
     -moz-border-radius: 0.67em;
@@ -1091,16 +1095,13 @@ form input[type='submit'] {
                              "helmo secondaire";
         grid-gap: 1.25em;
     }
+
     #hepl img, #helmo img, #formation img, #secondaire img {
         object-fit: cover;
     }
 
     #formations #first_slider > li {
         min-width: 100px;
-    }
-
-    #html img, #css img, #php img, #javascript img {
-        object-fit: cover;
     }
 }
 
