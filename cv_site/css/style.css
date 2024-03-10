@@ -24,7 +24,7 @@
 
 #main_nav, #banner, #nav_list, #nav_list ul, #services_list, #competences_list, #formations #first_slider, #langages #second_slider, #socials, #sponsors, #languages_sponsors, #article_hover > li ul#summary, .toggle, #services #flex_container {
     display: flex;
-    display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
 }
 
@@ -1070,6 +1070,10 @@ form input[type='submit'] {
 
     #nav_list ul:before {
         content: '';
+    }
+
+    #formations {
+        margin-bottom: 5em;
     }
 
     #formations nav, #langages nav {
