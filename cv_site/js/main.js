@@ -11,25 +11,21 @@ const myCurriculumVitae = {
 
     addEventListeners() {
 
-        if (window.innerWidth > 1500) {
-            settings.navListLiElements.forEach(liElt => {
+        settings.navListLiElements.forEach(liElt=>{
+            if (window.innerWidth > 1500) {
                 liElt.addEventListener('mouseover', (e) => {
                     this.mainNavHover(e);
                 });
-            });
 
-            settings.navListLiElements.forEach(liElt => {
                 liElt.addEventListener('mouseout', (e) => {
                     this.mainNavHoverOut(e);
                 });
-            });
-        } else {
-            settings.navListLiElements.forEach(liElt => {
+            } else {
                 liElt.addEventListener('click', (e) => {
                     this.mainNavClick(e);
                 });
-            });
-        }
+            }
+        });
 
         settings.servicesListLiElements.forEach(liElt => {
             liElt.addEventListener('click', (e) => {
@@ -299,7 +295,7 @@ const myCurriculumVitae = {
         } else if (settings.fourthNavListItemElement.classList.contains(settings.activeDropdownClass)) {
             this.fourthNavListItemClick();
         } else {
-            this.fifthNavListItemClick();
+            this.firstNavListItemClick();
         }
         settings.fifthDropdownElement.classList.toggle(settings.noDisplayClass);
         settings.navFifthArrowElement.classList.toggle(settings.rotateClass);
