@@ -35,7 +35,7 @@ const myCurriculumVitae = {
 
         settings.buttonElements.forEach(btnElt => {
             btnElt.addEventListener('click', (e) => {
-                this.hobbiesSection(e);
+                this.slidersSection(e);
             });
         });
 
@@ -409,7 +409,7 @@ const myCurriculumVitae = {
 
     /*Hobbies Section*/
 
-    hobbiesSection(e) {
+    slidersSection(e) {
         if (e.currentTarget.id === settings.firstSliderPreviousId) {
             this.previousSlide();
             settings.firstSliderElement.style.left = `${settings.pourcentage}px`;
