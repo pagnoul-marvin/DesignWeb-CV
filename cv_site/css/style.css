@@ -139,7 +139,7 @@ html {
 }
 
 #no_js_message {
-    margin-top: 3.90em;
+    margin-top: 3.45em;
 }
 
 #no_js_message #banner {
@@ -320,7 +320,7 @@ img#skills {
     align-self: center;
 }
 
-#gender {
+#jobTitle {
     color: #B4BAC9;
     margin-bottom: 0.15em;
     font-size: 0.75em;
