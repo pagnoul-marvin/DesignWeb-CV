@@ -10,9 +10,8 @@ const myCurriculumVitae = {
     },
 
     addEventListeners() {
-
-        settings.navListLiElements.forEach(liElt=>{
-            if (window.innerWidth > 1500) {
+        settings.navListLiElements.forEach(liElt => {
+            if (window.innerWidth > 750) {
                 liElt.addEventListener('mouseover', (e) => {
                     this.mainNavHover(e);
                 });
@@ -20,7 +19,7 @@ const myCurriculumVitae = {
                 liElt.addEventListener('mouseout', (e) => {
                     this.mainNavHoverOut(e);
                 });
-            } else {
+            } else if (window.innerWidth <= 750) {
                 liElt.addEventListener('click', (e) => {
                     this.mainNavClick(e);
                 });
@@ -81,11 +80,11 @@ const myCurriculumVitae = {
             this.openAndCloseSelect();
         });
 
-        if (window.innerWidth <= 1500) {
-            settings.burgerMenuElement.addEventListener('click', (e) => {
-                this.openAndCloseBurgerMenu(e);
-            });
-        }
+
+        settings.burgerMenuElement.addEventListener('click', (e) => {
+            this.openAndCloseBurgerMenu(e);
+        });
+
 
         if (window.innerWidth > 750) {
             settings.firstOverlayElement.addEventListener('click', () => {
@@ -395,7 +394,7 @@ const myCurriculumVitae = {
         if (settings.pourcentage === settings.maxPourcentage) {
             settings.pourcentage = settings.minPourcentage;
         } else {
-            settings.pourcentage -= 460;
+            settings.pourcentage -= settings.slidePourcentage;
         }
     },
 
@@ -403,7 +402,7 @@ const myCurriculumVitae = {
         if (settings.pourcentage === settings.minPourcentage) {
             settings.pourcentage = settings.maxPourcentage;
         } else {
-            settings.pourcentage += 460;
+            settings.pourcentage += settings.slidePourcentage;
         }
     },
 

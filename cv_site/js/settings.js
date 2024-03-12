@@ -1,6 +1,7 @@
 export const settings = {
+    slidePourcentage : document.getElementById('html').offsetWidth,
     pourcentage : 0,
-    maxPourcentage : -460,
+    maxPourcentage : 0 -  document.getElementById('html').offsetWidth,
     minPourcentage : 0,
     articleNumber : 0,
     wwwElement : document.getElementById('www'),
