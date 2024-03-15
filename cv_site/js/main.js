@@ -3,10 +3,24 @@ import {settings} from "./settings";
 const myCurriculumVitae = {
 
     init() {
+        this.noJs();
+        this.addEventListeners();
+    },
+
+    noJs() {
         settings.noJsMessageElement.classList.add(settings.noDisplayClass);
         settings.selectJsEnabledElement.classList.remove(settings.noDisplayClass);
         settings.languagesElement.classList.add(settings.noDisplayClass);
-        this.addEventListeners();
+        settings.mainNavElement.classList.remove(settings.noJsMainNavClass);
+        settings.navListElement.classList.remove(settings.noJsNavClass);
+        settings.articleNumberElement.classList.remove(settings.noJsArticleNumberClass);
+        settings.lastItemElement.classList.remove(settings.noJsRelativeClass);
+        settings.arrowElements.forEach(arrowElt => {
+            arrowElt.classList.remove(settings.noJsArrowClass);
+        });
+        settings.dropdownElements.forEach(dropdownElt=>{
+            dropdownElt.classList.remove(settings.noJsDropdownClass);
+        });
     },
 
     addEventListeners() {

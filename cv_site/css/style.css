@@ -139,7 +139,7 @@ html {
 }
 
 #no_js_message {
-    margin-top: 3.45em;
+    margin-top: 13em;
 }
 
 #no_js_message #banner {
@@ -289,6 +289,56 @@ html {
 
 #nav_list ul li a:hover {
     text-decoration: underline;
+}
+
+#main_nav.no-js-main-nav {
+    padding: 2em 4.6875em;
+    justify-content: stretch;
+}
+
+#main_nav .no-js-nav {
+    align-items: stretch;
+    justify-content: space-between;
+    text-align: center;
+    flex-shrink: 1;
+}
+
+#last_item.no-js-relative {
+    position: relative;
+}
+
+#article_number.no-js-article-number {
+    top: 1em;
+    right: 0.7em;
+}
+
+#main_nav .no-js-nav>li {
+    padding: 0;
+    cursor: initial;
+}
+
+#main_nav .no-js-nav>li:hover {
+    background-color: transparent;
+}
+
+.arrow {
+    display: none;
+}
+
+#nav_list .no-js-dropdown {
+    position: initial;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    z-index: initial;
+    padding: 0;
+    margin-top: 1em;
+    justify-content: stretch;
+    text-align: center;
+}
+
+#nav_list .no-js-dropdown:before {
+    content: none;
 }
 
 #services {
@@ -820,6 +870,10 @@ legend {
     margin-bottom: 0.67em;
 }
 
+footer ul#grid_container li a, footer ul#grid_container li span {
+    white-space: nowrap;
+}
+
 #article_hover form {
     margin-top: 3.3em;
 }
@@ -1140,7 +1194,7 @@ form input[type='submit'] {
         position: initial;
     }
 
-    #competences_list li, #site_explanation {
+    #competences_list li {
         width: 100%;
     }
 
@@ -1227,7 +1281,6 @@ form input[type='submit'] {
                              "formations adress"
                              "languages ."
                              "softskills .";
-        grid-column-gap: 5em;
         grid-row-gap: 1em;
     }
 
@@ -1332,5 +1385,9 @@ form input[type='submit'] {
         margin-left: 1em;
         margin-right: 1em;
         padding-right: 1em;
+    }
+
+    footer ul#grid_container li a, footer ul#grid_container li span {
+        white-space: normal;
     }
 }
