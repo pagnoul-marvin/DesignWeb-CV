@@ -77,6 +77,7 @@ export const settings = {
     noJsDropdownClass: 'no-js-dropdown',
     noJsArrowClass: 'arrow',
     noJsHeaderPositionClass: 'no-js-position',
+    noJsSlideClass : 'no-js-slide',
     wwwId : 'www',
     pencilId : 'pencil',
     responsiveId : 'responsive',

@@ -19,8 +19,8 @@
 		<nav id="main_nav" class="no-js-main-nav">
 
 			<h1 class="hidden">Navigation principale</h1>
-			<input type="checkbox" id="menu_toggle"/>
-			<label id="burger_menu" class="no_display menu__btn" for="menu_toggle">
+			<input type="checkbox" id="menu__toggle"/>
+			<label id="burger_menu" class="no_display menu__btn" for="menu__toggle">
 				<span></span>
 			</label>
 
@@ -196,7 +196,7 @@
 
 				<h2 class="hidden">Slider de mes formations</h2>
 
-				<ul id="first_slider">
+				<ul id="first_slider" class="no-js-slide">
 
 					<li id="hepl">
 
@@ -287,7 +287,7 @@
 
 				<h2 class="hidden">Slider de mes langages ma&icirc;tris&eacute;s</h2>
 
-				<ul id="second_slider">
+				<ul id="second_slider" class="no-js-slide">
 
 					<li>
 
@@ -517,10 +517,10 @@
 				</div>
 			</div>
 
-			<ul id="sponsors">
+			<ul id="sponsors" itemscope itemtype="https://schema.org/Organization">
 
-				<li><a id="alsacreations" title="Aller vers le site d'Alsacréations" href="https://www.alsacreations.com/" hreflang="fr">Alsacr&eacute;ations</a></li>
-				<li><a id="lmstudio" title="Aller vers le site de LM Studio" href="https://www.lmstudio.be/" hreflang="fr">LM Studio</a></li>
+				<li><span itemprop="funder"><a id="alsacreations" title="Aller vers le site d'Alsacréations" href="https://www.alsacreations.com/" hreflang="fr">Alsacr&eacute;ations</a></span></li>
+				<li><span itemprop="funder"><a id="lmstudio" title="Aller vers le site de LM Studio" href="https://www.lmstudio.be/" hreflang="fr">LM Studio</a></span></li>
 
 			</ul>
 		</div>

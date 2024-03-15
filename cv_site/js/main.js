@@ -16,6 +16,8 @@ const myCurriculumVitae = {
         settings.articleNumberElement.classList.remove(settings.noJsArticleNumberClass);
         settings.lastItemElement.classList.remove(settings.noJsRelativeClass);
         settings.headerElement.classList.remove(settings.noJsHeaderPositionClass);
+        settings.firstSliderElement.classList.remove(settings.noJsSlideClass);
+        settings.secondSliderElement.classList.remove(settings.noJsSlideClass);
         settings.arrowElements.forEach(arrowElt => {
             arrowElt.classList.remove(settings.noJsArrowClass);
         });
