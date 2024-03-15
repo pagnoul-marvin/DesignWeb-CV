@@ -14,15 +14,15 @@
 
 	<h1 class="hidden">Curciculum vitae</h1>
 
-	<header>
+	<header class="no-js-position">
 
 		<nav id="main_nav" class="no-js-main-nav">
 
 			<h1 class="hidden">Navigation principale</h1>
-
-			<div id="burger_menu" class="no_display">
+			<input type="checkbox" id="menu_toggle"/>
+			<label id="burger_menu" class="no_display menu__btn" for="menu_toggle">
 				<span></span>
-			</div>
+			</label>
 
 			<img id="logo" src="assets/icons/logo.svg" alt="Logo du site" width="40" height="40">
 			<img id="secondlogo" src="assets/icons/logo2.svg" alt="Logo de mon prénom avec un cheval à côté" width="118" height="40">
@@ -36,7 +36,7 @@
 					Mes services
 					<img class="arrow" id="nav_first_arrow" src="assets/icons/fleche.svg" alt="Une croix blanche" width="16" height="10">
 
-					<ul class="no-js-dropdown no_display" id="first_dropdown">
+					<ul class="no-js-dropdown" id="first_dropdown">
 						<li><a title="Aller vers la section de mes services" href="#choice" hreflang="fr">Cr&eacute;er un site web</a></li>
 						<li><a title="Aller vers la section de mes services" href="#choice" hreflang="fr">Cr&eacute;er un design</a></li>
 						<li><a title="Aller vers la section de mes services" href="#choice" hreflang="fr">R&eacute;aliser du responsive web design</a></li>
@@ -49,7 +49,7 @@
 					Mes comp&eacute;tences
 					<img class="arrow" id="nav_second_arrow" src="assets/icons/fleche.svg" alt="Une croix blanche" width="16" height="10">
 
-					<ul  class="no-js-dropdown no_display" id="second_dropdown">
+					<ul  class="no-js-dropdown" id="second_dropdown">
 						<li><a title="Aller vers la section de mes compétences" href="#competences" hreflang="fr"><abbr lang="en" title="User Interface">UI</abbr></a></li>
 						<li><a title="Aller vers la section de mes compétences" href="#competences" hreflang="fr"><abbr lang="en" title="User EXperience">UX</abbr></a></li>
 						<li><a title="Aller vers la section de mes compétences" href="#competences" hreflang="fr">Front&ndash;End</a></li>
@@ -62,7 +62,7 @@
 					Mes formations
 					<img class="arrow" id="nav_third_arrow" src="assets/icons/fleche.svg" alt="Une croix blanche" width="16" height="10">
 
-					<ul class="no-js-dropdown no_display" id="third_dropdown">
+					<ul class="no-js-dropdown" id="third_dropdown">
 						<li><a title="Aller vers la section de mes formations" href="#formations" hreflang="fr">&Eacute;tudes sup&eacute;rieures :&nbsp;<abbr title="Haute Ecole de la Province de Liège">HEPL</abbr>, Seraing</a></li>
 						<li><a title="Aller vers la section de mes formations" href="#formations" hreflang="fr">Formation en ligne :&nbsp;<abbr lang="fr" title="Deux Dimensions">2D</abbr></a></li>
 						<li><a title="Aller vers la section de mes formations" href="#formations" hreflang="fr">&Eacute;tudes sup&eacute;rieures :&nbsp;Sainte&ndash;Croix, Li&egrave;ge</a></li>
@@ -76,7 +76,7 @@
 					Mes langages maîtris&eacute;s
 					<img class="arrow" id="nav_fourth_arrow" src="assets/icons/fleche.svg" alt="Une croix blanche" width="16" height="10">
 
-					<ul class="no-js-dropdown no_display" id="fourth_dropdown">
+					<ul class="no-js-dropdown" id="fourth_dropdown">
 						<li><a title="Aller vers la section de mes langages maîtrisés" href="#langages" hreflang="fr"><abbr lang="en" title="Hyper Text Markup Language">HTML</abbr></a></li>
 						<li><a title="Aller vers la section de mes langages maîtrisés" href="#langages" hreflang="fr"><abbr lang="en" title="Cascading Style Sheet">CSS</abbr></a></li>
 						<li><a title="Aller vers la section de mes langages maîtrisés" href="#langages" hreflang="fr">JavaScript</a></li>
@@ -89,7 +89,7 @@
 					Mes soft skills
 					<img class="arrow" id="nav_fifth_arrow" src="assets/icons/fleche.svg" alt="Une croix blanche" width="16" height="10">
 
-					<ul class="no-js-dropdown no_display" id="fifth_dropdown">
+					<ul class="no-js-dropdown" id="fifth_dropdown">
 						<li><a title="Aller vers la section de mes soft skills" href="#soft_skills" hreflang="fr">Cr&eacute;ativit&eacute;</a></li>
 						<li><a title="Aller vers la section de mes soft skills" href="#soft_skills" hreflang="fr">Recherche</a></li>
 						<li><a title="Aller vers la section de mes soft skills" href="#soft_skills" hreflang="fr">Organisation</a></li>
@@ -545,6 +545,6 @@
 		</ul>
 
 	</footer>
-	<script type="module" src="./js/main.js"></script>
+	<!--<script type="module" src="./js/main.js"></script>!-->
 </body>
 </html>

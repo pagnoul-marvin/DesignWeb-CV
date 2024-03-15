@@ -15,11 +15,13 @@ const myCurriculumVitae = {
         settings.navListElement.classList.remove(settings.noJsNavClass);
         settings.articleNumberElement.classList.remove(settings.noJsArticleNumberClass);
         settings.lastItemElement.classList.remove(settings.noJsRelativeClass);
+        settings.headerElement.classList.remove(settings.noJsHeaderPositionClass);
         settings.arrowElements.forEach(arrowElt => {
             arrowElt.classList.remove(settings.noJsArrowClass);
         });
         settings.dropdownElements.forEach(dropdownElt=>{
             dropdownElt.classList.remove(settings.noJsDropdownClass);
+            dropdownElt.classList.add(settings.noDisplayClass);
         });
     },
 
