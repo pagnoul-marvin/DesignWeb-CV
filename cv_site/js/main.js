@@ -13,14 +13,23 @@ const myCurriculumVitae = {
         settings.languagesElement.classList.add(settings.noDisplayClass);
         settings.mainNavElement.classList.remove(settings.noJsMainNavClass);
         settings.navListElement.classList.remove(settings.noJsNavClass);
-        settings.articleNumberElement.classList.remove(settings.noJsArticleNumberClass);
         settings.lastItemElement.classList.remove(settings.noJsRelativeClass);
         settings.headerElement.classList.remove(settings.noJsHeaderPositionClass);
         settings.firstSliderElement.classList.remove(settings.noJsSlideClass);
         settings.secondSliderElement.classList.remove(settings.noJsSlideClass);
+        settings.hobbiesListElement.classList.remove(settings.noJsHobbiesListClass);
+        settings.secondCloseELement.classList.remove(settings.noJsCloseClass);
+        settings.hobbiesButtonElement.classList.remove(settings.noJsHobbiesButtonClass);
+        settings.noJsBasketElement.classList.remove(settings.noJsBasketClass);
+        settings.contactElement.href = '#article_hover';
+        settings.hobbiesTitleElement.forEach(titleElement =>{
+            titleElement.classList.remove(settings.noJsTitleClass);
+        });
+
         settings.arrowElements.forEach(arrowElt => {
             arrowElt.classList.remove(settings.noJsArrowClass);
         });
+
         settings.dropdownElements.forEach(dropdownElt=>{
             dropdownElt.classList.remove(settings.noJsDropdownClass);
             dropdownElt.classList.add(settings.noDisplayClass);
@@ -97,12 +106,6 @@ const myCurriculumVitae = {
         settings.selectJsEnabledImgElement.addEventListener('click', () => {
             this.openAndCloseSelect();
         });
-
-
-        settings.burgerMenuElement.addEventListener('click', (e) => {
-            this.openAndCloseBurgerMenu(e);
-        });
-
 
         if (window.innerWidth > 750) {
             settings.firstOverlayElement.addEventListener('click', () => {
@@ -248,7 +251,7 @@ const myCurriculumVitae = {
         if (settings.secondNavListItemElement.classList.contains(settings.activeDropdownClass)) {
             this.secondNavListItemClick();
         } else if (settings.firstNavListItemElement.classList.contains(settings.activeDropdownClass)) {
-            this.fifthNavListItemClick();
+            this.firstNavListItemClick();
         } else if (settings.fourthNavListItemElement.classList.contains(settings.activeDropdownClass)) {
             this.fourthNavListItemClick();
         } else {
@@ -322,7 +325,6 @@ const myCurriculumVitae = {
 
     closeNavList() {
         settings.navListElement.classList.remove(settings.removeNoDisplayClass);
-        settings.burgerMenuElement.classList.remove(settings.disappearedMiddleLineClass);
     },
 
     /*Services Section*/
@@ -520,13 +522,6 @@ const myCurriculumVitae = {
     openAndCloseSelect() {
         settings.selectOptionsElement.classList.toggle(settings.noDisplayClass);
         settings.languagesSponsorsImgElement.classList.toggle(settings.rotateClass);
-    },
-
-    /*Burger Menu*/
-
-    openAndCloseBurgerMenu(e) {
-        settings.navListElement.classList.toggle(settings.removeNoDisplayClass);
-        e.currentTarget.classList.toggle(settings.disappearedMiddleLineClass);
     }
 }
 
