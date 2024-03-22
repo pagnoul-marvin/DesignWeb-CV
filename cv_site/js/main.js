@@ -1,208 +1,537 @@
-document.getElementById('no_js_message').classList.add('no_display');
+import {settings} from "./settings";
 
-const wwwElement = document.getElementById('www');
-const wwwImage = document.getElementById('www_image');
-const pencilElement = document.getElementById('pencil');
-const pencilImage = document.getElementById('pencil_image');
-const responsiveElement = document.getElementById('responsive');
-const responsiveImage = document.getElementById('responsive_image');
-const rankingElement = document.getElementById('ranking');
-const rankingImage = document.getElementById('ranking_image');
-const serviceTitle = document.getElementById('service_name');
-document.querySelectorAll('#services_list li').forEach(liElt => {
-    liElt.addEventListener('click', (e) => {
-        if (e.currentTarget.id === 'www') {
-            e.currentTarget.classList.add('active_service');
-            document.getElementById('www_image').src = './img/icons/www_active.svg';
-            if (pencilElement.classList.contains('active_service')) {
-                pencilElement.classList.remove('active_service');
-                pencilImage.src = './img/icons/design.svg';
-            } else if (responsiveElement.classList.contains('active_service')) {
-                responsiveElement.classList.remove('active_service');
-                responsiveImage.src = './img/icons/responsive.svg';
-            } else if (rankingElement.classList.contains('active_service')) {
-                rankingElement.classList.remove('active_service');
-                rankingImage.src = './img/icons/referencement.svg';
+const myCurriculumVitae = {
+
+    init() {
+        this.noJs();
+        this.addEventListeners();
+    },
+
+    noJs() {
+        settings.noJsMessageElement.classList.add(settings.noDisplayClass);
+        settings.selectJsEnabledElement.classList.remove(settings.noDisplayClass);
+        settings.languagesElement.classList.add(settings.noDisplayClass);
+        settings.mainNavElement.classList.remove(settings.noJsMainNavClass);
+        settings.navListElement.classList.remove(settings.noJsNavClass);
+        settings.lastItemElement.classList.remove(settings.noJsRelativeClass);
+        settings.headerElement.classList.remove(settings.noJsHeaderPositionClass);
+        settings.firstSliderElement.classList.remove(settings.noJsSlideClass);
+        settings.secondSliderElement.classList.remove(settings.noJsSlideClass);
+        settings.hobbiesListElement.classList.remove(settings.noJsHobbiesListClass);
+        settings.secondCloseELement.classList.remove(settings.noJsCloseClass);
+        settings.hobbiesButtonElement.classList.remove(settings.noJsHobbiesButtonClass);
+        settings.noJsBasketElement.classList.remove(settings.noJsBasketClass);
+        settings.contactElement.href = '#article_hover';
+        settings.hobbiesTitleElement.forEach(titleElement =>{
+            titleElement.classList.remove(settings.noJsTitleClass);
+        });
+
+        settings.arrowElements.forEach(arrowElt => {
+            arrowElt.classList.remove(settings.noJsArrowClass);
+        });
+
+        settings.dropdownElements.forEach(dropdownElt=>{
+            dropdownElt.classList.remove(settings.noJsDropdownClass);
+            dropdownElt.classList.add(settings.noDisplayClass);
+        });
+    },
+
+    addEventListeners() {
+        settings.navListLiElements.forEach(liElt => {
+            if (window.innerWidth > 750) {
+                liElt.addEventListener('mouseover', (e) => {
+                    this.mainNavHover(e);
+                });
+
+                liElt.addEventListener('focus', (e) => {
+                    this.mainNavHover(e);
+                });
+
+                liElt.addEventListener('mouseout', (e) => {
+                    this.mainNavHoverOut(e);
+                });
+
+                liElt.addEventListener('focusout', (e) => {
+                    this.mainNavHoverOut(e);
+                });
+
+            } else if (window.innerWidth <= 750) {
+                liElt.addEventListener('click', (e) => {
+                    this.mainNavClick(e);
+                });
             }
-        } else if (e.currentTarget.id === 'pencil') {
-            e.currentTarget.classList.add('active_service');
-            document.getElementById('pencil_image').src = './img/icons/design_active.svg';
-            if (wwwElement.classList.contains('active_service')) {
-                wwwElement.classList.remove('active_service');
-                wwwImage.src = './img/icons/www.svg';
-            } else if (responsiveElement.classList.contains('active_service')) {
-                responsiveElement.classList.remove('active_service');
-                responsiveImage.src = './img/icons/responsive.svg';
-            } else if (rankingElement.classList.contains('active_service')) {
-                rankingElement.classList.remove('active_service');
-                rankingImage.src = './img/icons/referencement.svg';
-            }
-        } else if (e.currentTarget.id === 'responsive') {
-            e.currentTarget.classList.add('active_service');
-            document.getElementById('responsive_image').src = './img/icons/responsive_active.svg';
-            if (pencilElement.classList.contains('active_service')) {
-                pencilElement.classList.remove('active_service');
-                pencilImage.src = './img/icons/design.svg';
-            } else if (wwwElement.classList.contains('active_service')) {
-                wwwElement.classList.remove('active_service');
-                wwwImage.src = './img/icons/www.svg';
-            } else if (rankingElement.classList.contains('active_service')) {
-                rankingElement.classList.remove('active_service');
-                rankingImage.src = './img/icons/referencement.svg';
-            }
-        } else {
-            e.currentTarget.classList.add('active_service');
-            document.getElementById('ranking_image').src = './img/icons/referencement_active.svg';
-            if (pencilElement.classList.contains('active_service')) {
-                pencilElement.classList.remove('active_service');
-                pencilImage.src = './img/icons/design.svg';
-            } else if (responsiveElement.classList.contains('active_service')) {
-                responsiveElement.classList.remove('active_service');
-                responsiveImage.src = './img/icons/responsive.svg';
-            } else if (wwwElement.classList.contains('active_service')) {
-                wwwElement.classList.remove('active_service');
-                wwwImage.src = './img/icons/www.svg';
-            }
+        });
+
+        settings.servicesListLiElements.forEach(liElt => {
+            liElt.addEventListener('click', (e) => {
+                this.servicesList(e);
+            });
+        });
+
+        settings.buttonElements.forEach(btnElt => {
+            btnElt.addEventListener('click', (e) => {
+                this.slidersSection(e);
+            });
+        });
+
+        settings.hobbiesButtonElement.addEventListener('click', () => {
+            this.openAndCloseHobbyPopUpFromHobbiesButton();
+        });
+
+        settings.secondCloseELement.addEventListener('click', () => {
+            this.closeHobbyPopUp();
+        });
+
+        settings.contactElement.addEventListener('click', (e) => {
+            this.openArticlePopUpFromContactButton(e);
+        });
+
+        settings.basketElement.addEventListener('click', () => {
+            this.openArticlePopUpFromBasket();
+        });
+
+        settings.firstCloseELement.addEventListener('click', () => {
+            this.closeArticlePopUp();
+        });
+
+        settings.deleteArticleElement.addEventListener('click', () => {
+            this.removeArticleFromBasket();
+        });
+
+        settings.backToServicesElement.addEventListener('click', () => {
+            this.goBackToTheServices();
+        });
+
+        settings.languageChosenElement.addEventListener('click', () => {
+            this.openAndCloseSelectForText();
+        });
+
+        settings.selectOptionsPElements.forEach(pElt => {
+            pElt.addEventListener('click', (e) => {
+                this.selectLanguage(e);
+            });
+        });
+
+        settings.selectJsEnabledImgElement.addEventListener('click', () => {
+            this.openAndCloseSelect();
+        });
+
+        if (window.innerWidth > 750) {
+            settings.firstOverlayElement.addEventListener('click', () => {
+                this.closeHobbyPopUp();
+            });
+
+            settings.secondOverlayELement.addEventListener('click', () => {
+                this.closeArticlePopUp();
+            });
         }
-        serviceTitle.textContent = e.currentTarget.dataset.name;
-        document.getElementById('contact').classList.add('a_service_is_active');
-    });
-});
 
-let pourcentage = 0;
-let maxPourcentage = -460;
-let minPourcentage = 0;
+        if (window.innerWidth <= 1500) {
+            settings.navListAElement.forEach(aElt => {
+                aElt.addEventListener('click', () => {
+                    this.closeNavList();
+                })
+            });
+        }
+    },
 
-function previousSlide() {
-    if (pourcentage === maxPourcentage) {
-        pourcentage = minPourcentage;
-    } else {
-        pourcentage -= 460;
+    /*Main nav*/
+
+    mainNavHover(e) {
+        if (e.currentTarget.id === settings.firstNavListItemId) {
+            this.firstNavListItemHover();
+        } else if (e.currentTarget.id === settings.secondNavListItemId) {
+            this.secondNavListItemHover();
+        } else if (e.currentTarget.id === settings.thirdNavListItemId) {
+            this.thirdNavListItemHover();
+        } else if (e.currentTarget.id === settings.fourthNavListItemId) {
+            this.fourthNavListItemHover();
+        } else {
+            this.fifthNavListItemHover();
+        }
+    },
+
+    mainNavHoverOut(e) {
+        if (e.currentTarget.id === settings.firstNavListItemId) {
+            this.firstNavListItemHoverOut();
+        } else if (e.currentTarget.id === settings.secondNavListItemId) {
+            this.secondNavListItemHoverOut();
+        } else if (e.currentTarget.id === settings.thirdNavListItemId) {
+            this.thirdNavListItemHoverOut();
+        } else if (e.currentTarget.id === settings.fourthNavListItemId) {
+            this.fourthNavListItemHoverOut();
+        } else {
+            this.fifthNavListHoverOut();
+        }
+    },
+
+    mainNavClick(e) {
+        if (e.currentTarget.id === settings.firstNavListItemId) {
+            this.firstNavListItemIsCurrentTarget();
+        } else if (e.currentTarget.id === settings.secondNavListItemId) {
+            this.secondNavListItemIsCurrentTarget();
+        } else if (e.currentTarget.id === settings.thirdNavListItemId) {
+            this.thirdNavListItemIsCurrentTarget();
+        } else if (e.currentTarget.id === settings.fourthNavListItemId) {
+            this.fourthNavListItemIsCurrentTarget();
+        } else {
+            this.fifthNavListItemIsCurrentTarget();
+        }
+        e.currentTarget.classList.toggle(settings.activeDropdownClass);
+    },
+
+    firstNavListItemHover() {
+        settings.firstDropdownElement.classList.remove(settings.noDisplayClass);
+        settings.navFirstArrowElement.classList.add(settings.rotateClass);
+    },
+
+    firstNavListItemHoverOut() {
+        settings.firstDropdownElement.classList.add(settings.noDisplayClass);
+        settings.navFirstArrowElement.classList.remove(settings.rotateClass);
+    },
+
+    firstNavListItemClick() {
+        settings.firstNavListItemElement.classList.remove(settings.activeDropdownClass);
+        settings.firstDropdownElement.classList.add(settings.noDisplayClass);
+        settings.navFirstArrowElement.classList.remove(settings.rotateClass);
+    },
+
+    firstNavListItemIsCurrentTarget() {
+        if (settings.secondNavListItemElement.classList.contains(settings.activeDropdownClass)) {
+            this.secondNavListItemClick();
+        } else if (settings.thirdNavListItemElement.classList.contains(settings.activeDropdownClass)) {
+            this.thirdNavListItemClick();
+        } else if (settings.fourthNavListItemElement.classList.contains(settings.activeDropdownClass)) {
+            this.fourthNavListItemClick();
+        } else {
+            this.fifthNavListItemClick();
+        }
+        settings.firstDropdownElement.classList.toggle(settings.noDisplayClass);
+        settings.navFirstArrowElement.classList.toggle(settings.rotateClass);
+    },
+
+    secondNavListItemHover() {
+        settings.secondDropdownElement.classList.remove(settings.noDisplayClass);
+        settings.navSecondArrowElement.classList.add(settings.rotateClass);
+    },
+
+    secondNavListItemHoverOut() {
+        settings.secondDropdownElement.classList.add(settings.noDisplayClass);
+        settings.navSecondArrowElement.classList.remove(settings.rotateClass);
+    },
+
+    secondNavListItemClick() {
+        settings.secondNavListItemElement.classList.remove(settings.activeDropdownClass);
+        settings.secondDropdownElement.classList.add(settings.noDisplayClass);
+        settings.navSecondArrowElement.classList.remove(settings.rotateClass);
+    },
+
+    secondNavListItemIsCurrentTarget() {
+        if (settings.firstNavListItemElement.classList.contains(settings.activeDropdownClass)) {
+            this.firstNavListItemClick();
+        } else if (settings.thirdNavListItemElement.classList.contains(settings.activeDropdownClass)) {
+            this.thirdNavListItemClick();
+        } else if (settings.fourthNavListItemElement.classList.contains(settings.activeDropdownClass)) {
+            this.fourthNavListItemClick();
+        } else {
+            this.fifthNavListItemClick();
+        }
+        settings.secondDropdownElement.classList.toggle(settings.noDisplayClass);
+        settings.navSecondArrowElement.classList.toggle(settings.rotateClass);
+    },
+
+    thirdNavListItemHover() {
+        settings.thirdDropdownElement.classList.remove(settings.noDisplayClass);
+        settings.navThirdArrowElement.classList.add(settings.rotateClass);
+    },
+
+    thirdNavListItemHoverOut() {
+        settings.thirdDropdownElement.classList.add(settings.noDisplayClass);
+        settings.navThirdArrowElement.classList.remove(settings.rotateClass);
+    },
+
+    thirdNavListItemClick() {
+        settings.thirdNavListItemElement.classList.remove(settings.activeDropdownClass);
+        settings.thirdDropdownElement.classList.add(settings.noDisplayClass);
+        settings.navThirdArrowElement.classList.remove(settings.rotateClass);
+    },
+
+    thirdNavListItemIsCurrentTarget() {
+        if (settings.secondNavListItemElement.classList.contains(settings.activeDropdownClass)) {
+            this.secondNavListItemClick();
+        } else if (settings.firstNavListItemElement.classList.contains(settings.activeDropdownClass)) {
+            this.firstNavListItemClick();
+        } else if (settings.fourthNavListItemElement.classList.contains(settings.activeDropdownClass)) {
+            this.fourthNavListItemClick();
+        } else {
+            this.fifthNavListItemClick();
+        }
+        settings.thirdDropdownElement.classList.toggle(settings.noDisplayClass);
+        settings.navThirdArrowElement.classList.toggle(settings.rotateClass);
+    },
+
+    fourthNavListItemHover() {
+        settings.fourthDropdownElement.classList.remove(settings.noDisplayClass);
+        settings.navFourthArrowElement.classList.add(settings.rotateClass);
+    },
+
+    fourthNavListItemHoverOut() {
+        settings.fourthDropdownElement.classList.add(settings.noDisplayClass);
+        settings.navFourthArrowElement.classList.remove(settings.rotateClass);
+    },
+
+    fourthNavListItemClick() {
+        settings.fourthNavListItemElement.classList.remove(settings.activeDropdownClass);
+        settings.fourthDropdownElement.classList.add(settings.noDisplayClass);
+        settings.navFourthArrowElement.classList.remove(settings.rotateClass);
+    },
+
+    fourthNavListItemIsCurrentTarget() {
+        if (settings.secondNavListItemElement.classList.contains(settings.activeDropdownClass)) {
+            this.secondNavListItemClick();
+        } else if (settings.thirdNavListItemElement.classList.contains(settings.activeDropdownClass)) {
+            this.thirdNavListItemClick();
+        } else if (settings.firstNavListItemElement.classList.contains(settings.activeDropdownClass)) {
+            this.firstNavListItemClick();
+        } else {
+            this.fifthNavListItemClick();
+        }
+        settings.fourthDropdownElement.classList.toggle(settings.noDisplayClass);
+        settings.navFourthArrowElement.classList.toggle(settings.rotateClass);
+    },
+
+    fifthNavListItemHover() {
+        settings.fifthDropdownElement.classList.remove(settings.noDisplayClass);
+        settings.navFifthArrowElement.classList.add(settings.rotateClass);
+    },
+
+    fifthNavListHoverOut() {
+        settings.fifthDropdownElement.classList.add(settings.noDisplayClass);
+        settings.navFifthArrowElement.classList.remove(settings.rotateClass);
+    },
+
+    fifthNavListItemClick() {
+        settings.fifthNavListItemElement.classList.remove(settings.activeDropdownClass);
+        settings.fifthDropdownElement.classList.add(settings.noDisplayClass);
+        settings.navFifthArrowElement.classList.remove(settings.rotateClass);
+    },
+
+    fifthNavListItemIsCurrentTarget() {
+        if (settings.secondNavListItemElement.classList.contains(settings.activeDropdownClass)) {
+            this.secondNavListItemClick();
+        } else if (settings.thirdNavListItemElement.classList.contains(settings.activeDropdownClass)) {
+            this.thirdNavListItemClick();
+        } else if (settings.fourthNavListItemElement.classList.contains(settings.activeDropdownClass)) {
+            this.fourthNavListItemClick();
+        } else {
+            this.firstNavListItemClick();
+        }
+        settings.fifthDropdownElement.classList.toggle(settings.noDisplayClass);
+        settings.navFifthArrowElement.classList.toggle(settings.rotateClass);
+    },
+
+    /*Nav List*/
+
+    closeNavList() {
+        settings.navListElement.classList.remove(settings.removeNoDisplayClass);
+    },
+
+    /*Services Section*/
+
+    servicesList(e) {
+        if (e.currentTarget.id === settings.wwwId) {
+            this.firstImageFromServices();
+        } else if (e.currentTarget.id === settings.pencilId) {
+            this.secondImageFromServices();
+        } else if (e.currentTarget.id === settings.responsiveId) {
+            this.thirdImageFromServices();
+        } else {
+            this.fourthImageFromServices();
+        }
+        e.currentTarget.classList.add(settings.activeServiceClass);
+        settings.serviceTitleElement.textContent = e.currentTarget.dataset.name;
+        settings.contactElement.classList.add(settings.aServiceIsActiveClass);
+    },
+
+    firstImageFromServices() {
+        settings.wwwImageElement.src = settings.wwwActivePath;
+        if (settings.pencilElement.classList.contains(settings.activeServiceClass)) {
+            this.secondImageIsActive();
+        } else if (settings.responsiveElement.classList.contains(settings.activeServiceClass)) {
+            this.thirdImageIsActive();
+        } else if (settings.rankingElement.classList.contains(settings.activeServiceClass)) {
+            this.fourthImageIsActive();
+        }
+    },
+
+    firstImageIsActive() {
+        settings.wwwElement.classList.remove(settings.activeServiceClass);
+        settings.wwwImageElement.src = settings.wwwPath;
+    },
+
+    secondImageFromServices() {
+        settings.pencilImageElement.src = settings.designActivePath;
+        if (settings.wwwElement.classList.contains(settings.activeServiceClass)) {
+            this.firstImageIsActive();
+        } else if (settings.responsiveElement.classList.contains(settings.activeServiceClass)) {
+            this.thirdImageIsActive();
+        } else if (settings.rankingElement.classList.contains(settings.activeServiceClass)) {
+            this.fourthImageIsActive();
+        }
+    },
+
+    secondImageIsActive() {
+        settings.pencilElement.classList.remove(settings.activeServiceClass);
+        settings.pencilImageElement.src = settings.designPath;
+    },
+
+    thirdImageFromServices() {
+        settings.responsiveImageElement.src = settings.responsiveActivePath;
+        if (settings.pencilElement.classList.contains(settings.activeServiceClass)) {
+            this.secondImageIsActive();
+        } else if (settings.wwwElement.classList.contains(settings.activeServiceClass)) {
+            this.firstImageIsActive();
+        } else if (settings.rankingElement.classList.contains(settings.activeServiceClass)) {
+            this.fourthImageIsActive();
+        }
+    },
+
+    thirdImageIsActive() {
+        settings.responsiveElement.classList.remove(settings.activeServiceClass);
+        settings.responsiveImageElement.src = settings.responsivePath;
+    },
+
+    fourthImageFromServices() {
+        settings.rankingImageElement.src = settings.referencementActivePath;
+        if (settings.pencilElement.classList.contains(settings.activeServiceClass)) {
+            this.secondImageIsActive();
+        } else if (settings.responsiveElement.classList.contains(settings.activeServiceClass)) {
+            this.thirdImageIsActive();
+        } else if (settings.wwwElement.classList.contains(settings.activeServiceClass)) {
+            this.firstImageIsActive();
+        }
+    },
+
+    fourthImageIsActive() {
+        settings.rankingElement.classList.remove(settings.activeServiceClass);
+        settings.rankingImageElement.src = settings.referencementPath;
+    },
+
+    /*Sliders*/
+
+    previousSlide() {
+        if (settings.pourcentage === settings.maxPourcentage) {
+            settings.pourcentage = settings.minPourcentage;
+        } else {
+            settings.pourcentage -= settings.slidePourcentage;
+        }
+    },
+
+    nextSlide() {
+        if (settings.pourcentage === settings.minPourcentage) {
+            settings.pourcentage = settings.maxPourcentage;
+        } else {
+            settings.pourcentage += settings.slidePourcentage;
+        }
+    },
+
+    /*Hobbies Section*/
+
+    slidersSection(e) {
+        if (e.currentTarget.id === settings.firstSliderPreviousId) {
+            this.previousSlide();
+            settings.firstSliderElement.style.left = `${settings.pourcentage}px`;
+        } else if (e.currentTarget.id === settings.firstSliderNextId) {
+            this.nextSlide();
+            settings.firstSliderElement.style.left = `${settings.pourcentage}px`;
+        } else if (e.currentTarget.id === settings.secondSliderPreviousId) {
+            this.previousSlide();
+            settings.secondSliderElement.style.left = `${settings.pourcentage}px`;
+        } else {
+            this.nextSlide();
+            settings.secondSliderElement.style.left = `${settings.pourcentage}px`;
+        }
+    },
+
+    openAndCloseHobbyPopUpFromHobbiesButton() {
+        settings.hobbiesListElement.classList.toggle(settings.noDisplayClass);
+        settings.firstOverlayElement.classList.toggle(settings.noDisplayClass);
+    },
+
+    closeHobbyPopUp() {
+        settings.hobbiesListElement.classList.add(settings.noDisplayClass);
+        settings.firstOverlayElement.classList.add(settings.noDisplayClass);
+    },
+
+    /*Article Section*/
+
+    openArticlePopUpFromContactButton(e) {
+        if (e.currentTarget.classList.contains(settings.aServiceIsActiveClass)) {
+            settings.articleNumber = 1;
+            settings.articleNumberElement.textContent = `${settings.articleNumber}`;
+            settings.articleHoverLiELements.forEach(liElt => {
+                liElt.classList.remove(settings.noDisplayClass);
+            });
+            settings.articleHoverLastLiELement.classList.add(settings.noDisplayClass);
+        } else {
+            settings.articleHoverLiELements.forEach(liElt => {
+                liElt.classList.add(settings.noDisplayClass);
+            });
+            settings.articleHoverLastLiELement.classList.remove(settings.noDisplayClass);
+        }
+        settings.articleHoverElement.classList.remove(settings.noDisplayClass);
+        settings.secondOverlayELement.classList.remove(settings.noDisplayClass);
+    },
+
+    openArticlePopUpFromBasket() {
+        settings.secondOverlayELement.classList.remove(settings.noDisplayClass);
+        if (settings.articleNumber === 1) {
+            settings.articleHoverElement.classList.remove(settings.noDisplayClass);
+        } else {
+            settings.articleHoverElement.classList.remove(settings.noDisplayClass);
+            settings.articleHoverLiELements.forEach(liElt => {
+                liElt.classList.add(settings.noDisplayClass);
+            });
+            settings.articleHoverLastLiELement.classList.remove(settings.noDisplayClass);
+        }
+    },
+
+    closeArticlePopUp() {
+        settings.articleHoverElement.classList.add(settings.noDisplayClass);
+        settings.secondOverlayELement.classList.add(settings.noDisplayClass);
+    },
+
+    removeArticleFromBasket() {
+        settings.articleNumber = 0;
+        settings.articleHoverLiELements.forEach(liElt => {
+            liElt.classList.add(settings.noDisplayClass);
+        });
+        settings.articleHoverLastLiELement.classList.remove(settings.noDisplayClass);
+        settings.articleNumberElement.textContent = `${settings.articleNumber}`;
+    },
+
+    goBackToTheServices() {
+        settings.articleHoverElement.classList.add(settings.noDisplayClass);
+        settings.secondOverlayELement.classList.add(settings.noDisplayClass);
+    },
+
+    /*Select languages*/
+
+    openAndCloseSelectForText() {
+        settings.selectOptionsElement.classList.toggle(settings.noDisplayClass);
+        settings.languagesSponsorsImgElement.classList.toggle(settings.rotateClass);
+    },
+
+    selectLanguage(e) {
+        settings.languageChosenElement.textContent = e.currentTarget.dataset.name;
+        settings.selectOptionsElement.classList.add(settings.noDisplayClass);
+        settings.languagesSponsorsImgElement.classList.remove(settings.rotateClass);
+    },
+
+    openAndCloseSelect() {
+        settings.selectOptionsElement.classList.toggle(settings.noDisplayClass);
+        settings.languagesSponsorsImgElement.classList.toggle(settings.rotateClass);
     }
 }
 
-function nextSlide() {
-    if (pourcentage === minPourcentage) {
-        pourcentage = maxPourcentage;
-    } else {
-        pourcentage += 460;
-    }
-}
-
-document.querySelectorAll("button").forEach(btnElt => {
-    btnElt.addEventListener('click', (e) => {
-        if (e.currentTarget.id === "first_slider_previous") {
-            previousSlide(e);
-            document.getElementById('first_slider').style.left = `${pourcentage}px`;
-        } else if (e.currentTarget.id === "first_slider_next") {
-            nextSlide(e);
-            document.getElementById('first_slider').style.left = `${pourcentage}px`;
-        } else if (e.currentTarget.id === "second_slider_previous") {
-            previousSlide(e);
-            document.getElementById('second_slider').style.left = `${pourcentage}px`;
-        } else {
-            nextSlide(e);
-            document.getElementById('second_slider').style.left = `${pourcentage}px`;
-        }
-    });
-});
-
-document.querySelectorAll('#nav_list>li:not(:last-child)').forEach(liElt => {
-    liElt.addEventListener('mouseover', (e) => {
-        if (e.currentTarget.id === 'first_nav_list_item') {
-            document.getElementById('first_dropdown').classList.remove('no_display');
-            document.getElementById('nav_first_arrow').classList.add('rotate');
-        } else if (e.currentTarget.id === 'second_nav_list_item') {
-            document.getElementById('second_dropdown').classList.remove('no_display');
-            document.getElementById('nav_second_arrow').classList.add('rotate');
-        } else if (e.currentTarget.id === 'third_nav_list_item') {
-            document.getElementById('third_dropdown').classList.remove('no_display');
-            document.getElementById('nav_third_arrow').classList.add('rotate');
-        } else if (e.currentTarget.id === 'fourth_nav_list_item') {
-            document.getElementById('fourth_dropdown').classList.remove('no_display');
-            document.getElementById('nav_fourth_arrow').classList.add('rotate');
-        } else {
-            document.getElementById('fifth_dropdown').classList.remove('no_display');
-            document.getElementById('nav_fifth_arrow').classList.add('rotate');
-        }
-    });
-});
-document.querySelectorAll('#nav_list>li:not(:last-child)').forEach(liElt => {
-    liElt.addEventListener('mouseout', (e) => {
-        if (e.currentTarget.id === 'first_nav_list_item') {
-            document.getElementById('first_dropdown').classList.add('no_display');
-            document.getElementById('nav_first_arrow').classList.remove('rotate');
-        } else if (e.currentTarget.id === 'second_nav_list_item') {
-            document.getElementById('second_dropdown').classList.add('no_display');
-            document.getElementById('nav_second_arrow').classList.remove('rotate');
-        } else if (e.currentTarget.id === 'third_nav_list_item') {
-            document.getElementById('third_dropdown').classList.add('no_display');
-            document.getElementById('nav_third_arrow').classList.remove('rotate');
-        } else if (e.currentTarget.id === 'fourth_nav_list_item') {
-            document.getElementById('fourth_dropdown').classList.add('no_display');
-            document.getElementById('nav_fourth_arrow').classList.remove('rotate');
-        } else {
-            document.getElementById('fifth_dropdown').classList.add('no_display');
-            document.getElementById('nav_fifth_arrow').classList.remove('rotate');
-        }
-    });
-});
-
-document.querySelector('#hobbies_button').addEventListener('click', () => {
-    document.querySelector('#hobbies_list').classList.toggle('no_display');
-    document.getElementById('overlay').classList.toggle('no_display');
-});
-
-document.querySelector('#close2').addEventListener('click', () => {
-    document.querySelector('#hobbies_list').classList.add('no_display');
-    document.getElementById('overlay').classList.add('no_display');
-});
-
-let articleNumber = 0;
-document.getElementById('contact').addEventListener('click', (e) => {
-    if (e.currentTarget.classList.contains('a_service_is_active')) {
-        articleNumber = 1;
-        document.getElementById('article_number').textContent = `${articleNumber}`;
-        document.querySelectorAll('#article_hover>li:not(:last-child)').forEach(liElt => {
-            liElt.classList.remove('no_display');
-        });
-        document.querySelector('#article_hover>li:last-child').classList.add('no_display');
-    } else {
-        document.querySelectorAll('#article_hover>li:not(:last-child)').forEach(liElt => {
-            liElt.classList.add('no_display');
-        });
-        document.querySelector('#article_hover>li:last-child').classList.remove('no_display');
-    }
-    document.getElementById('article_hover').classList.remove('no_display');
-    document.getElementById('second_overlay').classList.remove('no_display');
-});
-document.getElementById('basket').addEventListener('click', () => {
-    document.getElementById('second_overlay').classList.remove('no_display');
-    if (articleNumber === 1) {
-        document.getElementById('article_hover').classList.remove('no_display');
-    } else {
-        document.getElementById('article_hover').classList.remove('no_display');
-        document.querySelectorAll('#article_hover>li:not(:last-child)').forEach(liElt => {
-            liElt.classList.add('no_display');
-        });
-        document.querySelector('#article_hover>li:last-child').classList.remove('no_display');
-    }
-});
-document.getElementById('close1').addEventListener('click', () => {
-    document.getElementById('article_hover').classList.add('no_display');
-    document.getElementById('second_overlay').classList.add('no_display');
-});
-
-document.getElementById('delete_article').addEventListener('click', () => {
-    articleNumber = 0;
-    document.querySelectorAll('#article_hover>li:not(:last-child)').forEach(liElt => {
-        liElt.classList.add('no_display');
-    });
-    document.querySelector('#article_hover>li:last-child').classList.remove('no_display');
-    document.getElementById('article_number').textContent = `${articleNumber}`;
-});
-
-document.getElementById('back_to_services').addEventListener('click', () => {
-    document.getElementById('article_hover').classList.add('no_display');
-    document.getElementById('second_overlay').classList.add('no_display');
-});
+myCurriculumVitae.init();
