@@ -18,21 +18,21 @@
 
 		<nav id="main_nav" class="no-js-main-nav">
 
-			<h1 class="hidden">Navigation principale</h1>
+			<h2 class="hidden">Navigation principale</h2>
 			<input type="checkbox" id="menu__toggle"/>
-			<label id="burger_menu" class="no_display menu__btn" for="menu__toggle">
+			<label id="burger_menu" class="no_display menu__btn" for="menu__toggle" tabindex="1">
 				<span></span>
 			</label>
 
 			<img id="logo" src="assets/icons/logo.svg" alt="Logo du site" width="40" height="40">
 			<img id="secondlogo" src="assets/icons/logo2.svg" alt="Logo de mon prénom avec un cheval à côté" width="118" height="40">
-			<div id="last_item" class="no-js-relative">
+			<div id="last_item" class="no-js-relative" tabindex="29">
 				<img id="basket" src="assets/ref/panier.svg" alt="Panier" height="35" width="27">
 				<span id="article_number" class="no-js-article-number">0</span>
 			</div>
 
 			<ul id="nav_list" class="no-js-nav">
-				<li id="first_nav_list_item">
+				<li id="first_nav_list_item" tabindex="2">
 					Mes services
 					<img class="arrow" id="nav_first_arrow" src="assets/icons/fleche.svg" alt="Une croix blanche" width="16" height="10">
 
@@ -45,7 +45,7 @@
 
 				</li>
 
-				<li id="second_nav_list_item">
+				<li id="second_nav_list_item" tabindex="7">
 					Mes comp&eacute;tences
 					<img class="arrow" id="nav_second_arrow" src="assets/icons/fleche.svg" alt="Une croix blanche" width="16" height="10">
 
@@ -58,7 +58,7 @@
 
 				</li>
 
-				<li id="third_nav_list_item">
+				<li id="third_nav_list_item" tabindex="12">
 					Mes formations
 					<img class="arrow" id="nav_third_arrow" src="assets/icons/fleche.svg" alt="Une croix blanche" width="16" height="10">
 
@@ -72,7 +72,7 @@
 				</li>
 
 
-				<li id="fourth_nav_list_item">
+				<li id="fourth_nav_list_item" tabindex="17">
 					Mes langages maîtris&eacute;s
 					<img class="arrow" id="nav_fourth_arrow" src="assets/icons/fleche.svg" alt="Une croix blanche" width="16" height="10">
 
@@ -85,7 +85,7 @@
 
 				</li>
 
-				<li id="fifth_nav_list_item">
+				<li id="fifth_nav_list_item" tabindex="22">
 					Mes soft skills
 					<img class="arrow" id="nav_fifth_arrow" src="assets/icons/fleche.svg" alt="Une croix blanche" width="16" height="10">
 
@@ -113,12 +113,12 @@
 			<div id="banner">
 
 				<input type="checkbox" id="cross" class="cross hidden" autocomplete="off">
-				<label for="cross" class="cross-button">
+				<label for="cross" class="cross-button" tabindex="29">
 					<span class="line">|</span>
 					<span class="line">|</span>
 				</label>
 				<p id="content" class="banner-content">Pour pouvoir utiliser toutes les fonctionnalit&eacute;s du site, veuillez activer Javascript.
-					<a href="https://support.google.com/adsense/answer/12654?hl=fr" hreflang="fr" title="Activer Javascript sur mon navigateur">Activer Javascript sur mon navigateur</a>
+					<a tabindex="29" href="https://support.google.com/adsense/answer/12654?hl=fr" hreflang="fr" title="Activer Javascript sur mon navigateur">Activer Javascript sur mon navigateur</a>
 				</p>
 
 			</div>
@@ -129,11 +129,11 @@
 
 			<h1 class="hidden">Mes informations personnelles</h1>
 
-			<div id="flex_container">
+			<div id="flex_container" itemscope itemtype="https://schema.org/Person">
 
-				<img id="landing_image" src="assets/ref/moi_fond_bleu.png" srcset="assets/ref/moi_fond_bleu.png 750w, assets/ref/moi_fond_bleu_1025.png 1025w, assets/ref/moi_fond_bleu_682.png 682w" sizes="(min-width: 1175px) 45vw, 100vw" alt="Photo de moi avec un fond bleu">
+				<img itemprop="image" id="landing_image" src="assets/ref/moi_fond_bleu.png" srcset="assets/ref/moi_fond_bleu.png 750w, assets/ref/moi_fond_bleu_1025.png 1025w, assets/ref/moi_fond_bleu_682.png 682w" sizes="(min-width: 1175px) 45vw, 100vw" alt="Photo de moi avec un fond bleu">
 
-				<ul id="informations" itemscope itemtype="https://schema.org/Person">
+				<ul id="informations">
 
 					<li id="jobTitle" lang="en"><span itemprop="jobTitle">Web developer</span></li>
 					<li><strong><span itemprop="name">Marvin</span> <span id="lastname" itemprop="familyName">Pagnoul</span></strong></li>
@@ -141,16 +141,16 @@
 					<li id="choice">Choississez un service</li>
 					<li>
 						<ul id="services_list">
-							<li title="Créer votre site web" lang="fr" id="www" data-name="Créer votre site web"><img id="www_image" src="assets/icons/www.svg" alt="Image du World Wide Web" width="55" height="39"></li>
-							<li title="Créer un design pour votre site" lang="fr" id="pencil" data-name="Créer un design pour votre site"><img id="pencil_image" src="assets/icons/design.svg" alt="Image d'un pinceau" width="55" height="39"></li>
-							<li title="Rendre votre site accessible sur mobile" lang="fr" id="responsive" data-name="Rendre votre site accessible sur mobile"><img id="responsive_image" src="assets/icons/responsive.svg" alt="Image d'un PC, d'une tablette et d'un téléphone" width="55" height="39"></li>
-							<li title="Améliorer le référencement de votre site" lang="fr" id="ranking" data-name="Améliorer le référencement de votre site"><img id="ranking_image" src="assets/icons/referencement.svg" alt="Image d'une loupe" width="55" height="39"></li>
+							<li tabindex="30" title="Créer votre site web" lang="fr" id="www" data-name="Créer votre site web"><img id="www_image" src="assets/icons/www.svg" alt="Image du World Wide Web" width="55" height="39"></li>
+							<li tabindex="31" title="Créer un design pour votre site" lang="fr" id="pencil" data-name="Créer un design pour votre site"><img id="pencil_image" src="assets/icons/design.svg" alt="Image d'un pinceau" width="55" height="39"></li>
+							<li tabindex="32" title="Rendre votre site accessible sur mobile" lang="fr" id="responsive" data-name="Rendre votre site accessible sur mobile"><img id="responsive_image" src="assets/icons/responsive.svg" alt="Image d'un PC, d'une tablette et d'un téléphone" width="55" height="39"></li>
+							<li tabindex="33" title="Améliorer le référencement de votre site" lang="fr" id="ranking" data-name="Améliorer le référencement de votre site"><img id="ranking_image" src="assets/icons/referencement.svg" alt="Image d'une loupe" width="55" height="39"></li>
 						</ul>
 					</li>
 
-					<li><a href="#no-js-basket" title="Aller vers la section pour me contacter" id="contact">Me contacter</a></li><!--
+					<li><a tabindex="34" href="#no-js-basket" title="Aller vers la section pour me contacter" id="contact">Me contacter</a></li><!--
 
-					--><li><img id="projects_number" src="assets/ref/projets.svg" alt="Image PEGI" height="80" width="60"></li>
+					--><li itemscope itemtype="http://schema.org/QuantitativeValue"><img itemprop="value" id="projects_number" src="assets/ref/projets.svg" alt="Image PEGI" height="80" width="60"></li>
 
 			</ul>
 
@@ -158,29 +158,29 @@
 
 		</section>
 
-		<section id="competences">
+		<section id="competences" itemscope itemtype="https://schema.org/Person">
 
 			<ul id="competences_list">
 
-				<li id="ui"><abbr lang="en" title="User Interface">UI</abbr></li>
-				<li id="ux"><abbr lang="en" title="User EXperience">UX</abbr></li>
-				<li id="frontend">Front&ndash;End</li>
-				<li id="backend">Back&ndash;End</li>
+				<li id="ui"><abbr lang="en" title="User Interface"><span itemprop="knows">UI</span></abbr></li>
+				<li id="ux"><abbr lang="en" title="User EXperience"><span itemprop="knows">UX</span></abbr></li>
+				<li id="frontend"><span itemprop="knows">Front&ndash;End</span></li>
+				<li id="backend"><span itemprop="knows">Back&ndash;End</span></li>
 
 			</ul>
 			<div id="skills_image">
 
-				<img id="skills" src="assets/ref/moi_fond_rose.png" alt="Photo de moi avec un fond rose" srcset="assets/ref/moi_fond_rose.png 1362w, assets/ref/moi_fond_rose_682.png 682w, assets/ref/moi_fond_rose_1025.png 1025w" sizes="100vw">
+				<img itemprop="image" id="skills" src="assets/ref/moi_fond_rose.png" alt="Photo de moi avec un fond rose" srcset="assets/ref/moi_fond_rose.png 1362w, assets/ref/moi_fond_rose_682.png 682w, assets/ref/moi_fond_rose_1025.png 1025w" sizes="100vw">
 
 				<div id="competences_text">
 
 					<h1>Mes compétences</h1>
 
 					<p>
-						Je suis polyvalent sachant aussi bien ma&icirc;triser le Front&ndash;End que le Back&ndash;End. L&rsquo;<abbr lang="en" title="User Interface">UI</abbr> et l&rsquo;<abbr lang="en" title="User EXperience">UX</abbr> sont tout autant importants pour moi afin d&rsquo;avoir une application ou un site accessible pour toute personne. J&rsquo;apporte &agrave; ces comp&eacute;tences le soin, la rigueur, l&rsquo;envie de r&eacute;ussir et surtout l&rsquo;envie de satisfaire.
+						Je suis polyvalent sachant aussi bien ma&icirc;triser le Front&ndash;End que le Back&ndash;End. L&rsquo;<abbr lang="en" title="User Interface">UI</abbr> et l&rsquo;<abbr lang="en" title="User EXperience">UX</abbr> sont &eacute;galement importants pour moi afin d&rsquo;avoir une application ou un site accessible pour toute personne. J&rsquo;apporte &agrave; ces comp&eacute;tences le soin, la rigueur, l&rsquo;envie de r&eacute;ussir et surtout l&rsquo;envie de satisfaire.
 					</p>
 
-					<a title="Aller vers mon portfolio" href="#" hreflang="fr">En savoir plus</a>
+					<a tabindex="35" title="Aller vers mon portfolio" href="#" hreflang="fr">En savoir plus</a>
 
 				</div>
 
@@ -196,18 +196,18 @@
 
 				<h2 class="hidden">Slider de mes formations</h2>
 
-				<ul id="first_slider" class="no-js-slide">
+				<ul id="first_slider" class="no-js-slide" itemscope itemtype="http://schema.org/EducationalOrganization">
 
 					<li id="hepl">
 
 						<ul>
 							<li><img id="hepl_logo" src="assets/ref/hepl.jpeg" srcset="assets/ref/hepl_1000.png 1000w, assets/ref/hepl.jpeg 4096w" sizes="(min-width: 1500px) 30.5%, (max-width: 750px) 100vh" alt="Image du logo de la HEPL"></li>
 
-							<li><p>&Eacute;tudes sup&eacute;rieures :&nbsp;<abbr lang="fr" title="Haute Ecole de la Province de Liège">HEPL</abbr>, Seraing</p></li>
+							<li><p>&Eacute;tudes sup&eacute;rieures :&nbsp;<abbr lang="fr" title="Haute Ecole de la Province de Liège"><span itemprop="name">HEPL</span></abbr>, <span itemscope itemtype="http://schema.org/PostalAddress" itemprop="address"><span itemprop="addressLocality">Seraing</span></span></p></li>
 
 							<li>
 								<p>
-									En juin 2022, j&rsquo;ai d&eacute;but&eacute; mes &eacute;tudes d&rsquo;infographie. Apr&egrave;s avoir r&eacute;ussi ma premi&egrave;re ann&eacute;e, j&rsquo;ai d&eacute;cid&eacute; d&rsquo;aller en option web car celle&ndash;ci m&rsquo;a &eacute;norm&eacute;ment plue. J&rsquo;y suis actuellement en 2&egrave;me ann&eacute;e.
+									En juin 2022, j&rsquo;ai d&eacute;but&eacute; mes &eacute;tudes d&rsquo;infographie. Apr&egrave;s avoir r&eacute;ussi ma premi&egrave;re ann&eacute;e, j&rsquo;ai d&eacute;cid&eacute; d&rsquo;aller en option web car celle&ndash;ci m&rsquo;a &eacute;norm&eacute;ment plu. J&rsquo;y suis actuellement en 2&egrave;me ann&eacute;e.
 								</p>
 							</li>
 
@@ -225,7 +225,7 @@
 
 							<li>
 								<p>
-									En janvier 2022, l&rsquo;univers de la <abbr lang="fr" title="Deux dimensions">2D</abbr> m&rsquo;a beaucoup int&eacute;ress&eacute; donc j&rsquo;ai d&eacute;cid&eacute; de faire une formation en ligne avant d&rsquo;entrer à l’&eacute;cole afin d&rsquo;avoir une base en <abbr lang="fr" title="Deux dimensions">2D</abbr>. Lors de cette formation, j&rsquo;ai appris la suite Adobe (Illustrator, Photoshop et InDesign) et j&rsquo;ai obtenu 4 dipl&ocirc;mes.
+									En janvier 2022, l&rsquo;univers de la <abbr lang="fr" title="Deux dimensions">2D</abbr> m&rsquo;a beaucoup int&eacute;ress&eacute;. J&rsquo;ai donc d&eacute;cid&eacute; de faire une formation en ligne avant d&rsquo;entrer à l’&eacute;cole afin d&rsquo;avoir une base en <abbr lang="fr" title="Deux dimensions">2D</abbr>. Lors de cette formation, j&rsquo;ai appris la suite Adobe (Illustrator, Photoshop et InDesign) et j&rsquo;ai obtenu 4 dipl&ocirc;mes.
 								</p>
 							</li>
 
@@ -239,7 +239,7 @@
 
 							<li><img id="sainte_croix" src="assets/ref/helmo.png" alt="Logo de HELMO" srcset="assets/ref/helmo_2000.png 2000w, assets/ref/helmo_1000.png 1000w, assets/ref/helmo.png 360w" sizes="(min-width: 1500px) 30.5%, (max-width: 750px) 100vh"></li>
 
-							<li><p>&Eacute;tudes sup&eacute;rieures :&nbsp;Sainte&ndash;Croix, Li&egrave;ge</p></li>
+							<li><p>&Eacute;tudes sup&eacute;rieures :&nbsp;<span itemprop="name">Sainte&ndash;Croix</span>, <span itemscope itemtype="http://schema.org/PostalAddress" itemprop="address"><span itemprop="addressLocality">Li&egrave;ge</span></span></p></li>
 
 							<li>
 								<p>
@@ -257,7 +257,7 @@
 
 							<li><img id="saint_louis" src="assets/ref/secondaire.jpeg" alt="Photo de l'école de Saint-Louis" srcset="assets/ref/secondaire_1200.jpg 1200w, assets/ref/secondaire.jpeg 2560w" sizes="(min-width: 1500px) 30.5%, (max-width: 750px) 100vh"></li>
 
-							<li><p>&Eacute;tudes secondaires :&nbsp;Saint&ndash;Louis, Waremme</p></li>
+							<li><p>&Eacute;tudes secondaires :&nbsp;<span itemprop="name">Saint&ndash;Louis</span>, <span itemscope itemtype="http://schema.org/PostalAddress" itemprop="address"><span itemprop="addressLocality">Waremme</span></span></p></li>
 
 							<li>
 								<p>
@@ -272,8 +272,8 @@
 
 				</ul>
 
-				<button id="first_slider_previous">Previous</button>
-				<button id="first_slider_next">Next</button>
+				<button tabindex="35" id="first_slider_previous">Previous</button>
+				<button tabindex="36" id="first_slider_next">Next</button>
 
 			</nav>
 
@@ -287,13 +287,13 @@
 
 				<h2 class="hidden">Slider de mes langages ma&icirc;tris&eacute;s</h2>
 
-				<ul id="second_slider" class="no-js-slide">
+				<ul id="second_slider" class="no-js-slide" itemscope itemtype="http://schema.org/Person">
 
 					<li>
 
 						<ul>
 							<li id="html" class="image_container">
-								<img src="assets/ref/html.svg" srcset="assets/ref/html_1000.svg 1000w, assets/ref/html_680.svg 680w, assets/ref/html.svg 440w" sizes="(min-width: 1500px) 30.5%, (max-width: 750px) 100vw" alt="Image de HTML">
+								<img itemprop="knowsAbout" src="assets/ref/html.svg" srcset="assets/ref/html_1000.svg 1000w, assets/ref/html_680.svg 680w, assets/ref/html.svg 440w" sizes="(min-width: 1500px) 30.5%, (max-width: 750px) 100vw" alt="Image de HTML">
 							</li>
 
 						</ul>
@@ -305,7 +305,7 @@
 						<ul>
 
 							<li id="css" class="image_container">
-								<img src="assets/ref/css.svg" srcset="assets/ref/css_1000.svg 1000w, assets/ref/css_680.svg 680w, assets/ref/css.svg 440w" sizes="(min-width: 1500px) 30.5%, (max-width: 750px) 100vw" alt="Image de CSS">
+								<img itemprop="knowsAbout" src="assets/ref/css.svg" srcset="assets/ref/css_1000.svg 1000w, assets/ref/css_680.svg 680w, assets/ref/css.svg 440w" sizes="(min-width: 1500px) 30.5%, (max-width: 750px) 100vw" alt="Image de CSS">
 							</li>
 
 						</ul>
@@ -316,7 +316,7 @@
 
 						<ul>
 							<li id="javascript" class="image_container">
-								<img src="assets/ref/js.svg" srcset="assets/ref/js_1000.svg 1000w, assets/ref/js_680.svg 680w, assets/ref/js.svg 440w" sizes="(min-width: 1500px) 30.5%, (max-width: 750px) 100vw" alt="Image de Javascript">
+								<img itemprop="knowsAbout" src="assets/ref/js.svg" srcset="assets/ref/js_1000.svg 1000w, assets/ref/js_680.svg 680w, assets/ref/js.svg 440w" sizes="(min-width: 1500px) 30.5%, (max-width: 750px) 100vw" alt="Image de Javascript">
 							</li>
 
 						</ul>
@@ -327,7 +327,7 @@
 
 						<ul>
 							<li id="php" class="image_container">
-								<img src="assets/ref/php.svg" srcset="assets/ref/php_1000.svg 1000w, assets/ref/php_680.svg 680w, assets/ref/php.svg 440w" sizes="(min-width: 1500px) 30.5%, (max-width: 750px) 100vw" alt="Image de PHP">
+								<img itemprop="knowsAbout" src="assets/ref/php.svg" srcset="assets/ref/php_1000.svg 1000w, assets/ref/php_680.svg 680w, assets/ref/php.svg 440w" sizes="(min-width: 1500px) 30.5%, (max-width: 750px) 100vw" alt="Image de PHP">
 							</li>
 
 						</ul>
@@ -336,8 +336,8 @@
 
 				</ul>
 
-				<button id="second_slider_previous">Previous</button>
-				<button id="second_slider_next">Next</button>
+				<button tabindex="37" id="second_slider_previous">Previous</button>
+				<button tabindex="38" id="second_slider_next">Next</button>
 
 			</nav>
 
@@ -347,8 +347,8 @@
 
 			<h1>Mes soft skills</h1>
 
-			<p>
-				Cr&eacute;ativit&eacute;, recherche, organisation, soin, autonomie, esprit d&rsquo;&eacute;quipe, esprit comp&eacute;titif.
+			<p itemscope itemtype="http://schema.org/Person">
+				<span itemprop="description">Cr&eacute;ativit&eacute;, recherche, organisation, soin, autonomie, esprit d&rsquo;&eacute;quipe, esprit comp&eacute;titif.</span>
 			</p>
 
 		</section>
@@ -359,40 +359,40 @@
 
 			<img class="no-js-hobbies_button" id="hobbies_button" src="assets/ref/hobby.svg" width="90" height="90" alt="La lettre H dans une étoile">
 			<div id="overlay" class="no_display"></div>
-			<ul class="no_display no-js-hobbies_list" id="hobbies_list">
+			<ul class="no_display no-js-hobbies_list" id="hobbies_list" itemscope itemtype="http://schema.org/Person">
 
 				<li><img class="no-js-close" id="close2" src="assets/icons/croixblanche.svg" alt="Une croix blanche" width="13" height="13"></li>
 
-				<li>
+				<li itemprop="description">
 
 					<p>Gaming</p>
 
 					<p>
-						Le gaming est ma passion la plus folle. Je pratique le gaming depuis plus de 10 ans. J&rsquo;ai d&eacute;couvert cette passion gr&acirc;ce &agrave; mon voisin qui m&rsquo;a initi&eacute; au fameux &laquo;&nbsp;Age of empires&nbsp;&raquo; qui a donc &eacute;t&eacute; mon premier jeu sur PC. Je joue &agrave; diff&eacute;rents types de jeux :&nbsp;du jeu d&rsquo;aventure au jeu d&rsquo;action en passant par les jeux de strat&eacute;gie.
+						Le gaming est ma passion la plus folle. Je pratique le gaming depuis plus de 10 ans. J&rsquo;ai d&eacute;couvert cette passion gr&acirc;ce &agrave; mon voisin qui m&rsquo;a initi&eacute; au fameux &laquo;&nbsp;Age of Empires&nbsp;&raquo; qui a donc &eacute;t&eacute; mon premier jeu sur PC. Je joue &agrave; diff&eacute;rents types de jeux :&nbsp;du jeu d&rsquo;aventure au jeu d&rsquo;action en passant par les jeux de strat&eacute;gie.
 					</p>
 
 					<p>5x&frasl;sem</p>
 
 				</li>
 
-				<li>
+				<li itemprop="description">
 
 					<p>Tir &agrave; l&rsquo;arc</p>
 
 					<p>
-						Pratiquer le tir &agrave; l&rsquo;arc est assez r&eacute;cent dans ma vie :&nbsp;je le pratique que depuis un peu plus d&rsquo;un an. Je tire &agrave; la Compagnie Royale D&rsquo;archers se situant &agrave; Li&egrave;ge.
+						Pratiquer le tir &agrave; l&rsquo;arc est assez r&eacute;cent dans ma vie :&nbsp;je le pratique que depuis un peu plus d&rsquo;un an. Je tire &agrave; la <span itemprop="affiliation">Compagnie Royale d&rsquo;Archers</span> se situant &agrave; Li&egrave;ge.
 					</p>
 
 					<p>2x&frasl;sem</p>
 
 				</li>
 
-				<li>
+				<li itemprop="description">
 
 					<p>Histoire</p>
 
 					<p>
-						L&rsquo;histoire est ma passion cach&eacute;e depuis mon plus jeune &acirc;ge. D&eacute;couverte par hasard, lors de l&rsquo;achat d&rsquo;un jeu&ndash;vid&eacute;o, je me concentre plus sur l&rsquo;histoire antique.
+						L&rsquo;histoire est ma passion cach&eacute;e depuis mon plus jeune &acirc;ge. D&eacute;couverte par hasard, lors de l&rsquo;achat d&rsquo;un jeu&ndash;vid&eacute;o, l&rsquo;Antiquit&eacute; est l'&eacute;poque qui m&rsquo;int&eacute;resse le plus.
 					</p>
 
 					<p>Dans la vie de tous les jours</p>
@@ -409,12 +409,12 @@
 
 			<div id="second_overlay" class="no_display"></div>
 
-			<ul id="article_hover" class="no_display">
+			<ul id="article_hover" class="no_display" itemscope itemtype="https://schema.org/Person">
 
-				<li><img id="close1" src="assets/icons/croixnoire.svg" alt="Une croix noire" width="13"
+				<li><img tabindex="1" id="close1" src="assets/icons/croixnoire.svg" alt="Une croix noire" width="13"
 						 height="13"></li>
 
-				<li><img id="content_profile" src="./assets/ref/moi_fond_bleu.png" alt="Image de moi en monstre" height="750" width="563"></li>
+				<li><img itemprop="image" id="content_profile" src="./assets/ref/moi_fond_bleu.png" alt="Image de moi en monstre" height="750" width="563"></li>
 
 				<li>
 					<ul id="summary">
@@ -423,8 +423,8 @@
 						<li><p>Cr&eacute;ateur :&nbsp;Marvin Pagnoul</p></li>
 						<li><p>marvinpagnoul@icloud.com</p></li>
 						<li><p>+32 494 16 40 75</p></li>
-						<li><p>Rue Louis Happart, 15 THYS, Belgique</p></li>
-						<li><p id="delete_article" title="Enlever ce service de mon panier">Enlever</p></li>
+						<li><p><span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="streetAddress">Rue Louis Happart, 15</span> &ndash; <span itemprop="postalCode">4367</span> <span itemprop="addressLocality">Thys</span>, <span itemprop="addressCountry">Belgique</span></span></p></li>
+						<li><p tabindex="1" id="delete_article" title="Enlever ce service de mon panier">Enlever</p></li>
 
 					</ul>
 
@@ -448,31 +448,31 @@
 								<li id="form_lastname">
 
 									<label for="name">Nom*</label>
-									<input type="text" name="nom" id="name" required="required" placeholder="Nom*">
+									<input tabindex="1" type="text" name="nom" id="name" required="required" placeholder="Nom*">
 
 								</li>
 
 								<li id="form_firstname">
 
 									<label for="firstname">Pr&eacute;nom*</label>
-									<input type="text" name="nom" id="firstname" required="required" placeholder="Prénom*">
+									<input tabindex="1" type="text" name="nom" id="firstname" required="required" placeholder="Prénom*">
 
 								</li>
 
 								<li id="email">
 
 									<label for="mail">Adresse mail*</label>
-									<input type="email" name="nom" id="mail" required="required" placeholder="Adresse mail*">
+									<input tabindex="1" type="email" name="nom" id="mail" required="required" placeholder="Adresse mail*">
 
 								</li>
 
 							</ol>
 
 							<p>
-								<span id="note">Note</span> :&nbsp;En soumettant, je vais recevoir un mail ayant le service ainsi que les coordonn&eacute;es ci&ndash;dessus. Suite &agrave; cela, nous pourrons discuter afin de d&eacute;finir vos souhaits.
+								<span id="note">Note</span> :&nbsp;En soumettant ce formulaire, je recevrai un mail avec le service choisi ainsi que les coordonn&eacute;es inscrites ci&ndash;dessus. Nous pourrons ainsi discuter afin de d&eacute;finir vos souhaits.
 							</p>
 
-							<input type="submit" value="SOUMETTRE">
+							<input type="submit" value="SOUMETTRE" tabindex="1">
 
 						</fieldset>
 
@@ -501,9 +501,9 @@
 
 		<ul id="socials">
 
-			<li><a id="facebook" title="Aller vers mon profil Facebook" href="https://www.facebook.com/marvin.pgnl/?locale=fr_FR" hreflang="fr">Facebook</a></li>
-			<li><a id="instagram" title="Aller vers mon profil Instagram" href="https://www.instagram.com/pagnoulmarvin/" hreflang="fr">Instagram</a></li>
-			<li><a id="github" title="Aller vers mon profil Github" href="https://github.com/pagnoul-marvin" hreflang="fr">Github</a></li>
+			<li><a tabindex="39" id="facebook" title="Aller vers mon profil Facebook" href="https://www.facebook.com/marvin.pgnl/?locale=fr_FR" hreflang="fr">Facebook</a></li>
+			<li><a tabindex="40" id="instagram" title="Aller vers mon profil Instagram" href="https://www.instagram.com/pagnoulmarvin/" hreflang="fr">Instagram</a></li>
+			<li><a tabindex="41" id="github" title="Aller vers mon profil Github" href="https://github.com/pagnoul-marvin" hreflang="fr">Github</a></li>
 
 		</ul>
 		
@@ -513,40 +513,40 @@
 				<option value="Français">Fran&ccedil;ais</option>
 				<option value="English">English</option>
 			</select>
-			<div id="select_js_enabled" class="no_display">
+			<div id="select_js_enabled" class="no_display" tabindex="42">
 				<p id="language_chosen">Fançais</p>
 				<img src="assets/icons/fleche_blanche.svg" alt="Une flèche blanche" width="16" height="10">
 				<div id="select_options" class="no_display">
-					<p data-name="Français">Fran&ccedil;ais</p>
-					<p data-name="English">English</p>
+					<p tabindex="43" data-name="Français">Fran&ccedil;ais</p>
+					<p tabindex="44" data-name="English">English</p>
 				</div>
 			</div>
 
 			<ul id="sponsors" itemscope itemtype="https://schema.org/Organization">
 
-				<li><span itemprop="funder"><a id="alsacreations" title="Aller vers le site d'Alsacréations" href="https://www.alsacreations.com/" hreflang="fr">Alsacr&eacute;ations</a></span></li>
-				<li><span itemprop="funder"><a id="lmstudio" title="Aller vers le site de LM Studio" href="https://www.lmstudio.be/" hreflang="fr">LM Studio</a></span></li>
+				<li><span itemprop="funder"><a tabindex="45" id="alsacreations" title="Aller vers le site d'Alsacréations" href="https://www.alsacreations.com/" hreflang="fr">Alsacr&eacute;ations</a></span></li>
+				<li><span itemprop="funder"><a tabindex="46" id="lmstudio" title="Aller vers le site de LM Studio" href="https://www.lmstudio.be/" hreflang="fr">LM Studio</a></span></li>
 
 			</ul>
 		</div>
 
-		<ul id="grid_container" itemscope itemtype="https://schema.org/Person">
+		<ul id="grid_container">
 
 			<li id="site_explanation">
 				<p>
-					Ce site a &eacute;t&eacute; cr&eacute;&eacute; &agrave; l&rsquo;occasion d&rsquo;un des nombreux projets lors de ma seconde ann&eacute;e (2023&ndash;2024) de mes &eacute;tudes sup&eacute;rieures en infographie &agrave; l&rsquo;<abbr lang="fr" title="Haute Ecole de la Province de Liège">HEPL</abbr> &agrave; Seraing (Campus des Mar&ecirc;ts). Je n&rsquo;ai pas &eacute;t&eacute; seul :&nbsp;j&rsquo;ai &eacute;t&eacute; aid&eacute; et conseill&eacute; par mes proches ainsi que par mes professeurs. Le but &eacute;tait de refaire un site choisi par moi-m&ecirc;me et de changer ses informations par mes informations afin de cr&eacute;er un curriculum vitae. Le site que j&rsquo;ai choisi est celui&ndash;ci :&nbsp;<a title="Aller vers le site de Total War" href="https://store.totalwar.com/en/total-war/total-war-warhammer-iii/total-war-warhammer-iii">Total War :&nbsp;Warhammer III</a>. Pour le bien de mon site, certaines informations ont pu &ecirc;tre invent&eacute;es.
+					Ce site a &eacute;t&eacute; cr&eacute;&eacute; &agrave; l&rsquo;occasion d&rsquo;un des nombreux projets lors de ma seconde ann&eacute;e (2023&ndash;2024) de mes &eacute;tudes sup&eacute;rieures en infographie &agrave; l&rsquo;<abbr lang="fr" title="Haute Ecole de la Province de Liège">HEPL</abbr> &agrave; Seraing (Campus des Mar&ecirc;ts). Je n&rsquo;ai pas &eacute;t&eacute; seul :&nbsp;j&rsquo;ai &eacute;t&eacute; aid&eacute; et conseill&eacute; par mes proches ainsi que par mes professeurs. Le but &eacute;tait de refaire un site choisi par moi-m&ecirc;me et de changer ses informations par les miennes afin de cr&eacute;er un curriculum vitae. Le site que j&rsquo;ai choisi est celui&ndash;ci :&nbsp;<a tabindex="47" title="Aller vers le site de Total War" href="https://store.totalwar.com/en/total-war/total-war-warhammer-iii/total-war-warhammer-iii">Total War :&nbsp;Warhammer III</a>. Pour le bien de mon site, certaines informations ont pu &ecirc;tre invent&eacute;es.
 				</p>
 			</li>
 
-			<li><a id="services_footer" title="Retourner vers mes services" href="#services" hreflang="fr">Mes services</a></li>
-			<li><a id="skills_footer" title="Retourner vers mes compétences" href="#competences" hreflang="fr">Mes comp&eacute;tences</a></li>
-			<li><a id="formations_footer" title="Retourner vers mes formations" href="#formations" hreflang="fr">Mes formations</a></li>
-			<li><a id="languages_footer" title="Retourner vers mes langages maîtrisés" href="#langages" hreflang="fr">Mes langages ma&icirc;tris&eacute;s</a></li>
-			<li><a id="softskills_footer" title="Retourner vers mes soft skills" href="#soft_skills" hreflang="fr">Mes soft skills</a></li>
+			<li><a tabindex="48" id="services_footer" title="Retourner vers mes services" href="#services" hreflang="fr">Mes services</a></li>
+			<li><a tabindex="49" id="skills_footer" title="Retourner vers mes compétences" href="#competences" hreflang="fr">Mes comp&eacute;tences</a></li>
+			<li><a tabindex="50" id="formations_footer" title="Retourner vers mes formations" href="#formations" hreflang="fr">Mes formations</a></li>
+			<li><a tabindex="51" id="languages_footer" title="Retourner vers mes langages maîtrisés" href="#langages" hreflang="fr">Mes langages ma&icirc;tris&eacute;s</a></li>
+			<li><a tabindex="52" id="softskills_footer" title="Retourner vers mes soft skills" href="#soft_skills" hreflang="fr">Mes soft skills</a></li>
 
-			<li id="mail_footer"><span itemprop="email">marvinpagnoul@icloud.com</span></li>
-			<li id="tel_footer"><span itemprop="telephone">04 94 16 40 75</span></li>
-			<li id="adress_footer"><span itemprop="address">Rue Louis Happart, 15 THYS</span></li>
+			<li id="mail_footer">marvinpagnoul@icloud.com</li>
+			<li id="tel_footer">+32 494 16 40 75</li>
+			<li id="adress_footer">Rue Louis Happart, 15 &ndash; 4367 Thys</li>
 		</ul>
 
 	</footer>

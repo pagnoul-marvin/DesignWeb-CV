@@ -453,7 +453,7 @@ main {
     height: 100%;
 }
 
-#services_list li:hover {
+#services_list li:hover, #services_list li:focus {
     -webkit-filter: invert(.85);
     filter: invert(.85);
 }
@@ -731,6 +731,10 @@ select#languages {
     top: 1.4em;
 }
 
+#main_nav #first_nav_list_item:focus ~ #nav_list #first_nav_list_item #first_dropdown {
+    display: block;
+}
+
 #select_options {
     padding: 1.025em 0;
     top: 4em;
@@ -921,6 +925,7 @@ fieldset {
     min-height: 100vh;
     max-width: 30em;
     overflow-x: scroll;
+    line-height: 1.5em;
 }
 
 #panier div.no-js-basket {
@@ -1538,7 +1543,7 @@ form p {
     }
 }
 
-@media (width <= 450px) {
+@media (width <= 480px) {
 
     ul#sponsors {
         display: block;

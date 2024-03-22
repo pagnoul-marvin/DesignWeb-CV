@@ -43,9 +43,18 @@ const myCurriculumVitae = {
                     this.mainNavHover(e);
                 });
 
+                liElt.addEventListener('focus', (e) => {
+                    this.mainNavHover(e);
+                });
+
                 liElt.addEventListener('mouseout', (e) => {
                     this.mainNavHoverOut(e);
                 });
+
+                liElt.addEventListener('focusout', (e) => {
+                    this.mainNavHoverOut(e);
+                });
+
             } else if (window.innerWidth <= 750) {
                 liElt.addEventListener('click', (e) => {
                     this.mainNavClick(e);
