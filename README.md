@@ -1,8 +1,16 @@
 # DesignWeb-CV
 
-Site de base : https://store.totalwar.com/en/total-war/total-war-warhammer-iii/total-war-warhammer-iii  
-Screencast (youtube) : https://youtu.be/dJLhxqiyGFU  
+**Note: the school where the project is created, the HEPL from Liège, Belgium, is a french-speaking school. From this point, the instruction will be in French. Sorry.**
 
+## Liens vers les sites/screencast
+
+[Site de base](https://store.totalwar.com/en/total-war/total-war-warhammer-iii/total-war-warhammer-iii)  
+
+[Mon site](marvinpagnoul.be)
+
+[Screencast youtube](https://youtu.be/dJLhxqiyGFU)  
+
+## Feedbacks
 
 Retours 1er feedbacks :    
 - Changer "compétences" par "langages maîtrisés"
