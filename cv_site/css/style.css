@@ -1,4 +1,4 @@
-#main_nav, #banner, #informations, #competences_list, #competences_text a, h1, #article_hover #delete_article, #article_hover #service_name, legend, label[for='keep_informations'], #note, input[type='submit'], #article_hover > li:last-child ul li a, #hobbies_list li p:first-child, div.no-js-basket a  {
+#main_nav, #banner, #informations, #competences_list, #competences_text a, h1, #article_hover #delete_article, #article_hover #service_name, legend, label[for='keep_informations'], #note, input[type='submit'], #article_hover > li:last-child ul li a, #hobbies_list li p:first-child, div.no-js-basket a {
     font-family: "Proxima Nova Bold", sans-serif;
     font-weight: bold;
 }
@@ -16,7 +16,7 @@
     text-indent: -10000px !important;
 }
 
-.no_display, #nav_list ul.no_display, #hobbies ul.no_display, #panier ul.no_display, .no_js, .toggle input, .cross[type="checkbox"]:checked + .cross-button + #content, .cross[type="checkbox"]:checked + .cross-button, #article_hover form ol label, #panier>div:last-child {
+.no_display, #nav_list ul.no_display, #hobbies ul.no_display, #panier ul.no_display, .no_js, .toggle input, .cross[type="checkbox"]:checked + .cross-button + #content, .cross[type="checkbox"]:checked + .cross-button, #article_hover form ol label, #panier > div:last-child {
     display: none;
 }
 
@@ -100,11 +100,11 @@ header, #competences, #overlay, #second_overlay, .toggle:before, .toggle:after {
 }
 
 #nav_list ul, #hobbies_list, .slider_round:before {
-    z-index: 2;
+    z-index: 3;
 }
 
 #hobbies_button, #article_hover {
-    z-index: 3;
+    z-index: 4;
 }
 
 #alsacreations, #lmstudio, #facebook, #github, #instagram, #formations nav #first_slider_previous, #formations nav #first_slider_next, #langages nav #second_slider_next, #langages nav #second_slider_previous, #competences_text a {
@@ -139,7 +139,7 @@ header, #informations p, #article_hover > li:last-child ul li a, form input[type
     -moz-border-radius: 0.33em;
 }
 
-#formations #first_slider li ul img, #formations #first_slider > li, #language_chosen, #select_options, #languages, #article_hover #content_profile, #article_hover form ol input, .slider_round:before, form input[type='submit'], #article_hover > li:last-child ul li a  {
+#formations #first_slider li ul img, #formations #first_slider > li, #language_chosen, #select_options, #languages, #article_hover #content_profile, #article_hover form ol input, .slider_round:before, form input[type='submit'], #article_hover > li:last-child ul li a {
     border-radius: 0.67em;
     -webkit-border-radius: 0.67em;
     -moz-border-radius: 0.67em;
@@ -149,7 +149,7 @@ header, #informations p, #article_hover > li:last-child ul li a, form input[type
     position: initial;
 }
 
-#main_nav .no-js-nav>li:hover, #nav_list .no-js-dropdown, #hobbies ul#hobbies_list.no-js-hobbies_list {
+#main_nav .no-js-nav > li:hover, #nav_list .no-js-dropdown, #hobbies ul#hobbies_list.no-js-hobbies_list {
     background-color: transparent;
 }
 
@@ -181,16 +181,21 @@ html {
     scroll-behavior: smooth;
 }
 
+.section {
+    margin-top: 2.5em;
+}
+
 header {
     background-color: #1b1e26;
     z-index: 3;
+    height: 60px;
 }
 
 #main_nav {
     font-size: 0.9275em;
     width: 91%;
     margin: 0 auto;
-    min-height: 3.75em;
+    height: 100%;
 }
 
 #no_js_message #banner {
@@ -249,14 +254,15 @@ header {
 }
 
 #article_number {
-    top: 1.6em;
-    right: 4.7em;
+    top: 1em;
+    right: .5em;
 }
 
 #main_nav > div#last_item {
     -webkit-box-ordinal-group: 2;
     -ms-flex-order: 1;
     order: 1;
+    position: relative;
 }
 
 #nav_list {
@@ -361,7 +367,7 @@ header.no-js-position {
     position: static;
 }
 
-#main_nav .no-js-nav>li {
+#main_nav .no-js-nav > li {
     padding: 0;
     cursor: initial;
 }
@@ -407,15 +413,19 @@ header.no-js-position {
     object-fit: cover;
 }
 
+section[id="formations"] {
+    margin-top: 14em;
+}
+
 #informations {
-    max-width: calc(420px - 1.25em*2);
-    width: calc(420px - 1.25em*2);
+    max-width: calc(420px - 1.25em * 2);
+    width: calc(420px - 1.25em * 2);
     padding: 1.25em;
     border-radius: .9375em;
     line-height: 1.5em;
     z-index: 2;
     position: absolute;
-    bottom: 0;
+    bottom: 20px;
     margin-left: 4.5%;
 }
 
@@ -445,7 +455,7 @@ main {
     font-size: 1.125em;
 }
 
-#choice, #services_list li, #informations li a {
+#choice, #services_list li, #informations li a, #competences_text a {
     border-radius: .375em;
 }
 
@@ -456,20 +466,21 @@ main {
 }
 
 #services_list {
+    flex-wrap: wrap;
     gap: 1.25em;
 }
 
 #services_list li {
     border: 1px solid white;
-    min-height: 3.5em;
+    padding: .5em;
     -webkit-box-flex: 1;
     flex-grow: 1;
     text-align: center;
 }
 
 #services_list li img {
+    width: 100%;
     vertical-align: middle;
-    height: 100%;
 }
 
 #services_list li:hover, #services_list li:focus {
@@ -482,10 +493,13 @@ main {
 }
 
 #informations li a {
-    height: 45px;
-    font-size: 1.125em;
     text-align: center;
     margin: 1em 0;
+}
+
+#competences_text a, #informations li a {
+    height: 45px;
+    font-size: 1.125em;
     align-content: center;
 }
 
@@ -499,11 +513,6 @@ main {
 
 #hobbies_button {
     bottom: 0;
-}
-
-#competences {
-    margin: 3.125em 0 17em 0;
-    padding-top: 2.5em;
 }
 
 #competences_list {
@@ -533,32 +542,28 @@ div#skills_image {
 
 #competences_text {
     background-color: #21232AE5;
-    max-width: 31.25em;
-    padding: 1.875em 2.5em 3.125em 3.75em;
+    width: calc(50.6875em - 3.75em*2);
+    padding: 2.5em 3.75em;
     border-radius: 0.625em;
     -webkit-border-radius: 0.625em;
     -moz-border-radius: 0.625em;
     position: absolute;
-    bottom: -10em;
-    right: 9em;
+    bottom: -5em;
+    right: 6em;
 }
 
 #competences_text p {
-    margin: 1.25em 0 6.25em 0;
-    font-size: 0.9375em;
+    margin: 1.25em 0;
     line-height: 1.56em;
 }
 
 #competences_text a {
-    border-radius: 0.625em;
-    -webkit-border-radius: 0.625em;
-    -moz-border-radius: 0.625em;
-    padding: 0.625em 3.125em;
-    width: 12.5em;
+    width: 11em;
     text-align: center;
     background-image: url(../assets/ref/play.svg);
-    background-position: 3.125em;
-    font-size: 1em;
+    background-position: 1.125em;
+    padding: 0 1.125em;
+    border: 1px solid rgba(255, 255, 255, 1);
 }
 
 #competences_text a:hover {
@@ -572,10 +577,6 @@ div#skills_image {
 
 h1 {
     font-size: 1.56em;
-}
-
-#formations #first_slider {
-    font-size: 0.9375em;
 }
 
 #formations #first_slider.no-js-slide, #langages #second_slider.no-js-slide {
@@ -593,7 +594,7 @@ h1 {
 #formations #first_slider > li {
     line-height: 1.67em;
     padding: 2em 2em 5em 2em;
-    min-width: calc((100% / 3) - 6.5em);
+    min-width: calc((100% / 2) - 6.5em);
 }
 
 #formations #first_slider > li:not(:last-child), #langages #second_slider li:not(:last-child) {
@@ -601,7 +602,7 @@ h1 {
 }
 
 #second_slider > li {
-    min-width: calc((100% / 3) - 2.5em);
+    min-width: calc((100% / 2) - 2.5em);
 }
 
 #first_slider img {
@@ -962,7 +963,7 @@ fieldset {
 
 div.no-js-basket a {
     text-decoration: none;
-    color: rgb(0,0,0);
+    color: rgb(0, 0, 0);
     text-transform: uppercase;
     padding: 1em;
     margin-top: 1em;
@@ -1089,11 +1090,11 @@ form p {
         position: fixed;
     }
 
-    #formations button, #langages button, #nav_list {
+    #nav_list {
         display: none;
     }
 
-    #main_nav #nav_list, #main_nav #nav_list>li, #burger_menu span {
+    #main_nav #nav_list, #main_nav #nav_list > li, #burger_menu span {
         display: block;
     }
 
@@ -1167,7 +1168,7 @@ form p {
         margin: 0;
     }
 
-    #main_nav #nav_list>li {
+    #main_nav #nav_list > li {
         padding: 1em 2em;
     }
 
@@ -1217,7 +1218,7 @@ form p {
         box-shadow: none;
     }
 
-    #main_nav #nav_list.no-js-nav >li:hover {
+    #main_nav #nav_list.no-js-nav > li:hover {
         margin-bottom: 2em;
         border-bottom: none;
         -webkit-box-shadow: none;
@@ -1277,26 +1278,6 @@ form p {
     #nav_list ul:before {
         content: '';
     }
-
-    #formations {
-        margin-bottom: 5em;
-    }
-
-    #formations nav, #langages nav {
-        margin: 1.875em 4.6875em 0 4.6875em;
-    }
-
-    #formations #first_slider > li:not(:last-child), #langages #second_slider > li:not(:last-child) {
-        margin-right: 0;
-    }
-
-    #formations ul#first_slider, #langages ul#second_slider {
-        display: grid;
-        display: -ms-grid;
-        grid-template-areas: "hepl formation"
-                             "helmo secondaire";
-        grid-gap: 1.25em;
-    }
 }
 
 @media (width <= 750px) {
@@ -1325,7 +1306,7 @@ form p {
         background-color: grey;
     }
 
-    #nav_list >li.active_dropdown {
+    #nav_list > li.active_dropdown {
         margin-bottom: 14em;
     }
 
@@ -1348,10 +1329,6 @@ form p {
 
     #main_nav {
         padding: 0 2em;
-    }
-
-    #article_number {
-        right: 2.6em;
     }
 
     #no_js_message #banner {
@@ -1378,6 +1355,24 @@ form p {
 
     main #services {
         margin: 5em 2em 0 2em;
+    }
+
+    #services #informations {
+        margin: 0;
+        background-color: transparent;
+        min-width: 100%;
+        padding: 0;
+        max-width: unset;
+        width: unset;
+    }
+
+    #services #landing_image {
+        height: 45%;
+        border-radius: .625em;
+    }
+
+    #services .gradient_background {
+        display: none;
     }
 
     #competences #competences_list li:not(:last-child) {
@@ -1459,6 +1454,10 @@ form p {
         margin-bottom: 1.25em;
     }
 
+    #formations ul#first_slider > li:not(:last-child), #langages ul#second_slider > li:not(:last-child) {
+        margin-right: 0;
+    }
+
     footer #grid_container > #site_explanation {
         -ms-grid-row: 1;
         -ms-grid-row-span: 1;
@@ -1509,30 +1508,8 @@ form p {
 
 @media (width <= 1175px) {
 
-    #competences_text, #informations {
-        background-color: transparent;
-    }
-
-    #language_chosen, #informations {
+    #language_chosen {
         margin: 0;
-    }
-
-    #services, #informations {
-        padding: 0;
-    }
-
-    #services {
-        margin: 5em 4.6875em 0 4.6875em;
-    }
-
-    #services div#flex_container {
-        display: initial;
-    }
-
-    div#flex_container img#landing_image {
-        height: auto;
-        width: 100%;
-        margin-bottom: 2em;
     }
 
     #competences, #formations {
@@ -1540,6 +1517,7 @@ form p {
     }
 
     #competences_text {
+        background-color: transparent;
         padding: 0;
         text-align: left;
         margin: 2em 0 0 0;
@@ -1549,10 +1527,6 @@ form p {
 
     #competences_text p {
         margin: 1.25em 0;
-    }
-
-    #informations {
-        min-width: 100%;
     }
 
     #select_js_enabled {

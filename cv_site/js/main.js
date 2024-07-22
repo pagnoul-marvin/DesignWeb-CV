@@ -420,14 +420,6 @@ const myCurriculumVitae = {
     /*Sliders*/
 
     previousSlide() {
-        if (settings.pourcentage === settings.maxPourcentage) {
-            settings.pourcentage = settings.minPourcentage;
-        } else {
-            settings.pourcentage -= settings.slidePourcentage;
-        }
-    },
-
-    nextSlide() {
         if (settings.pourcentage === settings.minPourcentage) {
             settings.pourcentage = settings.maxPourcentage;
         } else {
@@ -435,9 +427,19 @@ const myCurriculumVitae = {
         }
     },
 
+    nextSlide() {
+        if (settings.pourcentage === settings.maxPourcentage) {
+            settings.pourcentage = settings.minPourcentage;
+        } else {
+            settings.pourcentage -= settings.slidePourcentage;
+        }
+    },
+
     /*Hobbies Section*/
 
     slidersSection(e) {
+        console.log(settings.maxPourcentage)
+        console.log(settings.slidePourcentage)
         if (e.currentTarget.id === settings.firstSliderPreviousId) {
             this.previousSlide();
             settings.firstSliderElement.style.left = `${settings.pourcentage}px`;
