@@ -124,47 +124,22 @@ table {
 }
 
 @font-face {
-font-family: 'Segoe UI Regular';
+font-family: 'Proxima Nova Regular';
 font-style: normal;
 font-weight: normal;
- src: url('../fonts/segoe/Segoe UI.woff') format('woff');
+ src: url('../fonts/Mark Simonson  Proxima Nova Regular.otf') format('OpenType');
 }
 
 @font-face {
-font-family: 'Segoe UI Bold';
+font-family: 'Proxima Nova Bold';
 font-style: normal;
-font-weight: 700;
-src: url('../fonts/segoe/Segoe UI Bold.woff') format('woff');
+font-weight: 800;
+ src: url('../fonts/Mark Simonson  Proxima Nova Bold.otf') format('OpenType');
 }
 
 @font-face {
-font-family: 'Metropolis Regular';
-font-style: normal;
+font-family: 'Proxima Nova Italic';
+font-style: italic;
 font-weight: normal;
- src: url('../fonts/metropolis/Metropolis-Regular.otf') format('OpenType');
+ src: url('../fonts/Mark Simonson  Proxima Nova Regular Italic.otf') format('OpenType');
 }
-
-@font-face {
-font-family: 'Metropolis Bold';
-font-style: normal;
-font-weight: 700;
-src: url('../fonts/metropolis/Metropolis-Bold.otf') format('OpenType');
-}
-
-@font-face {
-font-family: 'Montserrat Regular';
-font-style: normal;
-font-weight: normal;
- src: url('../fonts/montserrat/Montserrat-Regular.ttf') format('TrueType');
-}
-
-@font-face {
-font-family: 'Montserrat Bold';
-font-style: normal;
-font-weight: 700;
-src: url('../fonts/montserrat/Montserrat-Bold.ttf') format('TrueType');
-}
-
-
-
-

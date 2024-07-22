@@ -1,13 +1,15 @@
 #main_nav, #banner, #informations, #competences_list, #competences_text a, h1, #article_hover #delete_article, #article_hover #service_name, legend, label[for='keep_informations'], #note, input[type='submit'], #article_hover > li:last-child ul li a, #hobbies_list li p:first-child, div.no-js-basket a  {
-    font-family: "Metropolis Bold", "Montserrat Bold", "Segoe UI Bold", sans-serif;
+    font-family: "Proxima Nova Bold", sans-serif;
+    font-weight: bold;
 }
 
 #nav_list ul li a, #choice, #competences_text p, #formations #first_slider, #soft_skills p, footer, #hobbies_list, #hobbies h2, #article_hover, #article_hover > li:last-child ul li:first-child, .toggle:before, .toggle:after, div.no-js-basket {
-    font-family: "Metropolis Regular", "Montserrat Regular", "Segoe UI Regular", sans-serif;
+    font-family: "Proxima Nova Regular", sans-serif;
 }
 
 .hidden {
     font-size: 0 !important;
+    position: absolute;
 }
 
 .hidden, #formations nav #first_slider_previous, #formations nav #first_slider_next, #langages nav #second_slider_next, #langages nav #second_slider_previous, #facebook, #github, #instagram, #alsacreations, #lmstudio {
@@ -90,7 +92,7 @@ header, #hobbies_button, #hobbies_list, #overlay, #second_overlay, #article_hove
 }
 
 #informations, #formations #first_slider > li {
-    background-color: #20242B;
+    background-color: #20242c;
 }
 
 header, #competences, #overlay, #second_overlay, .toggle:before, .toggle:after {
@@ -179,11 +181,16 @@ html {
     scroll-behavior: smooth;
 }
 
+header {
+    background-color: #1b1e26;
+    z-index: 3;
+}
+
 #main_nav {
     font-size: 0.9275em;
-    padding: 0 4.6875em;
+    width: 91%;
+    margin: 0 auto;
     min-height: 3.75em;
-    background-color: #1b1e26;
 }
 
 #no_js_message #banner {
@@ -243,7 +250,7 @@ html {
 
 #article_number {
     top: 1.6em;
-    right: 5.4em;
+    right: 4.7em;
 }
 
 #main_nav > div#last_item {
@@ -380,11 +387,39 @@ header.no-js-position {
 }
 
 #services {
-    padding: 0 4.6875em;
-    margin-top: 5em;
+    margin-top: 3.75em;
+    position: relative;
+    overflow: hidden;
+    height: calc(100vh - 3.75em);
 }
 
-#landing_image, img#skills {
+.gradient_background {
+    background: linear-gradient(90deg, black, transparent);
+    z-index: 1;
+}
+
+#landing_image, .gradient_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#informations {
+    max-width: calc(420px - 1.25em*2);
+    width: calc(420px - 1.25em*2);
+    padding: 1.25em;
+    border-radius: .9375em;
+    line-height: 1.5em;
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    margin-left: 4.5%;
+}
+
+img#skills {
     border-radius: 1.25em;
     -webkit-border-radius: 1.25em;
     -moz-border-radius: 1.25em;
@@ -395,24 +430,9 @@ img#skills {
     height: 100% !important;
 }
 
-#informations {
-    min-width: 18em;
-    padding: 2.5em 1.875em;
-    border-radius: 1.25em;
-    -webkit-border-radius: 1.25em;
-    -moz-border-radius: 1.25em;
-    font-size: 1.25em;
-    -webkit-box-ordinal-group: 0;
-    -ms-flex-order: -1;
-    order: -1;
-    -ms-grid-row-align: center;
-    align-self: center;
-}
-
 #jobTitle {
     color: #B4BAC9;
     margin-bottom: 0.15em;
-    font-size: 0.75em;
 }
 
 main {
@@ -422,27 +442,26 @@ main {
 #tariff {
     color: #FAE09F;
     margin: 1em 0;
+    font-size: 1.125em;
+}
+
+#choice, #services_list li, #informations li a {
+    border-radius: .375em;
 }
 
 #choice {
     background-color: #32363F;
-    border-radius: 0.5em;
-    -moz-border-radius: 0.5em;
-    -webkit-border-radius: 0.5em;
     margin-bottom: 1em;
-    padding: 0.5em 0.75em;
+    padding: .625em .9375em;
 }
 
 #services_list {
-    gap: 0.5em;
+    gap: 1.25em;
 }
 
 #services_list li {
     border: 1px solid white;
     min-height: 3.5em;
-    border-radius: 0.625em;
-    -webkit-border-radius: 0.625em;
-    -moz-border-radius: 0.625em;
     -webkit-box-flex: 1;
     flex-grow: 1;
     text-align: center;
@@ -463,12 +482,15 @@ main {
 }
 
 #informations li a {
+    height: 45px;
+    font-size: 1.125em;
     text-align: center;
     margin: 1em 0;
-    padding: 0.9375em 0;
-    border-radius: 0.625em;
-    -webkit-border-radius: 0.625em;
-    -moz-border-radius: 0.625em;
+    align-content: center;
+}
+
+#informations li strong {
+    font-size: 1.25em;
 }
 
 #informations li a:hover, #article_hover a#back_to_services:hover, div#no-js-basket a:hover {
@@ -757,6 +779,10 @@ select#languages {
 
 #menu__toggle {
     opacity: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
 }
 
 #alsacreations, #lmstudio {
@@ -1147,14 +1173,14 @@ form p {
 
     #burger_menu {
         z-index: 3;
-        width: 2em;
-        height: 1.5em;
+        width: 1.875em;
+        height: 1.875em;
         position: relative;
         cursor: pointer;
     }
 
     #burger_menu span {
-        height: 0.2em;
+        height: 0.15em;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -1167,7 +1193,7 @@ form p {
 
     #burger_menu span:before, #burger_menu span:after {
         content: '';
-        height: 0.2em;
+        height: 0.15em;
         background-color: #fff;
         position: absolute;
         -webkit-transition: -webkit-transform 0.2s ease-in-out;
@@ -1177,13 +1203,13 @@ form p {
     }
 
     #burger_menu span:before {
-        -ms-transform: translateY(-0.5em);
-        transform: translateY(-0.5em);
+        -ms-transform: translateY(-0.6em);
+        transform: translateY(-0.6em);
     }
 
     #burger_menu span:after {
-        -ms-transform: translateY(0.5em);
-        transform: translateY(0.5em);
+        -ms-transform: translateY(0.6em);
+        transform: translateY(0.6em);
     }
 
     #nav_list .no-js-dropdown {
@@ -1196,10 +1222,6 @@ form p {
         border-bottom: none;
         -webkit-box-shadow: none;
         box-shadow: none;
-    }
-
-    #article_number {
-        right: 5.4em;
     }
 
     #nav_list {
